@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "obj_rel_88_hallucination",
+    "eval_type": "obj_rel",
+    "index": 88,
+    "side": "hallucination",
+    "video": "1021_9565310990_540_609.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/object_relation/videos/1021_9565310990_540_609.mp4",
+    "question": "Is the baby walker far from the baby in the video?",
+    "answer": "no",
+    "type": "relation",
+    "predict": "<think>Let me think about this for a moment. The video shows a baby crawling on the grass, and there's a baby walker visible in the background. Now, wait, how far is the baby walker from the baby? Hmm, it seems to be relatively close, as the walker is within the frame and not too far off from the baby's position. Oh, I see, the baby walker is not very far from the baby. Let's break it down further - if it were far, it would likely be out of the frame or much less visible. So, based on this reasoning, the baby walker is not far from the baby.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a baby crawling on the grass, and there's a baby walker visible in the background. Now, wait, how far is the baby walker from the baby? Hmm, it seems to be relatively close, as the walker is within the frame and not too far off from the baby's position. Oh, I see, the baby walker is not very far from the baby. Let's break it down further - if it were far, it would likely be out of the frame or much less visible. So, based on this reasoning, the baby walker is not far from the baby.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a baby crawling on the grass, and there's a baby walker visible in the background. Now, wait, how far is the baby walker from the baby? Hmm, it seems to be relatively close, as the walker is within the frame and not too far off from the baby's position. Oh, I see, the baby walker is not very far from the baby. Let's break it down further - if it were far, it would likely be out of the frame or much less visible. So, based on this reasoning, the baby walker is not far from the baby.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's look at the video. The baby is on the grass, and the baby walker is in the background. The distance between them—since the baby is crawling and the walker is behind, it's not too close. Wait, the question is if it's far. Let's check the positions. In the frames, the walker is visible but not very close to the baby. So the answer would be yes, it's far.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a baby crawling on the grass, and there's a baby walker visible in the background. Now, wait, how far is the baby walker from the baby? Hmm, it seems to be relatively close, as the walker is within the frame and not too far off from the baby's position. Oh, I see, the baby walker is not very far from the baby. Let's break it down further - if it were far, it would likely be out of the frame or much less visible. So, based on this reasoning, the baby walker is not far from the baby.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's look at the video. The baby is on the grass, and the baby walker is in the background. The distance between them—since the baby is crawling and the walker is behind, it's not too close. Wait, the question is if it's far. Let's check the positions. In the frames, the walker is visible but not very close to the baby. So the answer would be yes, it's far.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\obj_rel_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\obj_rel_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\obj_rel_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.32370691526809586,
+        0.11773316211303586,
+        0.08603600156199928,
+        0.07654897640499543,
+        0.07573474717930713,
+        0.08856617395382602,
+        0.10142151709134825,
+        0.13025250642739217
+      ],
+      "metrics": {
+        "entropy": 1.9324589092232194,
+        "normalized_entropy": 0.9293162950193448,
+        "coefficient_of_variation": 0.6180029932989702,
+        "max_ratio": 0.32370691526809586,
+        "min_ratio": 0.07573474717930713
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          22,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          11,
+          20
+        ],
+        "total_video_tokens": 1760
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. The baby is on the grass, and the baby walker is in the background. The distance between them—since the walker is behind the baby, it's not too close. Wait, the question is if it's far. Let's check the positions. The baby is crawling, and the walker is visible but not very close. So the answer would be yes, it's far.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's look at the video. The baby is on the grass, and the baby walker is in the background. The distance between them—since the walker is behind the baby, it's not too close. Wait, the question is if it's far. Let's check the positions. The baby is crawling, and the walker is visible but not very close. So the answer would be yes, it's far.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 90,
+      "frame_ratios": [
+        0.3996199756775791,
+        0.12396218159710276,
+        0.0794782134773928,
+        0.06733776779482739,
+        0.06736213864450466,
+        0.0746073963032826,
+        0.09333870023500994,
+        0.09429362627030073
+      ],
+      "metrics": {
+        "entropy": 1.8276733383850226,
+        "normalized_entropy": 0.8789250872176828,
+        "coefficient_of_variation": 0.8420034728607281,
+        "max_ratio": 0.3996199756775791,
+        "min_ratio": 0.06733776779482739
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          22,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          11,
+          20
+        ],
+        "total_video_tokens": 1760
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a baby crawling on the grass, and there's a baby walker visible in the background. Now, wait, how far is the baby walker from the baby? Hmm, it seems to be a bit far, but I need to be sure. Let's break it down: the baby is in the foreground, and the walker is in the background, not too close. Oh, I see, the distance appears to be noticeable. So, is it far? I'd say yes, considering the baby's position and the walker's placement.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a baby crawling on the grass, and there's a baby walker visible in the background. Now, wait, how far is the baby walker from the baby? Hmm, it seems to be a bit far, but I need to be sure. Let's break it down: the baby is in the foreground, and the walker is in the background, not too close. Oh, I see, the distance appears to be noticeable. So, is it far? I'd say yes, considering the baby's position and the walker's placement.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 129,
+      "frame_ratios": [
+        0.3372078042390288,
+        0.1331913659927656,
+        0.11274114587131577,
+        0.08554138498131587,
+        0.0730801842534597,
+        0.07339292983391672,
+        0.08994926780311072,
+        0.09489591702508679
+      ],
+      "metrics": {
+        "entropy": 1.914484698094837,
+        "normalized_entropy": 0.9206725265997419,
+        "coefficient_of_variation": 0.659091975724777,
+        "max_ratio": 0.3372078042390288,
+        "min_ratio": 0.0730801842534597
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          22,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          11,
+          20
+        ],
+        "total_video_tokens": 1760
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "nonfact_72_hallucination",
+    "eval_type": "nonfact",
+    "index": 72,
+    "side": "hallucination",
+    "video": "tPLVNKgs8Lk_4614.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/external_nonfactual/videos/tPLVNKgs8Lk_4614.mp4",
+    "question": "Based on the video, should we pour small portions of the mixture into a medium-cooled pan when we make pancake?",
+    "answer": "no",
+    "type": "external_nonfactual_instruct",
+    "predict": "<think>Let me think about this for a moment. The video shows a process of making pancakes, and it's important to consider the context of pouring the mixture into a pan. Wait, what does the video specifically show? Hmm, it seems that the video demonstrates pouring a certain amount of the pancake mixture into a pan that appears to be preheated and possibly with some oil. Now, let's break it down further. The question asks about pouring small portions into a medium-cooled pan. Oh, I see, the term \"medium-cooled\" is a bit confusing. Typically, a pan should be hot, not cooled, for making pancakes. But if we consider the video's context, it seems to show pouring the mixture into a pan that's ready for cooking, not cooled. So, should we pour small portions into a cooled pan? That doesn't seem right based on what's typically done and what the video shows.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a process of making pancakes, and it's important to consider the context of pouring the mixture into a pan. Wait, what does the video specifically show? Hmm, it seems that the video demonstrates pouring a certain amount of the pancake mixture into a pan that appears to be preheated and possibly with some oil. Now, let's break it down further. The question asks about pouring small portions into a medium-cooled pan. Oh, I see, the term \"medium-cooled\" is a bit confusing. Typically, a pan should be hot, not cooled, for making pancakes. But if we consider the video's context, it seems to show pouring the mixture into a pan that's ready for cooking, not cooled. So, should we pour small portions into a cooled pan? That doesn't seem right based on what's typically done and what the video shows.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a process of making pancakes, and it's important to consider the context of pouring the mixture into a pan. Wait, what does the video specifically show? Hmm, it seems that the video demonstrates pouring a certain amount of the pancake mixture into a pan that appears to be preheated and possibly with some oil. Now, let's break it down further. The question asks about pouring small portions into a medium-cooled pan. Oh, I see, the term \"medium-cooled\" is a bit confusing. Typically, a pan should be hot, not cooled, for making pancakes. But if we consider the video's context, it seems to show pouring the mixture into a pan that's ready for cooking, not cooled. So, should we pour small portions into a cooled pan? That doesn't seem right based on what's typically done and what the video shows.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's check the video. The video shows pouring the batter into a pan. The step where they pour the batter—how much? The video shows pouring small portions. Also, the pan is medium-cooled, which is typical for pancakes to prevent sticking. So the answer should be yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a process of making pancakes, and it's important to consider the context of pouring the mixture into a pan. Wait, what does the video specifically show? Hmm, it seems that the video demonstrates pouring a certain amount of the pancake mixture into a pan that appears to be preheated and possibly with some oil. Now, let's break it down further. The question asks about pouring small portions into a medium-cooled pan. Oh, I see, the term \"medium-cooled\" is a bit confusing. Typically, a pan should be hot, not cooled, for making pancakes. But if we consider the video's context, it seems to show pouring the mixture into a pan that's ready for cooking, not cooled. So, should we pour small portions into a cooled pan? That doesn't seem right based on what's typically done and what the video shows.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's check the video. The video shows pouring the batter into a pan. The step where they pour the batter—how much? The video shows pouring small portions. Also, the pan is medium-cooled, which is typical for pancakes to prevent sticking. So the answer should be yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\nonfact_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\nonfact_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\nonfact_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.20188147581672206,
+        0.12334239197307795,
+        0.10771710081834722,
+        0.09063819388442464,
+        0.08037424386941805,
+        0.09714484576675467,
+        0.13009951003266537,
+        0.16880223783859005
+      ],
+      "metrics": {
+        "entropy": 2.033549635498057,
+        "normalized_entropy": 0.9779306581782021,
+        "coefficient_of_variation": 0.3111906178740153,
+        "max_ratio": 0.20188147581672206,
+        "min_ratio": 0.08037424386941805
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's check the video. The steps: first, they mix ingredients, then pour the batter into a pan. The video shows pouring the batter into the pan. The question is about pouring small portions into a medium-cooled pan. Wait, the video shows pouring the batter into the pan. Let's see the timestamps. At 107.8 seconds, the pan is shown, then 119.2 seconds, pouring batter. So when making pancakes, you pour the batter into the pan. The question is whether to pour small portions. In the video, they pour the batter into the pan, and the pan is probably preheated (since pancakes need a hot pan). But the question says \"medium-cooled pan\"—wait, maybe \"medium-cooked\" but no, it's \"medium-cooled\". Wait, maybe it's a typo, but the key is the action. The video shows pouring the batter into the pan. So the answer would be yes, because you pour small portions (each pancake is a portion) into the pan. Let me confirm. The video shows pouring the batter into the pan, so yes, you pour small portions (each pancake is a small portion) into the pan. So the answer is yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's check the video. The steps: first, they mix ingredients, then pour the batter into a pan. The video shows pouring the batter into the pan. The question is about pouring small portions into a medium-cooled pan. Wait, the video shows pouring the batter into the pan. Let's see the timestamps. At 107.8 seconds, the pan is shown, then 119.2 seconds, pouring batter. So when making pancakes, you pour the batter into the pan. The question is whether to pour small portions. In the video, they pour the batter into the pan, and the pan is probably preheated (since pancakes need a hot pan). But the question says \"medium-cooled pan\"—wait, maybe \"medium-cooked\" but no, it's \"medium-cooled\". Wait, maybe it's a typo, but the key is the action. The video shows pouring the batter into the pan. So the answer would be yes, because you pour small portions (each pancake is a portion) into the pan. Let me confirm. The video shows pouring the batter into the pan, so yes, you pour small portions (each pancake is a small portion) into the pan. So the answer is yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 264,
+      "frame_ratios": [
+        0.16065640920981392,
+        0.10205038545612811,
+        0.13428442569726196,
+        0.10965801621796058,
+        0.09317632745996414,
+        0.13246186482101296,
+        0.14629037969414757,
+        0.12142219144371073
+      ],
+      "metrics": {
+        "entropy": 2.0647775476851074,
+        "normalized_entropy": 0.9929481095280599,
+        "coefficient_of_variation": 0.17097714220269958,
+        "max_ratio": 0.16065640920981392,
+        "min_ratio": 0.09317632745996414
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a step-by-step process of making pancakes. When it comes to pouring the mixture into the pan, I need to consider the context provided. The video demonstrates pouring the batter into a pan that appears to be preheated and possibly with some oil, as indicated by the smooth surface and the way the batter spreads. Now, the question asks about pouring small portions into a medium-cooled pan. Hmm, that's an interesting point. A cooled pan might not be ideal for cooking pancakes as they might not cook evenly or develop a proper crust. Wait, let's break it down further. The video doesn't show a cooled pan, so it's not directly comparable. However, if we were to make pancakes using a cooled pan, it would likely not yield the best results. Oh, I see, the question is asking for a specific condition that isn't directly shown in the video. Given that the video doesn't demonstrate using a cooled pan, and considering that a cooled pan might not be optimal for cooking pancakes, I would lean towards the method shown in the video, which likely uses a heated pan.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a step-by-step process of making pancakes. When it comes to pouring the mixture into the pan, I need to consider the context provided. The video demonstrates pouring the batter into a pan that appears to be preheated and possibly with some oil, as indicated by the smooth surface and the way the batter spreads. Now, the question asks about pouring small portions into a medium-cooled pan. Hmm, that's an interesting point. A cooled pan might not be ideal for cooking pancakes as they might not cook evenly or develop a proper crust. Wait, let's break it down further. The video doesn't show a cooled pan, so it's not directly comparable. However, if we were to make pancakes using a cooled pan, it would likely not yield the best results. Oh, I see, the question is asking for a specific condition that isn't directly shown in the video. Given that the video doesn't demonstrate using a cooled pan, and considering that a cooled pan might not be optimal for cooking pancakes, I would lean towards the method shown in the video, which likely uses a heated pan.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 243,
+      "frame_ratios": [
+        0.14582521483880656,
+        0.10891829254052078,
+        0.12746415206975537,
+        0.10226056513059106,
+        0.09782338652583737,
+        0.14052825408948794,
+        0.14773713822782014,
+        0.12944299657718075
+      ],
+      "metrics": {
+        "entropy": 2.0683302269529915,
+        "normalized_entropy": 0.9946565871152752,
+        "coefficient_of_variation": 0.14783443441540312,
+        "max_ratio": 0.14773713822782014,
+        "min_ratio": 0.09782338652583737
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

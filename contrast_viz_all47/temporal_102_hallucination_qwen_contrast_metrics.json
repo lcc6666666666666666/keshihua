@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "temporal_102_hallucination",
+    "eval_type": "temporal",
+    "index": 102,
+    "side": "hallucination",
+    "video": "v_qBqUu4_qOnU.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/temporal/videos/v_qBqUu4_qOnU.mp4",
+    "question": "Is the event 'first the man walks his blindfolded daughter towards the pinata' longer than 'first she hits the pinata using the wooden stick and people clap'?",
+    "answer": "no",
+    "type": "length_relative",
+    "predict": "<think>Let me think about this carefully. The sequence of events in the video shows that first, the man indeed walks his blindfolded daughter towards the piñata. This action is quite clear and distinct. Then, she proceeds to hit the piñata with a wooden stick. The clapping from the people comes after she starts hitting the piñata. So, let's break it down:\n\n1. The man walks the blindfolded daughter towards the piñata.\n2. The daughter hits the piñata with a wooden stick.\n3. People clap after she starts hitting the piñata.\n\nHmm, the duration of the first event (man walking the daughter) is not necessarily longer than the second event (her hitting the piñata and people clapping). The question asks if the first event is longer, but we can't determine the duration from the given sequence alone. However, based on typical scenarios, the act of hitting the piñata and clapping usually doesn't take as long as someone walking a child. \n\nOh, I see. The question is more about the sequence and not necessarily the duration. But since we can't confirm the duration from the video alone, and the typical scenario suggests the first event might not be longer, I should answer based on the given options.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this carefully. The sequence of events in the video shows that first, the man indeed walks his blindfolded daughter towards the piñata. This action is quite clear and distinct. Then, she proceeds to hit the piñata with a wooden stick. The clapping from the people comes after she starts hitting the piñata. So, let's break it down:\n\n1. The man walks the blindfolded daughter towards the piñata.\n2. The daughter hits the piñata with a wooden stick.\n3. People clap after she starts hitting the piñata.\n\nHmm, the duration of the first event (man walking the daughter) is not necessarily longer than the second event (her hitting the piñata and people clapping). The question asks if the first event is longer, but we can't determine the duration from the given sequence alone. However, based on typical scenarios, the act of hitting the piñata and clapping usually doesn't take as long as someone walking a child. \n\nOh, I see. The question is more about the sequence and not necessarily the duration. But since we can't confirm the duration from the video alone, and the typical scenario suggests the first event might not be longer, I should answer based on the given options.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this carefully. The sequence of events in the video shows that first, the man indeed walks his blindfolded daughter towards the piñata. This action is quite clear and distinct. Then, she proceeds to hit the piñata with a wooden stick. The clapping from the people comes after she starts hitting the piñata. So, let's break it down:\n\n1. The man walks the blindfolded daughter towards the piñata.\n2. The daughter hits the piñata with a wooden stick.\n3. People clap after she starts hitting the piñata.\n\nHmm, the duration of the first event (man walking the daughter) is not necessarily longer than the second event (her hitting the piñata and people clapping). The question asks if the first event is longer, but we can't determine the duration from the given sequence alone. However, based on typical scenarios, the act of hitting the piñata and clapping usually doesn't take as long as someone walking a child. \n\nOh, I see. The question is more about the sequence and not necessarily the duration. But since we can't confirm the duration from the video alone, and the typical scenario suggests the first event might not be longer, I should answer based on the given options.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's analyze the video. First, the man walks his blindfolded daughter towards the pinata. Then she hits it, and people clap. The question is whether the first event (man walking) is longer than the second (hitting and clapping). \n\nLooking at the timestamps: The man is guiding her towards the pinata in the early frames (like 0-5 seconds maybe), then she starts hitting. The hitting and clapping part is when she's swinging the stick. The walking part is a sequence where he's moving her, which takes some time, and then the hitting and clapping is a shorter sequence. So the walking event is longer than the hitting and clapping event. Therefore, the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this carefully. The sequence of events in the video shows that first, the man indeed walks his blindfolded daughter towards the piñata. This action is quite clear and distinct. Then, she proceeds to hit the piñata with a wooden stick. The clapping from the people comes after she starts hitting the piñata. So, let's break it down:\n\n1. The man walks the blindfolded daughter towards the piñata.\n2. The daughter hits the piñata with a wooden stick.\n3. People clap after she starts hitting the piñata.\n\nHmm, the duration of the first event (man walking the daughter) is not necessarily longer than the second event (her hitting the piñata and people clapping). The question asks if the first event is longer, but we can't determine the duration from the given sequence alone. However, based on typical scenarios, the act of hitting the piñata and clapping usually doesn't take as long as someone walking a child. \n\nOh, I see. The question is more about the sequence and not necessarily the duration. But since we can't confirm the duration from the video alone, and the typical scenario suggests the first event might not be longer, I should answer based on the given options.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's analyze the video. First, the man walks his blindfolded daughter towards the pinata. Then she hits it, and people clap. The question is whether the first event (man walking) is longer than the second (hitting and clapping). \n\nLooking at the timestamps: The man is guiding her towards the pinata in the early frames (like 0-5 seconds maybe), then she starts hitting. The hitting and clapping part is when she's swinging the stick. The walking part is a sequence where he's moving her, which takes some time, and then the hitting and clapping is a shorter sequence. So the walking event is longer than the hitting and clapping event. Therefore, the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\temporal_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\temporal_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\temporal_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.2759470199672197,
+        0.09183196244520145,
+        0.0909052592788874,
+        0.09825749182848302,
+        0.0941219727780386,
+        0.10902526406066977,
+        0.1283327274148979,
+        0.11157830222660217
+      ],
+      "metrics": {
+        "entropy": 1.9927518978837373,
+        "normalized_entropy": 0.9583110935996461,
+        "coefficient_of_variation": 0.46615558292877507,
+        "max_ratio": 0.2759470199672197,
+        "min_ratio": 0.0909052592788874
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's analyze the video. First, the man walks his blindfolded daughter towards the pinata. That action starts at the beginning. Then, she hits the pinata. The question is whether the first event (man walking daughter) is longer than the second event (she hits and people clap). \n\nLooking at the timestamps: The man walking her towards the pinata is from the start up to when she's in position. Then she hits it. The hitting and clapping is a shorter action. So the walking part is longer. So the answer is yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's analyze the video. First, the man walks his blindfolded daughter towards the pinata. That action starts at the beginning. Then, she hits the pinata. The question is whether the first event (man walking daughter) is longer than the second event (she hits and people clap). \n\nLooking at the timestamps: The man walking her towards the pinata is from the start up to when she's in position. Then she hits it. The hitting and clapping is a shorter action. So the walking part is longer. So the answer is yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 121,
+      "frame_ratios": [
+        0.3345317468850741,
+        0.13479025075668288,
+        0.09106189623145064,
+        0.10938813525805784,
+        0.08901511729610008,
+        0.07379541295885084,
+        0.08108728922743799,
+        0.08633015138634564
+      ],
+      "metrics": {
+        "entropy": 1.9195582352334832,
+        "normalized_entropy": 0.9231123822229722,
+        "coefficient_of_variation": 0.6495255625281006,
+        "max_ratio": 0.3345317468850741,
+        "min_ratio": 0.07379541295885084
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this carefully. The sequence of events in the video shows that first, the man indeed walks his blindfolded daughter towards the pinata. This action is quite clear and distinct. Then, after reaching the pinata, the daughter is given a wooden stick and attempts to hit it. The clapping from the onlookers seems to occur after a few attempts at hitting the pinata. So, let's break it down:\n\n1. The man walks the blindfolded daughter towards the pinata.\n2. The daughter is given a stick and attempts to hit the pinata.\n3. People clap after she hits the pinata.\n\nHmm, the duration of the first event, which is the man walking the daughter towards the pinata, appears to be a single, continuous action. The second event, which involves hitting the pinata and clapping, encompasses multiple actions that occur over a span of time. \n\nOh, I see. The first event is not necessarily longer in duration compared to the second event, which includes multiple actions. The question asks if the first event is longer, and considering the nature of these actions, it doesn't seem so.</think>\n<answer>no</answer>",
+      "prediction_full": "<think>Let me think about this carefully. The sequence of events in the video shows that first, the man indeed walks his blindfolded daughter towards the pinata. This action is quite clear and distinct. Then, after reaching the pinata, the daughter is given a wooden stick and attempts to hit it. The clapping from the onlookers seems to occur after a few attempts at hitting the pinata. So, let's break it down:\n\n1. The man walks the blindfolded daughter towards the pinata.\n2. The daughter is given a stick and attempts to hit the pinata.\n3. People clap after she hits the pinata.\n\nHmm, the duration of the first event, which is the man walking the daughter towards the pinata, appears to be a single, continuous action. The second event, which involves hitting the pinata and clapping, encompasses multiple actions that occur over a span of time. \n\nOh, I see. The first event is not necessarily longer in duration compared to the second event, which includes multiple actions. The question asks if the first event is longer, and considering the nature of these actions, it doesn't seem so.</think>\n<answer>no</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 247,
+      "frame_ratios": [
+        0.256852826665201,
+        0.12938029634344025,
+        0.10620836293914908,
+        0.11124001610010995,
+        0.09418727484390158,
+        0.09991019292929859,
+        0.1100518793655237,
+        0.09216915081337586
+      ],
+      "metrics": {
+        "entropy": 2.011419416752314,
+        "normalized_entropy": 0.9672882725654449,
+        "coefficient_of_variation": 0.40818673271158495,
+        "max_ratio": 0.256852826665201,
+        "min_ratio": 0.09216915081337586
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "temporal_46_hallucination",
+    "eval_type": "temporal",
+    "index": 46,
+    "side": "hallucination",
+    "video": "v_zto8JvkVLVw.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/temporal/videos/v_zto8JvkVLVw.mp4",
+    "question": "Does 'an athletic man is seen standing before a bar with his arms raised up' happen later than 'the man continues to spin himself around and jumps off with his arms up'?",
+    "answer": "no",
+    "type": "temporal_relative",
+    "predict": "<think>Let me think about this carefully. The sequence of events in the video needs to be analyzed step by step. First, we see a gymnast performing on a balance beam. The gymnast is seen spinning and performing various maneuvers on the beam. Then, the gymnast jumps off the beam with arms raised. Now, the question asks if an athletic man standing before a bar with arms raised happens later than the gymnast jumping off the beam. Hmm, I don't recall seeing an athletic man standing before a bar in this video. The scene is focused on a gymnast performing on a balance beam, not an athletic man with a bar. So, this part of the question seems to be describing a different scenario. Oh, I see, the question might be mixing up different scenes. Let's break it down: the gymnast jumps off the beam, and there's no scene change to an athletic man with a bar. Therefore, the described event doesn't happen later in this video.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this carefully. The sequence of events in the video needs to be analyzed step by step. First, we see a gymnast performing on a balance beam. The gymnast is seen spinning and performing various maneuvers on the beam. Then, the gymnast jumps off the beam with arms raised. Now, the question asks if an athletic man standing before a bar with arms raised happens later than the gymnast jumping off the beam. Hmm, I don't recall seeing an athletic man standing before a bar in this video. The scene is focused on a gymnast performing on a balance beam, not an athletic man with a bar. So, this part of the question seems to be describing a different scenario. Oh, I see, the question might be mixing up different scenes. Let's break it down: the gymnast jumps off the beam, and there's no scene change to an athletic man with a bar. Therefore, the described event doesn't happen later in this video.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this carefully. The sequence of events in the video needs to be analyzed step by step. First, we see a gymnast performing on a balance beam. The gymnast is seen spinning and performing various maneuvers on the beam. Then, the gymnast jumps off the beam with arms raised. Now, the question asks if an athletic man standing before a bar with arms raised happens later than the gymnast jumping off the beam. Hmm, I don't recall seeing an athletic man standing before a bar in this video. The scene is focused on a gymnast performing on a balance beam, not an athletic man with a bar. So, this part of the question seems to be describing a different scenario. Oh, I see, the question might be mixing up different scenes. Let's break it down: the gymnast jumps off the beam, and there's no scene change to an athletic man with a bar. Therefore, the described event doesn't happen later in this video.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's check the sequence. First, the man is spinning around on the bar. Then, he jumps off with arms up. After that, he's standing with arms raised. So the standing with arms raised happens after jumping off. So the question is asking if \"an athletic man is seen standing before a bar with his arms raised up\" happens later than \"the man continues to spin himself around and jumps off with his arms up\". Let's see the timestamps. The spinning and jumping off is part of the routine, then after that, he's standing. So yes, the standing with arms raised is later.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this carefully. The sequence of events in the video needs to be analyzed step by step. First, we see a gymnast performing on a balance beam. The gymnast is seen spinning and performing various maneuvers on the beam. Then, the gymnast jumps off the beam with arms raised. Now, the question asks if an athletic man standing before a bar with arms raised happens later than the gymnast jumping off the beam. Hmm, I don't recall seeing an athletic man standing before a bar in this video. The scene is focused on a gymnast performing on a balance beam, not an athletic man with a bar. So, this part of the question seems to be describing a different scenario. Oh, I see, the question might be mixing up different scenes. Let's break it down: the gymnast jumps off the beam, and there's no scene change to an athletic man with a bar. Therefore, the described event doesn't happen later in this video.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's check the sequence. First, the man is spinning around on the bar. Then, he jumps off with arms up. After that, he's standing with arms raised. So the standing with arms raised happens after jumping off. So the question is asking if \"an athletic man is seen standing before a bar with his arms raised up\" happens later than \"the man continues to spin himself around and jumps off with his arms up\". Let's see the timestamps. The spinning and jumping off is part of the routine, then after that, he's standing. So yes, the standing with arms raised is later.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\temporal_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\temporal_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\temporal_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.24074533581733704,
+        0.12450411170721054,
+        0.10606501251459122,
+        0.09702293574810028,
+        0.0737970620393753,
+        0.07510985434055328,
+        0.11863972246646881,
+        0.16411596536636353
+      ],
+      "metrics": {
+        "entropy": 2.0028127342617568,
+        "normalized_entropy": 0.9631493331829006,
+        "coefficient_of_variation": 0.41201706673836747,
+        "max_ratio": 0.24074533581733704,
+        "min_ratio": 0.0737970620393753
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's check the timestamps. First, the event \"an athletic man is seen standing before a bar with his arms raised up\" – looking at the video, the first part shows him standing. Then the next part is \"the man continues to spin himself around and jumps off with his arms up\". Wait, the question is whether the first event happens later than the second. Wait, no: the question is asking if the first event (standing with arms raised) happens later than the second event (spinning and jumping off). Let's see the sequence.\n\nIn the video, the man starts by standing before the bar (arms raised, maybe). Then he does the routine: spins, jumps off. So the standing with arms raised is the start, then the spinning and jumping off is later. So the first event (standing) is earlier than the second (spinning and jumping). Therefore, the statement \"an athletic man is seen standing before a bar with his arms raised up\" happens later than \"the man continues to spin himself around and jumps off with his arms up\" is false. So the answer is no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's check the timestamps. First, the event \"an athletic man is seen standing before a bar with his arms raised up\" – looking at the video, the first part shows him standing. Then the next part is \"the man continues to spin himself around and jumps off with his arms up\". Wait, the question is whether the first event happens later than the second. Wait, no: the question is asking if the first event (standing with arms raised) happens later than the second event (spinning and jumping off). Let's see the sequence.\n\nIn the video, the man starts by standing before the bar (arms raised, maybe). Then he does the routine: spins, jumps off. So the standing with arms raised is the start, then the spinning and jumping off is later. So the first event (standing) is earlier than the second (spinning and jumping). Therefore, the statement \"an athletic man is seen standing before a bar with his arms raised up\" happens later than \"the man continues to spin himself around and jumps off with his arms up\" is false. So the answer is no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 232,
+      "frame_ratios": [
+        0.23167371404657194,
+        0.12750939834848943,
+        0.12643320670078387,
+        0.12414119207648647,
+        0.09798287454272994,
+        0.0804489839010092,
+        0.09938358367407943,
+        0.11242704670984974
+      ],
+      "metrics": {
+        "entropy": 2.027398749167337,
+        "normalized_entropy": 0.9749727071094015,
+        "coefficient_of_variation": 0.3454546919560186,
+        "max_ratio": 0.23167371404657194,
+        "min_ratio": 0.0804489839010092
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this carefully. The sequence of events in the video needs to be analyzed step by step. First, we see a gymnast performing on a balance beam. The gymnast is a girl, not an athletic man, so that detail in the question is incorrect. The gymnast performs various spins and maneuvers on the beam. Then, she dismounts from the beam with her arms raised. Now, let's break down the specific parts of the question.\n\nThe question asks if 'an athletic man is seen standing before a bar with his arms raised up' happens later than 'the man continues to spin himself around and jumps off with his arms up'. The first part of the question describes a scene that doesn't match what we see in the video at all. There is no athletic man standing before a bar with his arms raised up in this video. The second part of the question describes the gymnast spinning and jumping off with her arms up, which does happen in the video.\n\nSince the first part of the question doesn't match the video content, it cannot happen later than the second part. Therefore, the question is based on a false premise.\n\nHmm, oh, I see. The correct answer must be based on the actual sequence of events in the video.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this carefully. The sequence of events in the video needs to be analyzed step by step. First, we see a gymnast performing on a balance beam. The gymnast is a girl, not an athletic man, so that detail in the question is incorrect. The gymnast performs various spins and maneuvers on the beam. Then, she dismounts from the beam with her arms raised. Now, let's break down the specific parts of the question.\n\nThe question asks if 'an athletic man is seen standing before a bar with his arms raised up' happens later than 'the man continues to spin himself around and jumps off with his arms up'. The first part of the question describes a scene that doesn't match what we see in the video at all. There is no athletic man standing before a bar with his arms raised up in this video. The second part of the question describes the gymnast spinning and jumping off with her arms up, which does happen in the video.\n\nSince the first part of the question doesn't match the video content, it cannot happen later than the second part. Therefore, the question is based on a false premise.\n\nHmm, oh, I see. The correct answer must be based on the actual sequence of events in the video.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 266,
+      "frame_ratios": [
+        0.20284895598888397,
+        0.13195738196372986,
+        0.12297114729881287,
+        0.11051385849714279,
+        0.11304760724306107,
+        0.09014298021793365,
+        0.10840398073196411,
+        0.12011408805847168
+      ],
+      "metrics": {
+        "entropy": 2.0507719807865374,
+        "normalized_entropy": 0.9862128555582581,
+        "coefficient_of_variation": 0.252665805569669,
+        "max_ratio": 0.20284895598888397,
+        "min_ratio": 0.09014298021793365
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

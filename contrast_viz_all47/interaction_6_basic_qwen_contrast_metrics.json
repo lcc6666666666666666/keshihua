@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_6_basic",
+    "eval_type": "interaction",
+    "index": 6,
+    "side": "basic",
+    "video": "6.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/6.mp4",
+    "question": "Does this tall man think it's difficult to move things upstairs?",
+    "answer": "yes",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. The scene shows a group of people in a living room, and one of them is talking about moving things upstairs. The tall man in question seems to be making a comment about the difficulty of the task. Wait, what exactly is he saying? Hmm, it sounds like he's expressing some concern about the physical effort required. Oh, I see, he's definitely suggesting that it's not an easy task. Let's break it down: if he's voicing a concern about the difficulty, it implies that he thinks it's challenging. So, does this mean he thinks it's difficult?</think>\n<answer>yes</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The scene shows a group of people in a living room, and one of them is talking about moving things upstairs. The tall man in question seems to be making a comment about the difficulty of the task. Wait, what exactly is he saying? Hmm, it sounds like he's expressing some concern about the physical effort required. Oh, I see, he's definitely suggesting that it's not an easy task. Let's break it down: if he's voicing a concern about the difficulty, it implies that he thinks it's challenging. So, does this mean he thinks it's difficult?</think>\n<answer>yes</answer><|im_end|>",
+    "extracted_answer": "yes",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "yes",
+      "instruct": "no",
+      "thinking": "no"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a group of people in a living room, and one of them is talking about moving things upstairs. The tall man in question seems to be making a comment about the difficulty of the task. Wait, what exactly is he saying? Hmm, it sounds like he's expressing some concern about the physical effort required. Oh, I see, he's definitely suggesting that it's not an easy task. Let's break it down: if he's voicing a concern about the difficulty, it implies that he thinks it's challenging. So, does this mean he thinks it's difficult?</think>\n<answer>yes</answer>",
+      "instruct": "no",
+      "thinking": "Got it, let's look at the video. The question is whether the tall man thinks it's difficult to move things upstairs. First, I need to check the context. In the scene, there's a tall man (probably Howard from Big Bang Theory) and others. The action involves moving things, maybe related to stairs. But the video doesn't show any explicit dialogue about difficulty moving upstairs. Wait, the question is asking if he thinks it's difficult. Since there's no clear indication in the provided frames that he's expressing difficulty, maybe the answer is no. But wait, maybe I need to recall the scene. Wait, the user is asking based on the video. Let me check the frames. The video shows people in a living room, moving around. The tall man (Howard) might be part of the conversation. But without specific dialogue, how do I know? Wait, the question is to answer yes or no. Maybe the answer is no because there's no evidence he thinks it's difficult. Wait, but maybe in the context of the show, but the user says to answer based on the video. Since the video frames don't show him saying it's difficult, the answer would be no.\n</think>\n\nno"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a group of people in a living room, and one of them is talking about moving things upstairs. The tall man in question seems to be making a comment about the difficulty of the task. Wait, what exactly is he saying? Hmm, it sounds like he's expressing some concern about the physical effort required. Oh, I see, he's definitely suggesting that it's not an easy task. Let's break it down: if he's voicing a concern about the difficulty, it implies that he thinks it's challenging. So, does this mean he thinks it's difficult?</think>\n<answer>yes</answer><|im_end|>",
+      "instruct": "no<|im_end|>",
+      "thinking": "Got it, let's look at the video. The question is whether the tall man thinks it's difficult to move things upstairs. First, I need to check the context. In the scene, there's a tall man (probably Howard from Big Bang Theory) and others. The action involves moving things, maybe related to stairs. But the video doesn't show any explicit dialogue about difficulty moving upstairs. Wait, the question is asking if he thinks it's difficult. Since there's no clear indication in the provided frames that he's expressing difficulty, maybe the answer is no. But wait, maybe I need to recall the scene. Wait, the user is asking based on the video. Let me check the frames. The video shows people in a living room, moving around. The tall man (Howard) might be part of the conversation. But without specific dialogue, how do I know? Wait, the question is to answer yes or no. Maybe the answer is no because there's no evidence he thinks it's difficult. Wait, but maybe in the context of the show, but the user says to answer based on the video. Since the video frames don't show him saying it's difficult, the answer would be no.\n</think>\n\nno<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.24226325028350204,
+        0.1238298900774154,
+        0.09381687361547728,
+        0.10151946987153679,
+        0.11487463519350781,
+        0.09870505038782804,
+        0.09876279983631372,
+        0.1262280307344189
+      ],
+      "metrics": {
+        "entropy": 2.023392250255018,
+        "normalized_entropy": 0.9730459884053583,
+        "coefficient_of_variation": 0.36616507545088667,
+        "max_ratio": 0.24226325028350207,
+        "min_ratio": 0.09381687361547729
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          28,
+          60
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          14,
+          30
+        ],
+        "total_video_tokens": 3360
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. The question is whether the tall man thinks it's difficult to move things upstairs. First, I need to check the context. In the video, there's a scene where someone is moving things. Wait, the tall man—probably the one in the gray shirt. Let's see the actions. In the frames, maybe he's reacting to moving things. But the question is about his thought. Wait, the video might show him saying something. Wait, the user is asking if he thinks it's difficult. Let's check the dialogue or actions. Hmm, maybe in the scene where they're moving, he might express difficulty. But since the question is yes/no, I need to infer. Wait, maybe the answer is no? Wait, no, let's think again. Wait, the video might have a moment where he's not thinking it's difficult. Wait, maybe the correct answer is no. Wait, no, let's check. Wait, the problem is to answer yes or no. Let's see the context. The user provided the video frames. Let's look at the actions. In frame 12, the tall man (gray shirt) is near the fridge, and the others are moving. Maybe he's not saying it's difficult. Wait, maybe the answer is no. Wait, but I need to be precise. Wait, the question is \"Does this tall man think it's difficult to move things upstairs?\" So if in the video, he doesn't express that it's difficult, then the answer is no. Let's check the frames. Frame 13: the tall man is near the fridge, and the others are moving. Maybe he's not complaining. So the answer is no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's look at the video. The question is whether the tall man thinks it's difficult to move things upstairs. First, I need to check the context. In the video, there's a scene where someone is moving things. Wait, the tall man—probably the one in the gray shirt. Let's see the actions. In the frames, maybe he's reacting to moving things. But the question is about his thought. Wait, the video might show him saying something. Wait, the user is asking if he thinks it's difficult. Let's check the dialogue or actions. Hmm, maybe in the scene where they're moving, he might express difficulty. But since the question is yes/no, I need to infer. Wait, maybe the answer is no? Wait, no, let's think again. Wait, the video might have a moment where he's not thinking it's difficult. Wait, maybe the correct answer is no. Wait, no, let's check. Wait, the problem is to answer yes or no. Let's see the context. The user provided the video frames. Let's look at the actions. In frame 12, the tall man (gray shirt) is near the fridge, and the others are moving. Maybe he's not saying it's difficult. Wait, maybe the answer is no. Wait, but I need to be precise. Wait, the question is \"Does this tall man think it's difficult to move things upstairs?\" So if in the video, he doesn't express that it's difficult, then the answer is no. Let's check the frames. Frame 13: the tall man is near the fridge, and the others are moving. Maybe he's not complaining. So the answer is no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 361,
+      "frame_ratios": [
+        0.24995020218156427,
+        0.14335644351956578,
+        0.11650225606934916,
+        0.09880678429310608,
+        0.10830753377309094,
+        0.09372472832891887,
+        0.096339122178697,
+        0.09301292965570784
+      ],
+      "metrics": {
+        "entropy": 2.0131282783300617,
+        "normalized_entropy": 0.9681100612733724,
+        "coefficient_of_variation": 0.39808750674608584,
+        "max_ratio": 0.24995020218156427,
+        "min_ratio": 0.09301292965570784
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          28,
+          60
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          14,
+          30
+        ],
+        "total_video_tokens": 3360
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows a group of people in a living room, and one of the men seems to be discussing something with another man. The context suggests that they might be talking about moving things, possibly upstairs. Wait, what exactly is the question asking? It's asking if this tall man thinks it's difficult to move things upstairs. Hmm, I need to consider the body language and the conversation in the scene. The tall man doesn't seem to be complaining or showing any signs of difficulty, so I doubt he thinks it's difficult. Oh, I see, the question is quite specific. Let's break it down: if he didn't show any signs of difficulty, then the answer should be no.</think>\n<answer>no</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows a group of people in a living room, and one of the men seems to be discussing something with another man. The context suggests that they might be talking about moving things, possibly upstairs. Wait, what exactly is the question asking? It's asking if this tall man thinks it's difficult to move things upstairs. Hmm, I need to consider the body language and the conversation in the scene. The tall man doesn't seem to be complaining or showing any signs of difficulty, so I doubt he thinks it's difficult. Oh, I see, the question is quite specific. Let's break it down: if he didn't show any signs of difficulty, then the answer should be no.</think>\n<answer>no</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 160,
+      "frame_ratios": [
+        0.22900551261781593,
+        0.1364654671792557,
+        0.10494294564873442,
+        0.11906222874995769,
+        0.11651310932332103,
+        0.08410502663802494,
+        0.10116893580691927,
+        0.108736774035971
+      ],
+      "metrics": {
+        "entropy": 2.031040949439438,
+        "normalized_entropy": 0.9767242351995632,
+        "coefficient_of_variation": 0.33422129732459677,
+        "max_ratio": 0.22900551261781593,
+        "min_ratio": 0.08410502663802494
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          28,
+          60
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          14,
+          30
+        ],
+        "total_video_tokens": 3360
+      }
+    }
+  ]
+}

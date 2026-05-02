@@ -1,0 +1,17 @@
+{
+  "semantic": {
+    "basic_accuracy": 0.86,
+    "halluc_accuracy": 0.89,
+    "accuracy": 0.76
+  },
+  "interaction": {
+    "basic_accuracy": 0.31451612903225806,
+    "halluc_accuracy": 0.7419354838709677,
+    "accuracy": 0.18548387096774194
+  },
+  "all": {
+    "basic_accuracy": 0.587258064516129,
+    "halluc_accuracy": 0.8159677419354838,
+    "accuracy": 0.472741935483871
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "temporal_158_hallucination",
+    "eval_type": "temporal",
+    "index": 158,
+    "side": "hallucination",
+    "video": "v_3MJQEQ98168.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/temporal/videos/v_3MJQEQ98168.mp4",
+    "question": "Is the event 'kid is hanging from horizontal stairs on the playground' shorter than 'the kid stands at the edge of the stairs in the playground'?",
+    "answer": "no",
+    "type": "length_relative",
+    "predict": "<think>Let me think about this for a moment. The question asks if the event of the kid hanging from the horizontal stairs is shorter than the event of the kid standing at the edge of the stairs. Hmm, to compare these two events, I need to consider the duration of each.\n\nWait, what exactly do we mean by \"shorter\"? In this context, it likely refers to the duration of the events. Let's break it down:\n\n1. The kid hanging from the horizontal stairs: This involves a continuous action where the kid is actively using their muscles to hold on, which can last for a few seconds to a minute depending on the kid's strength and endurance.\n\n2. The kid standing at the edge of the stairs: This is a relatively static position. The kid might be standing there for a few seconds, contemplating their next move or simply observing their surroundings.\n\nOh, I see. The hanging action typically involves more physical exertion and can last longer compared to just standing still. Therefore, the event of hanging is not necessarily shorter than standing at the edge.\n\nConsidering this reasoning, I believe the event 'kid is hanging from horizontal stairs on the playground' is not shorter than 'the kid stands at the edge of the stairs in the playground'.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The question asks if the event of the kid hanging from the horizontal stairs is shorter than the event of the kid standing at the edge of the stairs. Hmm, to compare these two events, I need to consider the duration of each.\n\nWait, what exactly do we mean by \"shorter\"? In this context, it likely refers to the duration of the events. Let's break it down:\n\n1. The kid hanging from the horizontal stairs: This involves a continuous action where the kid is actively using their muscles to hold on, which can last for a few seconds to a minute depending on the kid's strength and endurance.\n\n2. The kid standing at the edge of the stairs: This is a relatively static position. The kid might be standing there for a few seconds, contemplating their next move or simply observing their surroundings.\n\nOh, I see. The hanging action typically involves more physical exertion and can last longer compared to just standing still. Therefore, the event of hanging is not necessarily shorter than standing at the edge.\n\nConsidering this reasoning, I believe the event 'kid is hanging from horizontal stairs on the playground' is not shorter than 'the kid stands at the edge of the stairs in the playground'.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The question asks if the event of the kid hanging from the horizontal stairs is shorter than the event of the kid standing at the edge of the stairs. Hmm, to compare these two events, I need to consider the duration of each.\n\nWait, what exactly do we mean by \"shorter\"? In this context, it likely refers to the duration of the events. Let's break it down:\n\n1. The kid hanging from the horizontal stairs: This involves a continuous action where the kid is actively using their muscles to hold on, which can last for a few seconds to a minute depending on the kid's strength and endurance.\n\n2. The kid standing at the edge of the stairs: This is a relatively static position. The kid might be standing there for a few seconds, contemplating their next move or simply observing their surroundings.\n\nOh, I see. The hanging action typically involves more physical exertion and can last longer compared to just standing still. Therefore, the event of hanging is not necessarily shorter than standing at the edge.\n\nConsidering this reasoning, I believe the event 'kid is hanging from horizontal stairs on the playground' is not shorter than 'the kid stands at the edge of the stairs in the playground'.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's figure this out. First, we need to identify the two events. The first event is \"kid is hanging from horizontal stairs on the playground\" and the second is \"the kid stands at the edge of the stairs in the playground\". \n\nLooking at the video, the kid is hanging from the horizontal bars (which are part of the playground structure, maybe the horizontal stairs part). Then, later, the kid is standing at the edge of the stairs. We need to check the duration of each event. \n\nThe hanging part: in the video, the kid is moving along the horizontal bars, so that's a continuous action. The standing at the edge is a shorter moment. Wait, but the question is about which event is shorter. \n\nWait, the first event (hanging) is when the kid is actively moving across the bars, which takes some time. The second event (standing at the edge) is a brief moment. So the standing event is shorter. Therefore, the answer is yes, because the hanging event is longer than the standing event.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The question asks if the event of the kid hanging from the horizontal stairs is shorter than the event of the kid standing at the edge of the stairs. Hmm, to compare these two events, I need to consider the duration of each.\n\nWait, what exactly do we mean by \"shorter\"? In this context, it likely refers to the duration of the events. Let's break it down:\n\n1. The kid hanging from the horizontal stairs: This involves a continuous action where the kid is actively using their muscles to hold on, which can last for a few seconds to a minute depending on the kid's strength and endurance.\n\n2. The kid standing at the edge of the stairs: This is a relatively static position. The kid might be standing there for a few seconds, contemplating their next move or simply observing their surroundings.\n\nOh, I see. The hanging action typically involves more physical exertion and can last longer compared to just standing still. Therefore, the event of hanging is not necessarily shorter than standing at the edge.\n\nConsidering this reasoning, I believe the event 'kid is hanging from horizontal stairs on the playground' is not shorter than 'the kid stands at the edge of the stairs in the playground'.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's figure this out. First, we need to identify the two events. The first event is \"kid is hanging from horizontal stairs on the playground\" and the second is \"the kid stands at the edge of the stairs in the playground\". \n\nLooking at the video, the kid is hanging from the horizontal bars (which are part of the playground structure, maybe the horizontal stairs part). Then, later, the kid is standing at the edge of the stairs. We need to check the duration of each event. \n\nThe hanging part: in the video, the kid is moving along the horizontal bars, so that's a continuous action. The standing at the edge is a shorter moment. Wait, but the question is about which event is shorter. \n\nWait, the first event (hanging) is when the kid is actively moving across the bars, which takes some time. The second event (standing at the edge) is a brief moment. So the standing event is shorter. Therefore, the answer is yes, because the hanging event is longer than the standing event.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\temporal_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\temporal_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\temporal_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.21515377827676138,
+        0.12865140119126742,
+        0.07769596924018722,
+        0.07949093339551687,
+        0.07747961927114215,
+        0.09453876739168618,
+        0.12754244182448574,
+        0.199447089408953
+      ],
+      "metrics": {
+        "entropy": 1.9995354353978179,
+        "normalized_entropy": 0.9615732855767288,
+        "coefficient_of_variation": 0.41167646856336665,
+        "max_ratio": 0.21515377827676138,
+        "min_ratio": 0.07747961927114215
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          58,
+          104
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          29,
+          52
+        ],
+        "total_video_tokens": 12064
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's figure this out. First, we need to understand the two events. The first event is \"kid is hanging from horizontal stairs on the playground\". The second is \"the kid stands at the edge of the stairs in the playground\".\n\nLooking at the video: The kid is hanging on the horizontal bars (which are part of the playground structure, maybe the horizontal stairs? Wait, the horizontal bars are like a monkey bar structure. The kid is moving across those bars, hanging from them. Then, when he reaches the end, he steps onto the red platform (which is the stairs part). \n\nSo the time when he's hanging on the horizontal bars (the monkey bars) is from the start until he gets to the platform. Then, when he stands at the edge of the stairs (the red platform), that's after he's finished hanging. \n\nThe question is whether the duration of hanging is shorter than standing at the edge. Let's check the timestamps. \n\nThe hanging part: from the beginning (0.0s) until he reaches the platform. The video shows him moving across the monkey bars, which takes several seconds. Then, when he gets to the platform, he stands there. The standing at the edge is a shorter moment. \n\nWait, the event \"kid is hanging from horizontal stairs\" – the horizontal stairs might be the monkey bars. The time he's hanging is the time he's moving across them. The event \"stands at the edge\" is when he's on the platform, which is a brief moment. \n\nSo the hanging event (moving across monkey bars) is longer than the standing event (just standing at the edge). Therefore, the hanging event is NOT shorter than the standing event. So the answer is no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's figure this out. First, we need to understand the two events. The first event is \"kid is hanging from horizontal stairs on the playground\". The second is \"the kid stands at the edge of the stairs in the playground\".\n\nLooking at the video: The kid is hanging on the horizontal bars (which are part of the playground structure, maybe the horizontal stairs? Wait, the horizontal bars are like a monkey bar structure. The kid is moving across those bars, hanging from them. Then, when he reaches the end, he steps onto the red platform (which is the stairs part). \n\nSo the time when he's hanging on the horizontal bars (the monkey bars) is from the start until he gets to the platform. Then, when he stands at the edge of the stairs (the red platform), that's after he's finished hanging. \n\nThe question is whether the duration of hanging is shorter than standing at the edge. Let's check the timestamps. \n\nThe hanging part: from the beginning (0.0s) until he reaches the platform. The video shows him moving across the monkey bars, which takes several seconds. Then, when he gets to the platform, he stands there. The standing at the edge is a shorter moment. \n\nWait, the event \"kid is hanging from horizontal stairs\" – the horizontal stairs might be the monkey bars. The time he's hanging is the time he's moving across them. The event \"stands at the edge\" is when he's on the platform, which is a brief moment. \n\nSo the hanging event (moving across monkey bars) is longer than the standing event (just standing at the edge). Therefore, the hanging event is NOT shorter than the standing event. So the answer is no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 361,
+      "frame_ratios": [
+        0.2502110339732622,
+        0.12252421114629822,
+        0.10816116792203737,
+        0.09543334089865299,
+        0.08747749160941677,
+        0.1083874495087184,
+        0.10870067937226116,
+        0.11910462556935289
+      ],
+      "metrics": {
+        "entropy": 2.0172755788987193,
+        "normalized_entropy": 0.9701044912611985,
+        "coefficient_of_variation": 0.3880825161495092,
+        "max_ratio": 0.2502110339732622,
+        "min_ratio": 0.08747749160941677
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          58,
+          104
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          29,
+          52
+        ],
+        "total_video_tokens": 12064
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this carefully. The question asks if the event of the kid hanging from the horizontal stairs is shorter than the event of the kid standing at the edge of the stairs. Hmm, to compare these two events, I need to consider the duration of each.\n\nFirst, let's break it down. The kid hanging from the horizontal stairs involves a continuous motion, swinging and holding on, which seems to take a noticeable amount of time. On the other hand, the event of the kid standing at the edge of the stairs appears to be a more static moment, likely shorter in duration.\n\nWait, I need to verify this. The hanging action involves movement and effort, which typically takes more time compared to a simple standing position. Oh, I see, the hanging event is likely longer because it involves more physical activity and time spent in that position.\n\nTherefore, the event 'kid is hanging from horizontal stairs on the playground' is not shorter than 'the kid stands at the edge of the stairs in the playground'.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this carefully. The question asks if the event of the kid hanging from the horizontal stairs is shorter than the event of the kid standing at the edge of the stairs. Hmm, to compare these two events, I need to consider the duration of each.\n\nFirst, let's break it down. The kid hanging from the horizontal stairs involves a continuous motion, swinging and holding on, which seems to take a noticeable amount of time. On the other hand, the event of the kid standing at the edge of the stairs appears to be a more static moment, likely shorter in duration.\n\nWait, I need to verify this. The hanging action involves movement and effort, which typically takes more time compared to a simple standing position. Oh, I see, the hanging event is likely longer because it involves more physical activity and time spent in that position.\n\nTherefore, the event 'kid is hanging from horizontal stairs on the playground' is not shorter than 'the kid stands at the edge of the stairs in the playground'.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 213,
+      "frame_ratios": [
+        0.21114876709022545,
+        0.1270504882406407,
+        0.10741531768876822,
+        0.10068631097163028,
+        0.09944972321801093,
+        0.10504510175403131,
+        0.11610542151253356,
+        0.1330988695241595
+      ],
+      "metrics": {
+        "entropy": 2.0459687061975513,
+        "normalized_entropy": 0.9839029687484053,
+        "coefficient_of_variation": 0.2759987089973923,
+        "max_ratio": 0.21114876709022545,
+        "min_ratio": 0.09944972321801093
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          58,
+          104
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          29,
+          52
+        ],
+        "total_video_tokens": 12064
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_37_hallucination",
+    "eval_type": "interaction",
+    "index": 37,
+    "side": "hallucination",
+    "video": "37.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/37.mp4",
+    "question": "Does the man in red think the experiment is impressive?",
+    "answer": "no",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. The scene shows a group of people gathered around a table, and one of them is holding a plate with what appears to be a green substance. The man in the red shirt seems to be observing this closely. Wait, what's his reaction? Hmm, his expression doesn't seem particularly impressed. In fact, it looks more like curiosity or even slight skepticism. Oh, I see, he's not showing any signs of amazement or approval. Let's break it down further - if he thought the experiment was impressive, we'd expect to see some sort of positive reaction, like a smile or an expression of awe. But that's not what we're seeing here. So, based on his expression and body language, it seems he doesn't find the experiment impressive.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The scene shows a group of people gathered around a table, and one of them is holding a plate with what appears to be a green substance. The man in the red shirt seems to be observing this closely. Wait, what's his reaction? Hmm, his expression doesn't seem particularly impressed. In fact, it looks more like curiosity or even slight skepticism. Oh, I see, he's not showing any signs of amazement or approval. Let's break it down further - if he thought the experiment was impressive, we'd expect to see some sort of positive reaction, like a smile or an expression of awe. But that's not what we're seeing here. So, based on his expression and body language, it seems he doesn't find the experiment impressive.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a group of people gathered around a table, and one of them is holding a plate with what appears to be a green substance. The man in the red shirt seems to be observing this closely. Wait, what's his reaction? Hmm, his expression doesn't seem particularly impressed. In fact, it looks more like curiosity or even slight skepticism. Oh, I see, he's not showing any signs of amazement or approval. Let's break it down further - if he thought the experiment was impressive, we'd expect to see some sort of positive reaction, like a smile or an expression of awe. But that's not what we're seeing here. So, based on his expression and body language, it seems he doesn't find the experiment impressive.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's look at the video. The man in red is the one in the red shirt with the plaid jacket. In the frames, he's talking and gesturing. The question is whether he thinks the experiment is impressive. From the context of the show (which is likely The Big Bang Theory), but we need to see his expression. Wait, the video shows him speaking, maybe with enthusiasm. But the question is to answer yes or no. Wait, maybe in the scene, he's reacting positively. But let's check the frames. The man in red (Leonard?) is talking, maybe excited. But the question is about the experiment. Wait, the problem is to determine if he thinks it's impressive. Since the video shows him in a conversation, maybe he's impressed. But how to know? Wait, the user wants a yes or no. Let's think: in the context of the show, when they talk about experiments, sometimes they are impressed. But maybe the video shows his reaction. Wait, the frames: he's speaking, maybe with a positive tone. But without more context, but the question is to answer based on the video. Wait, maybe the answer is yes. Wait, but let's check. Alternatively, maybe the answer is no. Wait, no, the user says to answer with yes or no. Let's see. The man in red is Leonard, and in the scene, he might be impressed. But maybe the correct answer is yes. Wait, but I need to be sure. Alternatively, maybe the video shows him saying something like \"that's impressive\". But since we can't hear the audio, we have to go by visual cues. His body language: he's gesturing, maybe excited. So probably yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a group of people gathered around a table, and one of them is holding a plate with what appears to be a green substance. The man in the red shirt seems to be observing this closely. Wait, what's his reaction? Hmm, his expression doesn't seem particularly impressed. In fact, it looks more like curiosity or even slight skepticism. Oh, I see, he's not showing any signs of amazement or approval. Let's break it down further - if he thought the experiment was impressive, we'd expect to see some sort of positive reaction, like a smile or an expression of awe. But that's not what we're seeing here. So, based on his expression and body language, it seems he doesn't find the experiment impressive.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's look at the video. The man in red is the one in the red shirt with the plaid jacket. In the frames, he's talking and gesturing. The question is whether he thinks the experiment is impressive. From the context of the show (which is likely The Big Bang Theory), but we need to see his expression. Wait, the video shows him speaking, maybe with enthusiasm. But the question is to answer yes or no. Wait, maybe in the scene, he's reacting positively. But let's check the frames. The man in red (Leonard?) is talking, maybe excited. But the question is about the experiment. Wait, the problem is to determine if he thinks it's impressive. Since the video shows him in a conversation, maybe he's impressed. But how to know? Wait, the user wants a yes or no. Let's think: in the context of the show, when they talk about experiments, sometimes they are impressed. But maybe the video shows his reaction. Wait, the frames: he's speaking, maybe with a positive tone. But without more context, but the question is to answer based on the video. Wait, maybe the answer is yes. Wait, but let's check. Alternatively, maybe the answer is no. Wait, no, the user says to answer with yes or no. Let's see. The man in red is Leonard, and in the scene, he might be impressed. But maybe the correct answer is yes. Wait, but I need to be sure. Alternatively, maybe the video shows him saying something like \"that's impressive\". But since we can't hear the audio, we have to go by visual cues. His body language: he's gesturing, maybe excited. So probably yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.2111956555841735,
+        0.13400805495709386,
+        0.13037014493234997,
+        0.0958798935964664,
+        0.09047800639562333,
+        0.08387912377264811,
+        0.11498652081886383,
+        0.13920259994278103
+      ],
+      "metrics": {
+        "entropy": 2.0366218444023225,
+        "normalized_entropy": 0.9794080783617883,
+        "coefficient_of_variation": 0.304267425319433,
+        "max_ratio": 0.2111956555841735,
+        "min_ratio": 0.08387912377264811
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. The man in red (from the show, probably Howard) is talking. In the frames, he's gesturing and seems to be expressing something. The question is if he thinks the experiment is impressive. Wait, the context might be from a scene where he's reacting to something. But the video shows him speaking, maybe with a tone that suggests he's not impressed? Wait, no, maybe I need to check the dialogue. Wait, the user is asking based on the video. Let's see the frames. The man in red (Howard) is standing, talking, maybe with a sarcastic or unimpressed tone. Wait, in the show, sometimes he's critical. But the question is whether he thinks it's impressive. If the video shows him saying something negative, then no. But how to tell? Wait, the problem is to answer yes or no. Let's think: in the scene, the man in red (Howard) is probably not impressed. Wait, maybe the context is from a specific episode. But since we have to go by the video, let's check the expressions. In frame 4-8, he's speaking, maybe with a look that's not impressed. So the answer would be no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's look at the video. The man in red (from the show, probably Howard) is talking. In the frames, he's gesturing and seems to be expressing something. The question is if he thinks the experiment is impressive. Wait, the context might be from a scene where he's reacting to something. But the video shows him speaking, maybe with a tone that suggests he's not impressed? Wait, no, maybe I need to check the dialogue. Wait, the user is asking based on the video. Let's see the frames. The man in red (Howard) is standing, talking, maybe with a sarcastic or unimpressed tone. Wait, in the show, sometimes he's critical. But the question is whether he thinks it's impressive. If the video shows him saying something negative, then no. But how to tell? Wait, the problem is to answer yes or no. Let's think: in the scene, the man in red (Howard) is probably not impressed. Wait, maybe the context is from a specific episode. But since we have to go by the video, let's check the expressions. In frame 4-8, he's speaking, maybe with a look that's not impressed. So the answer would be no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 264,
+      "frame_ratios": [
+        0.23950083910675107,
+        0.13346271415744296,
+        0.11668937082125799,
+        0.10948462202377054,
+        0.0966226472947396,
+        0.0966730877261324,
+        0.09095659242505717,
+        0.11661012644484828
+      ],
+      "metrics": {
+        "entropy": 2.024245865908384,
+        "normalized_entropy": 0.9734564907620039,
+        "coefficient_of_variation": 0.36142921720600013,
+        "max_ratio": 0.23950083910675107,
+        "min_ratio": 0.09095659242505717
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows a group of people gathered around a table, and one of them, wearing a red shirt, seems to be explaining something. The man in red appears to be quite animated, using hand gestures as he speaks. Now, wait, what exactly is he saying? Hmm, it seems like he's talking about an experiment. Oh, I see, he's describing it with a lot of enthusiasm. But does that mean he thinks it's impressive? Let's break it down further. His body language suggests he's quite engaged and passionate about what he's saying, which could imply that he does think it's impressive. However, I need to be sure. If he didn't think it was impressive, his tone and gestures would likely be different. So, after this reflection, I believe he does think the experiment is impressive.</think>\n<answer>no</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows a group of people gathered around a table, and one of them, wearing a red shirt, seems to be explaining something. The man in red appears to be quite animated, using hand gestures as he speaks. Now, wait, what exactly is he saying? Hmm, it seems like he's talking about an experiment. Oh, I see, he's describing it with a lot of enthusiasm. But does that mean he thinks it's impressive? Let's break it down further. His body language suggests he's quite engaged and passionate about what he's saying, which could imply that he does think it's impressive. However, I need to be sure. If he didn't think it was impressive, his tone and gestures would likely be different. So, after this reflection, I believe he does think the experiment is impressive.</think>\n<answer>no</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 187,
+      "frame_ratios": [
+        0.21464432775974274,
+        0.12237890809774399,
+        0.11458046734333038,
+        0.11362017691135406,
+        0.10414338856935501,
+        0.09883499145507812,
+        0.10139966011047363,
+        0.13039807975292206
+      ],
+      "metrics": {
+        "entropy": 2.0447292422920027,
+        "normalized_entropy": 0.9833069126051067,
+        "coefficient_of_variation": 0.2826554634464136,
+        "max_ratio": 0.21464432775974274,
+        "min_ratio": 0.09883499145507812
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    }
+  ]
+}

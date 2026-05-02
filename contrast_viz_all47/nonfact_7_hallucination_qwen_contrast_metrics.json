@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "nonfact_7_hallucination",
+    "eval_type": "nonfact",
+    "index": 7,
+    "side": "hallucination",
+    "video": "6XBocXgvfTs_2876.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/external_nonfactual/videos/6XBocXgvfTs_2876.mp4",
+    "question": "Based on the video, should we skewer banana, lemon, and shrimp when we make shish kabob?",
+    "answer": "no",
+    "type": "external_nonfactual_instruct",
+    "predict": "<think>Let me think about this for a moment. The video shows a woman preparing ingredients for a dish that includes skewering. She is seen handling shrimp, bananas, and lemons, and she does indeed skewer these items. Now, wait, does this mean we should include these in our shish kabob? Hmm, let's break it down. The woman is demonstrating a specific method, and she does skewer these items, so it seems like part of the process she's showing. Oh, I see, if we're following her method, then yes, we should include these ingredients on the skewers. But let's verify - the video doesn't explicitly say these are for shish kabob, but given the context of skewering and the ingredients used, it's reasonable to infer that this is what she's preparing.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a woman preparing ingredients for a dish that includes skewering. She is seen handling shrimp, bananas, and lemons, and she does indeed skewer these items. Now, wait, does this mean we should include these in our shish kabob? Hmm, let's break it down. The woman is demonstrating a specific method, and she does skewer these items, so it seems like part of the process she's showing. Oh, I see, if we're following her method, then yes, we should include these ingredients on the skewers. But let's verify - the video doesn't explicitly say these are for shish kabob, but given the context of skewering and the ingredients used, it's reasonable to infer that this is what she's preparing.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a woman preparing ingredients for a dish that includes skewering. She is seen handling shrimp, bananas, and lemons, and she does indeed skewer these items. Now, wait, does this mean we should include these in our shish kabob? Hmm, let's break it down. The woman is demonstrating a specific method, and she does skewer these items, so it seems like part of the process she's showing. Oh, I see, if we're following her method, then yes, we should include these ingredients on the skewers. But let's verify - the video doesn't explicitly say these are for shish kabob, but given the context of skewering and the ingredients used, it's reasonable to infer that this is what she's preparing.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's check the video. The question is about skewering banana, lemon, and shrimp for shish kabob. Looking at the video, in the part where she's preparing, she's handling skewers. Wait, the video shows her putting ingredients on skewers. Let me recall: she has a banana, lemon, and shrimp. Wait, in the video, when she's making shish kabob, she does skewer those items. Let's check the timestamps. For example, at around 150-155 seconds, she's putting pieces on the skewer. The ingredients mentioned are banana, lemon, shrimp. So yes, she does skewer them. So the answer should be yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a woman preparing ingredients for a dish that includes skewering. She is seen handling shrimp, bananas, and lemons, and she does indeed skewer these items. Now, wait, does this mean we should include these in our shish kabob? Hmm, let's break it down. The woman is demonstrating a specific method, and she does skewer these items, so it seems like part of the process she's showing. Oh, I see, if we're following her method, then yes, we should include these ingredients on the skewers. But let's verify - the video doesn't explicitly say these are for shish kabob, but given the context of skewering and the ingredients used, it's reasonable to infer that this is what she's preparing.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's check the video. The question is about skewering banana, lemon, and shrimp for shish kabob. Looking at the video, in the part where she's preparing, she's handling skewers. Wait, the video shows her putting ingredients on skewers. Let me recall: she has a banana, lemon, and shrimp. Wait, in the video, when she's making shish kabob, she does skewer those items. Let's check the timestamps. For example, at around 150-155 seconds, she's putting pieces on the skewer. The ingredients mentioned are banana, lemon, shrimp. So yes, she does skewer them. So the answer should be yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\nonfact_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\nonfact_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\nonfact_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.25143346377785103,
+        0.15184792989379114,
+        0.09682747048756085,
+        0.08036899626529959,
+        0.08609283034572623,
+        0.08047150135391579,
+        0.11322690630873222,
+        0.1397309015671231
+      ],
+      "metrics": {
+        "entropy": 1.997582222368286,
+        "normalized_entropy": 0.9606339886595603,
+        "coefficient_of_variation": 0.43214821766766637,
+        "max_ratio": 0.25143346377785103,
+        "min_ratio": 0.08036899626529959
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          16,
+          20
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          8,
+          10
+        ],
+        "total_video_tokens": 640
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's check the video. The question is whether we should skewer banana, lemon, and shrimp for shish kabob. Looking at the timestamps: \n\n- At 159.2 seconds, the person is handling a banana, and at 165.6 seconds, they're putting the banana on a skewer. Then, there's a lemon (172.8 seconds) and shrimp (179.2 seconds). So they are skewering banana, lemon, and shrimp. The video shows the process of putting these items on the skewer. So the answer should be yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's check the video. The question is whether we should skewer banana, lemon, and shrimp for shish kabob. Looking at the timestamps: \n\n- At 159.2 seconds, the person is handling a banana, and at 165.6 seconds, they're putting the banana on a skewer. Then, there's a lemon (172.8 seconds) and shrimp (179.2 seconds). So they are skewering banana, lemon, and shrimp. The video shows the process of putting these items on the skewer. So the answer should be yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 132,
+      "frame_ratios": [
+        0.2680703005247042,
+        0.1373527301365681,
+        0.12378778485862799,
+        0.10897228933664332,
+        0.09912911796041712,
+        0.08026625814037458,
+        0.08320947611402542,
+        0.09921204292863928
+      ],
+      "metrics": {
+        "entropy": 1.9934646458262313,
+        "normalized_entropy": 0.9586538529069927,
+        "coefficient_of_variation": 0.45573619231798107,
+        "max_ratio": 0.2680703005247042,
+        "min_ratio": 0.08026625814037458
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          16,
+          20
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          8,
+          10
+        ],
+        "total_video_tokens": 640
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a woman preparing ingredients for a dish, and she is seen skewering shrimp, banana, and lemon. Now, wait, is this specifically for shish kabob? Hmm, shish kabob typically involves skewering meat and vegetables, and sometimes fruits, to be grilled. Oh, I see, the woman is indeed making a dish that involves skewering these ingredients, so it's reasonable to infer that this is for a shish kabob. Let's break it down: banana, lemon, and shrimp are being skewered, which aligns with the preparation for shish kabob. Therefore, based on the video content, the answer should reflect this observation.</think>\n<answer>Yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a woman preparing ingredients for a dish, and she is seen skewering shrimp, banana, and lemon. Now, wait, is this specifically for shish kabob? Hmm, shish kabob typically involves skewering meat and vegetables, and sometimes fruits, to be grilled. Oh, I see, the woman is indeed making a dish that involves skewering these ingredients, so it's reasonable to infer that this is for a shish kabob. Let's break it down: banana, lemon, and shrimp are being skewered, which aligns with the preparation for shish kabob. Therefore, based on the video content, the answer should reflect this observation.</think>\n<answer>Yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 157,
+      "frame_ratios": [
+        0.18555545975763735,
+        0.13286830182686166,
+        0.15010733754402436,
+        0.11214161176755534,
+        0.11237201354253414,
+        0.08649789570253155,
+        0.0952750678606392,
+        0.1251823119982164
+      ],
+      "metrics": {
+        "entropy": 2.052231271774552,
+        "normalized_entropy": 0.9869146261821323,
+        "coefficient_of_variation": 0.23748807687529336,
+        "max_ratio": 0.18555545975763735,
+        "min_ratio": 0.08649789570253155
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          16,
+          20
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          8,
+          10
+        ],
+        "total_video_tokens": 640
+      }
+    }
+  ]
+}

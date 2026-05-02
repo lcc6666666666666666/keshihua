@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_75_hallucination",
+    "eval_type": "interaction",
+    "index": 75,
+    "side": "hallucination",
+    "video": "75.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/75.mp4",
+    "question": "Dose the older man appreciate the man's words?",
+    "answer": "no",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. The scene shows an older man and a younger man in what appears to be a tense conversation. The older man seems to be speaking with a certain level of authority or emotion, and the younger man is listening. Now, to determine if the older man appreciates the younger man's words, I need to consider their body language and expressions.\n\nHmm, the older man's expression doesn't seem particularly appreciative. He looks somewhat exasperated or frustrated, which might suggest he doesn't fully agree with or appreciate what the younger man is saying. Wait, let's break it down further. If he did appreciate the words, his expression might be more positive or nodding in agreement. Instead, his body language seems more defensive or resistant.\n\nOh, I see. Given this analysis, it seems unlikely that the older man appreciates the younger man's words.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The scene shows an older man and a younger man in what appears to be a tense conversation. The older man seems to be speaking with a certain level of authority or emotion, and the younger man is listening. Now, to determine if the older man appreciates the younger man's words, I need to consider their body language and expressions.\n\nHmm, the older man's expression doesn't seem particularly appreciative. He looks somewhat exasperated or frustrated, which might suggest he doesn't fully agree with or appreciate what the younger man is saying. Wait, let's break it down further. If he did appreciate the words, his expression might be more positive or nodding in agreement. Instead, his body language seems more defensive or resistant.\n\nOh, I see. Given this analysis, it seems unlikely that the older man appreciates the younger man's words.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The scene shows an older man and a younger man in what appears to be a tense conversation. The older man seems to be speaking with a certain level of authority or emotion, and the younger man is listening. Now, to determine if the older man appreciates the younger man's words, I need to consider their body language and expressions.\n\nHmm, the older man's expression doesn't seem particularly appreciative. He looks somewhat exasperated or frustrated, which might suggest he doesn't fully agree with or appreciate what the younger man is saying. Wait, let's break it down further. If he did appreciate the words, his expression might be more positive or nodding in agreement. Instead, his body language seems more defensive or resistant.\n\nOh, I see. Given this analysis, it seems unlikely that the older man appreciates the younger man's words.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's look at the video. The older man is the one in the gray suit with a tie, and he's speaking into a microphone. The man in the floral shirt is next to him. The older man seems to be reacting to something, maybe the man's words. But the question is if he appreciates them. From the context, the older man is speaking passionately, maybe agreeing or supporting. Wait, the video shows the older man with a microphone, and the man in the floral shirt is there. The older man's expression—maybe he's happy or appreciative. But the question is about whether he appreciates the man's words. Let's check the scene. The older man is speaking, and the man in the floral shirt is next to him. The older man's body language—maybe he's nodding or showing approval. But the answer needs to be yes or no. Wait, the video might show the older man reacting positively. Let me think. The older man is the one with the microphone, and he's speaking, so maybe he's the one who is appreciating the man's words. Wait, no—the question is if the older man appreciates the man's words. So the man in the floral shirt is the one speaking? Wait, no, the older man is speaking. Wait, the scene where the older man is speaking, maybe the man in the floral shirt is the one whose words he's appreciating. Wait, the video sequence: first, the two people on the balcony, then the man in the floral shirt in a room, then the woman in the suit, then the older man with the microphone. The older man is speaking, and the man in the floral shirt is there. Maybe the older man is responding to the man's words. If the older man is smiling or nodding, then yes. But the video shows the older man with a microphone, and he's speaking, so maybe he's the one who is appreciating. Wait, the question is \"Dose the older man appreciate the man's words?\" So the man's words—probably the man in the floral shirt. The older man's reaction: in the video, when the older man is speaking, he's animated, maybe showing approval. But I need to check the context. Alternatively, maybe the older man is the one who is the subject of the man's words. Wait, the video might be from a scene where the man in the floral shirt is speaking, and the older man is reacting. If the older man is smiling or nodding, then yes. But the video shows the older man with a microphone, so he's probably the one speaking. Wait, maybe the man in the floral shirt is the one who said something, and the older man is appreciating. Let's look at the frames. The older man is in a room with people, speaking into a microphone. The man in the floral shirt is next to him. The older man's expression—maybe he's happy, so he appreciates. But the answer is yes or no. I think the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The scene shows an older man and a younger man in what appears to be a tense conversation. The older man seems to be speaking with a certain level of authority or emotion, and the younger man is listening. Now, to determine if the older man appreciates the younger man's words, I need to consider their body language and expressions.\n\nHmm, the older man's expression doesn't seem particularly appreciative. He looks somewhat exasperated or frustrated, which might suggest he doesn't fully agree with or appreciate what the younger man is saying. Wait, let's break it down further. If he did appreciate the words, his expression might be more positive or nodding in agreement. Instead, his body language seems more defensive or resistant.\n\nOh, I see. Given this analysis, it seems unlikely that the older man appreciates the younger man's words.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's look at the video. The older man is the one in the gray suit with a tie, and he's speaking into a microphone. The man in the floral shirt is next to him. The older man seems to be reacting to something, maybe the man's words. But the question is if he appreciates them. From the context, the older man is speaking passionately, maybe agreeing or supporting. Wait, the video shows the older man with a microphone, and the man in the floral shirt is there. The older man's expression—maybe he's happy or appreciative. But the question is about whether he appreciates the man's words. Let's check the scene. The older man is speaking, and the man in the floral shirt is next to him. The older man's body language—maybe he's nodding or showing approval. But the answer needs to be yes or no. Wait, the video might show the older man reacting positively. Let me think. The older man is the one with the microphone, and he's speaking, so maybe he's the one who is appreciating the man's words. Wait, no—the question is if the older man appreciates the man's words. So the man in the floral shirt is the one speaking? Wait, no, the older man is speaking. Wait, the scene where the older man is speaking, maybe the man in the floral shirt is the one whose words he's appreciating. Wait, the video sequence: first, the two people on the balcony, then the man in the floral shirt in a room, then the woman in the suit, then the older man with the microphone. The older man is speaking, and the man in the floral shirt is there. Maybe the older man is responding to the man's words. If the older man is smiling or nodding, then yes. But the video shows the older man with a microphone, and he's speaking, so maybe he's the one who is appreciating. Wait, the question is \"Dose the older man appreciate the man's words?\" So the man's words—probably the man in the floral shirt. The older man's reaction: in the video, when the older man is speaking, he's animated, maybe showing approval. But I need to check the context. Alternatively, maybe the older man is the one who is the subject of the man's words. Wait, the video might be from a scene where the man in the floral shirt is speaking, and the older man is reacting. If the older man is smiling or nodding, then yes. But the video shows the older man with a microphone, so he's probably the one speaking. Wait, maybe the man in the floral shirt is the one who said something, and the older man is appreciating. Let's look at the frames. The older man is in a room with people, speaking into a microphone. The man in the floral shirt is next to him. The older man's expression—maybe he's happy, so he appreciates. But the answer is yes or no. I think the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.23752764044350116,
+        0.12618684862693286,
+        0.10782955667249527,
+        0.07936249732496214,
+        0.09278310159432218,
+        0.09253870764776101,
+        0.12192567528728898,
+        0.14184597240273633
+      ],
+      "metrics": {
+        "entropy": 2.018331902643272,
+        "normalized_entropy": 0.9706124756038116,
+        "coefficient_of_variation": 0.373377948471674,
+        "max_ratio": 0.23752764044350116,
+        "min_ratio": 0.07936249732496214
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video frames. The older man is in frame 33-37, and he's speaking with a big smile, maybe laughing. The man in the floral shirt (frame 10-15) is talking, and the older man's reaction seems positive. So does he appreciate the words? The older man's expression is happy, so yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's look at the video frames. The older man is in frame 33-37, and he's speaking with a big smile, maybe laughing. The man in the floral shirt (frame 10-15) is talking, and the older man's reaction seems positive. So does he appreciate the words? The older man's expression is happy, so yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 84,
+      "frame_ratios": [
+        0.22523058299834217,
+        0.10132751991329789,
+        0.1054345557628034,
+        0.09828053780945159,
+        0.08347423685618627,
+        0.08678222025864647,
+        0.15345639562071844,
+        0.14601395078055376
+      ],
+      "metrics": {
+        "entropy": 2.0208898132446085,
+        "normalized_entropy": 0.9718425705836734,
+        "coefficient_of_variation": 0.35932862531959764,
+        "max_ratio": 0.22523058299834217,
+        "min_ratio": 0.08347423685618627
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows an older man and a younger man in what appears to be a tense situation. The older man seems to be reacting to something the younger man has said. Wait, what is his body language telling me? Hmm, the older man looks quite animated, almost as if he's laughing or exclaiming something. Oh, I see, this could mean a few things. Let's break it down: if he's laughing, it could be a sign of amusement, but it could also be a reaction to something unexpected or even offensive. Considering the context and the intensity of his expression, it seems more likely that he's reacting with some form of strong emotion, possibly negative. So, does this mean he appreciates the words? I don't think so.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows an older man and a younger man in what appears to be a tense situation. The older man seems to be reacting to something the younger man has said. Wait, what is his body language telling me? Hmm, the older man looks quite animated, almost as if he's laughing or exclaiming something. Oh, I see, this could mean a few things. Let's break it down: if he's laughing, it could be a sign of amusement, but it could also be a reaction to something unexpected or even offensive. Considering the context and the intensity of his expression, it seems more likely that he's reacting with some form of strong emotion, possibly negative. So, does this mean he appreciates the words? I don't think so.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 173,
+      "frame_ratios": [
+        0.19091989878863475,
+        0.09395222015856876,
+        0.09909984845296113,
+        0.11482660044630615,
+        0.10270857428354865,
+        0.11107080761079462,
+        0.15550380365908878,
+        0.13191824660009718
+      ],
+      "metrics": {
+        "entropy": 2.0503973543369156,
+        "normalized_entropy": 0.9860326983179064,
+        "coefficient_of_variation": 0.24904598503576114,
+        "max_ratio": 0.19091989878863475,
+        "min_ratio": 0.09395222015856876
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

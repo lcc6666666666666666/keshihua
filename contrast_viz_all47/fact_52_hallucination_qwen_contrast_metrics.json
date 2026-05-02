@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "fact_52_hallucination",
+    "eval_type": "fact",
+    "index": 52,
+    "side": "hallucination",
+    "video": "pNAwkqm4t3A_2699.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/external_factual/videos/pNAwkqm4t3A_2699.mp4",
+    "question": "Based on the video, should we remove onion rings from the pot when we make onion rings?",
+    "answer": "no",
+    "type": "external_factual_instruct",
+    "predict": "<think>Let me think about this for a moment. The video shows the process of making deep-fried onion rings. We see the preparation of the batter, the coating of the onion rings, and then the frying process. Now, when frying, the goal is to cook the onion rings until they are golden and crispy. The video shows the onion rings being placed into hot oil, and they are visibly frying. Hmm, so if we're frying them, we wouldn't want to remove them from the pot while they're cooking, right? Wait, but what if we need to remove them? Oh, I see, the video doesn't show any indication that the onion rings should be removed from the pot during the frying process. Let's break it down: the purpose of frying is to cook them thoroughly in the oil, so removing them would interrupt that process. Therefore, based on the video content, it seems logical that we should not remove the onion rings from the pot while they are frying.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows the process of making deep-fried onion rings. We see the preparation of the batter, the coating of the onion rings, and then the frying process. Now, when frying, the goal is to cook the onion rings until they are golden and crispy. The video shows the onion rings being placed into hot oil, and they are visibly frying. Hmm, so if we're frying them, we wouldn't want to remove them from the pot while they're cooking, right? Wait, but what if we need to remove them? Oh, I see, the video doesn't show any indication that the onion rings should be removed from the pot during the frying process. Let's break it down: the purpose of frying is to cook them thoroughly in the oil, so removing them would interrupt that process. Therefore, based on the video content, it seems logical that we should not remove the onion rings from the pot while they are frying.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows the process of making deep-fried onion rings. We see the preparation of the batter, the coating of the onion rings, and then the frying process. Now, when frying, the goal is to cook the onion rings until they are golden and crispy. The video shows the onion rings being placed into hot oil, and they are visibly frying. Hmm, so if we're frying them, we wouldn't want to remove them from the pot while they're cooking, right? Wait, but what if we need to remove them? Oh, I see, the video doesn't show any indication that the onion rings should be removed from the pot during the frying process. Let's break it down: the purpose of frying is to cook them thoroughly in the oil, so removing them would interrupt that process. Therefore, based on the video content, it seems logical that we should not remove the onion rings from the pot while they are frying.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's think. In the video, when making onion rings, they're frying them in oil. Typically, when frying, you remove the food once it's cooked to avoid overcooking. The video shows the onion rings being fried, so you would remove them when done. So the answer should be yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows the process of making deep-fried onion rings. We see the preparation of the batter, the coating of the onion rings, and then the frying process. Now, when frying, the goal is to cook the onion rings until they are golden and crispy. The video shows the onion rings being placed into hot oil, and they are visibly frying. Hmm, so if we're frying them, we wouldn't want to remove them from the pot while they're cooking, right? Wait, but what if we need to remove them? Oh, I see, the video doesn't show any indication that the onion rings should be removed from the pot during the frying process. Let's break it down: the purpose of frying is to cook them thoroughly in the oil, so removing them would interrupt that process. Therefore, based on the video content, it seems logical that we should not remove the onion rings from the pot while they are frying.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's think. In the video, when making onion rings, they're frying them in oil. Typically, when frying, you remove the food once it's cooked to avoid overcooking. The video shows the onion rings being fried, so you would remove them when done. So the answer should be yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\fact_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\fact_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\fact_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.19955775736444464,
+        0.2087986233472414,
+        0.0874633815128619,
+        0.06395815503472552,
+        0.05595709550252841,
+        0.0841828982288509,
+        0.0853668402244699,
+        0.21471524878487733
+      ],
+      "metrics": {
+        "entropy": 1.947703000250438,
+        "normalized_entropy": 0.9366471531952876,
+        "coefficient_of_variation": 0.5197595190015494,
+        "max_ratio": 0.21471524878487733,
+        "min_ratio": 0.05595709550252841
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's see. The video shows the onion rings being fried in oil. When you fry onion rings, you usually take them out once they're golden brown. The question is whether to remove them from the pot. In the video, after frying, they're probably taken out. So the answer should be yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's see. The video shows the onion rings being fried in oil. When you fry onion rings, you usually take them out once they're golden brown. The question is whether to remove them from the pot. In the video, after frying, they're probably taken out. So the answer should be yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 69,
+      "frame_ratios": [
+        0.1950411691153311,
+        0.18403754049623475,
+        0.09723185965192005,
+        0.07793157721902975,
+        0.07335623517683675,
+        0.08853123534913142,
+        0.08669825837086718,
+        0.19717212462064904
+      ],
+      "metrics": {
+        "entropy": 1.9942200303493425,
+        "normalized_entropy": 0.9590171160754782,
+        "coefficient_of_variation": 0.4200056268644006,
+        "max_ratio": 0.19717212462064904,
+        "min_ratio": 0.07335623517683675
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows the process of making deep-fried onion rings. We see the preparation of the batter, the coating of the onion rings, and then the frying process. Now, wait, what happens when the onion rings are fried? Hmm, the video shows the onion rings being placed into hot oil, and they are left there to cook. Oh, I see, the video doesn't show anyone removing the onion rings from the pot during the frying process. Let's break it down further. If we were to remove the onion rings while they are frying, it would likely be to check on them or to take them out once they are done. But the video doesn't depict this action. So, based on the information provided in the video, it seems that the onion rings should not be removed from the pot during the frying process unless explicitly shown.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows the process of making deep-fried onion rings. We see the preparation of the batter, the coating of the onion rings, and then the frying process. Now, wait, what happens when the onion rings are fried? Hmm, the video shows the onion rings being placed into hot oil, and they are left there to cook. Oh, I see, the video doesn't show anyone removing the onion rings from the pot during the frying process. Let's break it down further. If we were to remove the onion rings while they are frying, it would likely be to check on them or to take them out once they are done. But the video doesn't depict this action. So, based on the information provided in the video, it seems that the onion rings should not be removed from the pot during the frying process unless explicitly shown.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 189,
+      "frame_ratios": [
+        0.16723057752274406,
+        0.17065519221615189,
+        0.10289010482199568,
+        0.08837001091517516,
+        0.08853603220385337,
+        0.09553183686384437,
+        0.10110344068038046,
+        0.18568280477585497
+      ],
+      "metrics": {
+        "entropy": 2.032502076135804,
+        "normalized_entropy": 0.977426888612549,
+        "coefficient_of_variation": 0.3117673972457431,
+        "max_ratio": 0.18568280477585497,
+        "min_ratio": 0.08837001091517516
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "obj_rel": {
+    "basic_accuracy": 0.65,
+    "halluc_accuracy": 0.885,
+    "accuracy": 0.585
+  },
+  "temporal": {
+    "basic_accuracy": 0.6704545454545454,
+    "halluc_accuracy": 0.875,
+    "accuracy": 0.6420454545454546
+  },
+  "factdet": {
+    "basic_accuracy": 0.82,
+    "halluc_accuracy": 0.96,
+    "accuracy": 0.78
+  },
+  "all": {
+    "basic_accuracy": 0.7134848484848484,
+    "halluc_accuracy": 0.9066666666666666,
+    "accuracy": 0.6690151515151515
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "fact_83_hallucination",
+    "eval_type": "fact",
+    "index": 83,
+    "side": "hallucination",
+    "video": "HdQzPLk_KiA_4824.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/external_factual/videos/HdQzPLk_KiA_4824.mp4",
+    "question": "Based on the video, should we place the falafel in a pan when we make falafel?",
+    "answer": "no",
+    "type": "external_factual_instruct",
+    "predict": "<think>Let me think about this for a moment. The video shows the preparation of falafel balls, and I need to determine if they should be placed in a pan during the cooking process. Wait, what exactly happens to the falafel after they are formed? Hmm, I recall that typically falafel is deep-fried, which means they need to be placed in hot oil. Oh, I see, a pan could be used for frying, but the video doesn't explicitly show this step. Let's break it down further. The video focuses on the preparation and shaping of the falafel, not the cooking method. So, based on common knowledge and the typical preparation of falafel, it's likely that they would be fried in a pan. However, the video doesn't confirm this. Given the options, I should choose based on the most probable scenario.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows the preparation of falafel balls, and I need to determine if they should be placed in a pan during the cooking process. Wait, what exactly happens to the falafel after they are formed? Hmm, I recall that typically falafel is deep-fried, which means they need to be placed in hot oil. Oh, I see, a pan could be used for frying, but the video doesn't explicitly show this step. Let's break it down further. The video focuses on the preparation and shaping of the falafel, not the cooking method. So, based on common knowledge and the typical preparation of falafel, it's likely that they would be fried in a pan. However, the video doesn't confirm this. Given the options, I should choose based on the most probable scenario.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows the preparation of falafel balls, and I need to determine if they should be placed in a pan during the cooking process. Wait, what exactly happens to the falafel after they are formed? Hmm, I recall that typically falafel is deep-fried, which means they need to be placed in hot oil. Oh, I see, a pan could be used for frying, but the video doesn't explicitly show this step. Let's break it down further. The video focuses on the preparation and shaping of the falafel, not the cooking method. So, based on common knowledge and the typical preparation of falafel, it's likely that they would be fried in a pan. However, the video doesn't confirm this. Given the options, I should choose based on the most probable scenario.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "So, let's check the video. The video shows making falafel. In the steps, after forming the balls, they probably cook them in a pan. Wait, the question is whether to place in a pan. From typical falafel preparation, yes, you fry them in a pan. But let's see the video. The video might show frying. Wait, the user is asking based on the video. Let me recall. The video has steps: mixing ingredients, forming balls, then cooking. In the video, when they make falafel, they would cook in a pan. So the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows the preparation of falafel balls, and I need to determine if they should be placed in a pan during the cooking process. Wait, what exactly happens to the falafel after they are formed? Hmm, I recall that typically falafel is deep-fried, which means they need to be placed in hot oil. Oh, I see, a pan could be used for frying, but the video doesn't explicitly show this step. Let's break it down further. The video focuses on the preparation and shaping of the falafel, not the cooking method. So, based on common knowledge and the typical preparation of falafel, it's likely that they would be fried in a pan. However, the video doesn't confirm this. Given the options, I should choose based on the most probable scenario.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "So, let's check the video. The video shows making falafel. In the steps, after forming the balls, they probably cook them in a pan. Wait, the question is whether to place in a pan. From typical falafel preparation, yes, you fry them in a pan. But let's see the video. The video might show frying. Wait, the user is asking based on the video. Let me recall. The video has steps: mixing ingredients, forming balls, then cooking. In the video, when they make falafel, they would cook in a pan. So the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\fact_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\fact_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\fact_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.24291128101133763,
+        0.16304102661491204,
+        0.10587647636142727,
+        0.0933490700524231,
+        0.07358692641248499,
+        0.07443805094389655,
+        0.12535271141940885,
+        0.12144445718410951
+      ],
+      "metrics": {
+        "entropy": 2.0002979331823165,
+        "normalized_entropy": 0.9619399695008571,
+        "coefficient_of_variation": 0.41885808132760954,
+        "max_ratio": 0.24291128101133763,
+        "min_ratio": 0.07358692641248499
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's check the video. The video shows making vegan falafel balls. In the steps, after preparing the mixture, they form balls and then probably cook them. The question is whether to place in a pan. From typical falafel preparation, you fry them in a pan. The video might show that. Let's see the timestamps. The last part shows forming balls, but maybe the cooking step is implied. Wait, the question is based on the video. Let's think: in the video, when making falafel, you usually cook them in a pan (frying). So the answer should be yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's check the video. The video shows making vegan falafel balls. In the steps, after preparing the mixture, they form balls and then probably cook them. The question is whether to place in a pan. From typical falafel preparation, you fry them in a pan. The video might show that. Let's see the timestamps. The last part shows forming balls, but maybe the cooking step is implied. Wait, the question is based on the video. Let's think: in the video, when making falafel, you usually cook them in a pan (frying). So the answer should be yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 133,
+      "frame_ratios": [
+        0.26412995665781364,
+        0.12832548736313404,
+        0.09771030777281867,
+        0.11656113279755664,
+        0.09028251877864753,
+        0.07856540089229491,
+        0.09791019939220699,
+        0.1265149963455276
+      ],
+      "metrics": {
+        "entropy": 1.9989346917712194,
+        "normalized_entropy": 0.961284388959749,
+        "coefficient_of_variation": 0.4407427684703849,
+        "max_ratio": 0.26412995665781364,
+        "min_ratio": 0.07856540089229491
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows the preparation of falafel balls, and I need to determine if they should be placed in a pan during the making process. Wait, what exactly happens in the video when it comes to cooking the falafel? Hmm, I recall seeing the falafel balls being formed and then placed on a plate, but I don't remember seeing them being placed in a pan right away. Oh, I see, the video might not show the cooking part in detail. Let's break it down: typically, falafel balls are fried in oil, which means they would need to be placed in a pan at some point. However, the video doesn't explicitly show this step. Given that the question is specifically about what is shown in the video, I should stick to what I observed.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows the preparation of falafel balls, and I need to determine if they should be placed in a pan during the making process. Wait, what exactly happens in the video when it comes to cooking the falafel? Hmm, I recall seeing the falafel balls being formed and then placed on a plate, but I don't remember seeing them being placed in a pan right away. Oh, I see, the video might not show the cooking part in detail. Let's break it down: typically, falafel balls are fried in oil, which means they would need to be placed in a pan at some point. However, the video doesn't explicitly show this step. Given that the question is specifically about what is shown in the video, I should stick to what I observed.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 180,
+      "frame_ratios": [
+        0.22719355402021613,
+        0.12017188429064075,
+        0.1065383654890195,
+        0.10835885517185084,
+        0.09644567535315415,
+        0.08858061930921886,
+        0.10538783198351419,
+        0.14732321438238558
+      ],
+      "metrics": {
+        "entropy": 2.0302336886181287,
+        "normalized_entropy": 0.9763360248050275,
+        "coefficient_of_variation": 0.33596757718804454,
+        "max_ratio": 0.22719355402021613,
+        "min_ratio": 0.08858061930921886
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

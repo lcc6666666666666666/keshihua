@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_110_basic",
+    "eval_type": "interaction",
+    "index": 110,
+    "side": "basic",
+    "video": "110.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/110.mp4",
+    "question": "Is this man pretending to exchange pleasantries?",
+    "answer": "yes",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. The scene shows two men in suits engaged in what appears to be a conversation. Their body language and facial expressions seem quite formal and somewhat tense. Wait, could this be a situation where they are pretending to exchange pleasantries? Hmm, it's possible. The way they are standing and the slight smiles on their faces could suggest a facade of cordiality. Oh, I see, it's quite common in certain professional or diplomatic settings for people to exchange pleasantries even when they might not genuinely mean them. Let's break it down further. If they were truly at ease, their body language might be more relaxed. The fact that they seem somewhat stiff could indicate that they are indeed putting on an act. After all this reflection, I believe the answer is clear.</think>\n<answer>yes</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The scene shows two men in suits engaged in what appears to be a conversation. Their body language and facial expressions seem quite formal and somewhat tense. Wait, could this be a situation where they are pretending to exchange pleasantries? Hmm, it's possible. The way they are standing and the slight smiles on their faces could suggest a facade of cordiality. Oh, I see, it's quite common in certain professional or diplomatic settings for people to exchange pleasantries even when they might not genuinely mean them. Let's break it down further. If they were truly at ease, their body language might be more relaxed. The fact that they seem somewhat stiff could indicate that they are indeed putting on an act. After all this reflection, I believe the answer is clear.</think>\n<answer>yes</answer><|im_end|>",
+    "extracted_answer": "yes",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "yes",
+      "instruct": "no",
+      "thinking": "no"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The scene shows two men in suits engaged in what appears to be a conversation. Their body language and facial expressions seem quite formal and somewhat tense. Wait, could this be a situation where they are pretending to exchange pleasantries? Hmm, it's possible. The way they are standing and the slight smiles on their faces could suggest a facade of cordiality. Oh, I see, it's quite common in certain professional or diplomatic settings for people to exchange pleasantries even when they might not genuinely mean them. Let's break it down further. If they were truly at ease, their body language might be more relaxed. The fact that they seem somewhat stiff could indicate that they are indeed putting on an act. After all this reflection, I believe the answer is clear.</think>\n<answer>yes</answer>",
+      "instruct": "no",
+      "thinking": "Got it, let's look at the video. The two men are in a room, dressed formally. Their body language and expressions—like the way they're looking at each other and the smiles—might suggest they're not just exchanging pleasantries. Wait, the question is if the man is pretending. But the video shows them interacting, maybe with some tension or something. Wait, the key is \"pretending to exchange pleasantries.\" If their interaction seems forced or not genuine, then yes. But from the frames, they seem to be having a conversation, maybe with some underlying tension. But the question is about one man pretending. Wait, the video shows two men. Let me check the context. The original question is \"Is this man pretending to exchange pleasantries?\" So which man? The question is a bit ambiguous, but maybe the answer is no because their interaction looks like a real conversation, not pretending. Wait, but maybe it's a scene where they're being polite but not sincere. Hmm. Wait, the user wants a yes or no. Let's think. In the video, their expressions and body language—like the smiles and the way they're talking—might indicate they're not pretending. Or maybe they are. Wait, the problem is to answer based on the video. Let's see: the men are in a room, suits, talking. The question is if the man is pretending. If the interaction is genuine, then no. If it's forced, then yes. But from the frames, it's hard to tell. Wait, maybe the answer is no. Because the video shows them engaging in a conversation, which could be genuine. Alternatively, maybe it's a scene where they're pretending. But without more context, it's tricky. Wait, the user says \"Answer the question using 'yes' or 'no'.\" So I need to pick one. Let's think: the question is \"Is this man pretending to exchange pleasantries?\" If the man is part of a scene where they're not being sincere, then yes. But in the video, their body language—like the smiles and the way they're looking at each other—might suggest they're being polite but not pretending. Wait, maybe the answer is no. Because the interaction seems like a normal conversation. So I'll go with no.\n</think>\n\nno"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The scene shows two men in suits engaged in what appears to be a conversation. Their body language and facial expressions seem quite formal and somewhat tense. Wait, could this be a situation where they are pretending to exchange pleasantries? Hmm, it's possible. The way they are standing and the slight smiles on their faces could suggest a facade of cordiality. Oh, I see, it's quite common in certain professional or diplomatic settings for people to exchange pleasantries even when they might not genuinely mean them. Let's break it down further. If they were truly at ease, their body language might be more relaxed. The fact that they seem somewhat stiff could indicate that they are indeed putting on an act. After all this reflection, I believe the answer is clear.</think>\n<answer>yes</answer><|im_end|>",
+      "instruct": "no<|im_end|>",
+      "thinking": "Got it, let's look at the video. The two men are in a room, dressed formally. Their body language and expressions—like the way they're looking at each other and the smiles—might suggest they're not just exchanging pleasantries. Wait, the question is if the man is pretending. But the video shows them interacting, maybe with some tension or something. Wait, the key is \"pretending to exchange pleasantries.\" If their interaction seems forced or not genuine, then yes. But from the frames, they seem to be having a conversation, maybe with some underlying tension. But the question is about one man pretending. Wait, the video shows two men. Let me check the context. The original question is \"Is this man pretending to exchange pleasantries?\" So which man? The question is a bit ambiguous, but maybe the answer is no because their interaction looks like a real conversation, not pretending. Wait, but maybe it's a scene where they're being polite but not sincere. Hmm. Wait, the user wants a yes or no. Let's think. In the video, their expressions and body language—like the smiles and the way they're talking—might indicate they're not pretending. Or maybe they are. Wait, the problem is to answer based on the video. Let's see: the men are in a room, suits, talking. The question is if the man is pretending. If the interaction is genuine, then no. If it's forced, then yes. But from the frames, it's hard to tell. Wait, maybe the answer is no. Because the video shows them engaging in a conversation, which could be genuine. Alternatively, maybe it's a scene where they're pretending. But without more context, it's tricky. Wait, the user says \"Answer the question using 'yes' or 'no'.\" So I need to pick one. Let's think: the question is \"Is this man pretending to exchange pleasantries?\" If the man is part of a scene where they're not being sincere, then yes. But in the video, their body language—like the smiles and the way they're looking at each other—might suggest they're being polite but not pretending. Wait, maybe the answer is no. Because the interaction seems like a normal conversation. So I'll go with no.\n</think>\n\nno<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.3030238747596741,
+        0.12306544184684753,
+        0.09827449917793274,
+        0.062367282807826996,
+        0.08342564105987549,
+        0.0854201391339302,
+        0.11155633628368378,
+        0.1328667849302292
+      ],
+      "metrics": {
+        "entropy": 1.9508762183260369,
+        "normalized_entropy": 0.9381731485223961,
+        "coefficient_of_variation": 0.5647722603915792,
+        "max_ratio": 0.3030238747596741,
+        "min_ratio": 0.062367282807826996
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          24,
+          54
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          12,
+          27
+        ],
+        "total_video_tokens": 2592
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. The two men are in a room, dressed formally. Their body language and expressions—like the way they're looking at each other and the smiles—might suggest they're being polite but maybe not genuine. The question is if he's pretending to exchange pleasantries. From the context, their interaction seems forced or staged, so the answer would be yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's look at the video. The two men are in a room, dressed formally. Their body language and expressions—like the way they're looking at each other and the smiles—might suggest they're being polite but maybe not genuine. The question is if he's pretending to exchange pleasantries. From the context, their interaction seems forced or staged, so the answer would be yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 85,
+      "frame_ratios": [
+        0.32194026585056784,
+        0.1502737369327157,
+        0.1025503105845233,
+        0.07586762884555097,
+        0.08246064001782298,
+        0.08116948423155805,
+        0.08764652711943104,
+        0.09809140641783015
+      ],
+      "metrics": {
+        "entropy": 1.9296237948303654,
+        "normalized_entropy": 0.9279528931943704,
+        "coefficient_of_variation": 0.6209172192618081,
+        "max_ratio": 0.32194026585056784,
+        "min_ratio": 0.07586762884555097
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          24,
+          54
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          12,
+          27
+        ],
+        "total_video_tokens": 2592
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows two men in suits engaged in what appears to be a conversation. Their body language and facial expressions seem quite formal and polite, which could suggest a professional or diplomatic interaction. Wait, could this be a facade for something more? Hmm, the way they are standing and speaking to each other does not seem entirely natural, almost as if they are putting on an act. Oh, I see, it's possible that they are indeed pretending to exchange pleasantries. Let's break it down further. If this were a genuine conversation, their body language might be more relaxed, and their expressions might show more authenticity. However, given the context and the way they are interacting, it seems plausible that they are indeed pretending.</think>\n<answer>yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows two men in suits engaged in what appears to be a conversation. Their body language and facial expressions seem quite formal and polite, which could suggest a professional or diplomatic interaction. Wait, could this be a facade for something more? Hmm, the way they are standing and speaking to each other does not seem entirely natural, almost as if they are putting on an act. Oh, I see, it's possible that they are indeed pretending to exchange pleasantries. Let's break it down further. If this were a genuine conversation, their body language might be more relaxed, and their expressions might show more authenticity. However, given the context and the way they are interacting, it seems plausible that they are indeed pretending.</think>\n<answer>yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 165,
+      "frame_ratios": [
+        0.28811949251746843,
+        0.14402840912024575,
+        0.10405664473138995,
+        0.09231642347018158,
+        0.09929046415271638,
+        0.0886672710626642,
+        0.08684501571450207,
+        0.09667627923083165
+      ],
+      "metrics": {
+        "entropy": 1.9752796621870254,
+        "normalized_entropy": 0.9499087243353496,
+        "coefficient_of_variation": 0.511593376869128,
+        "max_ratio": 0.28811949251746843,
+        "min_ratio": 0.08684501571450207
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          24,
+          54
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          12,
+          27
+        ],
+        "total_video_tokens": 2592
+      }
+    }
+  ]
+}

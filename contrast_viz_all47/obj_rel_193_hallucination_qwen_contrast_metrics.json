@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "obj_rel_193_hallucination",
+    "eval_type": "obj_rel",
+    "index": 193,
+    "side": "hallucination",
+    "video": "ILSVRC2015_val_00072000_15_45.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/object_relation/videos/ILSVRC2015_val_00072000_15_45.mp4",
+    "question": "Does a dog walk right a person in the video?",
+    "answer": "no",
+    "type": "relation",
+    "predict": "<think>Let me think about this for a moment. The video shows a person interacting with a dog, and there are suitcases on the floor. Now, I need to focus on the question: does a dog walk right a person in the video? Hmm, what does \"walk right a person\" mean exactly? It seems to imply that the dog is moving towards or alongside the person. \n\nWait, let's break it down. The dog appears to be sniffing around the suitcases, and the person is bending over, seemingly interacting with the dog. The dog is not really \"walking right a person\" in the sense of moving alongside them in a direct manner. Oh, I see, the dog is more focused on the suitcases and the person's actions.\n\nSo, after this reflection, I don't think the dog is walking right a person in the way the question suggests.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a person interacting with a dog, and there are suitcases on the floor. Now, I need to focus on the question: does a dog walk right a person in the video? Hmm, what does \"walk right a person\" mean exactly? It seems to imply that the dog is moving towards or alongside the person. \n\nWait, let's break it down. The dog appears to be sniffing around the suitcases, and the person is bending over, seemingly interacting with the dog. The dog is not really \"walking right a person\" in the sense of moving alongside them in a direct manner. Oh, I see, the dog is more focused on the suitcases and the person's actions.\n\nSo, after this reflection, I don't think the dog is walking right a person in the way the question suggests.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a person interacting with a dog, and there are suitcases on the floor. Now, I need to focus on the question: does a dog walk right a person in the video? Hmm, what does \"walk right a person\" mean exactly? It seems to imply that the dog is moving towards or alongside the person. \n\nWait, let's break it down. The dog appears to be sniffing around the suitcases, and the person is bending over, seemingly interacting with the dog. The dog is not really \"walking right a person\" in the sense of moving alongside them in a direct manner. Oh, I see, the dog is more focused on the suitcases and the person's actions.\n\nSo, after this reflection, I don't think the dog is walking right a person in the way the question suggests.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's look at the video. The dog is moving around, and in the frames, the dog seems to be walking past the person. Let's check the positions. The person is bending over, and the dog is moving from one side to the other. So does the dog walk right a person? Wait, \"walk right a person\" might mean the dog walks past the person. Let's see the movement. In the video, the dog is moving around the person. So yes, the dog walks past the person. So the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a person interacting with a dog, and there are suitcases on the floor. Now, I need to focus on the question: does a dog walk right a person in the video? Hmm, what does \"walk right a person\" mean exactly? It seems to imply that the dog is moving towards or alongside the person. \n\nWait, let's break it down. The dog appears to be sniffing around the suitcases, and the person is bending over, seemingly interacting with the dog. The dog is not really \"walking right a person\" in the sense of moving alongside them in a direct manner. Oh, I see, the dog is more focused on the suitcases and the person's actions.\n\nSo, after this reflection, I don't think the dog is walking right a person in the way the question suggests.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's look at the video. The dog is moving around, and in the frames, the dog seems to be walking past the person. Let's check the positions. The person is bending over, and the dog is moving from one side to the other. So does the dog walk right a person? Wait, \"walk right a person\" might mean the dog walks past the person. Let's see the movement. In the video, the dog is moving around the person. So yes, the dog walks past the person. So the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\obj_rel_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\obj_rel_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\obj_rel_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.270514704898438,
+        0.12408721816799695,
+        0.08024033398152393,
+        0.07407326472023919,
+        0.09727744302980432,
+        0.09390798490965321,
+        0.10203393852811869,
+        0.1578651117642257
+      ],
+      "metrics": {
+        "entropy": 1.9809524614611589,
+        "normalized_entropy": 0.9526367641289332,
+        "coefficient_of_variation": 0.48261895278857053,
+        "max_ratio": 0.270514704898438,
+        "min_ratio": 0.07407326472023919
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          22,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          11,
+          20
+        ],
+        "total_video_tokens": 1760
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. The dog is interacting with the person. In the frames, the dog seems to be moving around the person. Wait, the question is \"Does a dog walk right a person in the video?\" Hmm, maybe \"walk right\" is a typo? Maybe \"walk past\" or \"walk around\"? Let's check the actions. The dog is near the person, moving around. Let's see the sequence. The dog is next to the person, then moves. Wait, in the video, the dog is walking around the person. So does the dog walk right (past) the person? Let's check the frames. From the video, the dog is moving around the person, so yes, it walks past. So the answer is yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's look at the video. The dog is interacting with the person. In the frames, the dog seems to be moving around the person. Wait, the question is \"Does a dog walk right a person in the video?\" Hmm, maybe \"walk right\" is a typo? Maybe \"walk past\" or \"walk around\"? Let's check the actions. The dog is near the person, moving around. Let's see the sequence. The dog is next to the person, then moves. Wait, in the video, the dog is walking around the person. So does the dog walk right (past) the person? Let's check the frames. From the video, the dog is moving around the person, so yes, it walks past. So the answer is yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 163,
+      "frame_ratios": [
+        0.37571702148216835,
+        0.12737079695637243,
+        0.07763980611325466,
+        0.08374554164734234,
+        0.08594305301052016,
+        0.07055207666444321,
+        0.08130937330070893,
+        0.0977223308251899
+      ],
+      "metrics": {
+        "entropy": 1.86565553280934,
+        "normalized_entropy": 0.897190661730364,
+        "coefficient_of_variation": 0.7691685245704771,
+        "max_ratio": 0.37571702148216835,
+        "min_ratio": 0.07055207666444321
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          22,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          11,
+          20
+        ],
+        "total_video_tokens": 1760
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a person interacting with a dog, and the dog is near some suitcases. Now, I need to determine if the dog walks right a person. Hmm, what does \"walks right a person\" mean? It seems to imply that the dog is moving towards or past the person. Let's break it down: the dog is near the person, and it appears to be moving around the person and the suitcases. Oh, I see, the dog does seem to be moving around the person, but is it specifically \"walking right\" them? After careful consideration, I believe the dog is indeed moving around the person in a way that could be described as \"walking right\" them.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a person interacting with a dog, and the dog is near some suitcases. Now, I need to determine if the dog walks right a person. Hmm, what does \"walks right a person\" mean? It seems to imply that the dog is moving towards or past the person. Let's break it down: the dog is near the person, and it appears to be moving around the person and the suitcases. Oh, I see, the dog does seem to be moving around the person, but is it specifically \"walking right\" them? After careful consideration, I believe the dog is indeed moving around the person in a way that could be described as \"walking right\" them.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 160,
+      "frame_ratios": [
+        0.27578036435293074,
+        0.1150769800360416,
+        0.09060055489990029,
+        0.09528707464791479,
+        0.10077430833444118,
+        0.0979604772159706,
+        0.10129052928860266,
+        0.12322971122419818
+      ],
+      "metrics": {
+        "entropy": 1.9944090537903878,
+        "normalized_entropy": 0.9591080171358142,
+        "coefficient_of_variation": 0.4628836329671477,
+        "max_ratio": 0.27578036435293074,
+        "min_ratio": 0.09060055489990029
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          22,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          11,
+          20
+        ],
+        "total_video_tokens": 1760
+      }
+    }
+  ]
+}

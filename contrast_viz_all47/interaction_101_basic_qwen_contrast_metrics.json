@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_101_basic",
+    "eval_type": "interaction",
+    "index": 101,
+    "side": "basic",
+    "video": "101.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/101.mp4",
+    "question": "Is this man mentioning the girl's mother because he doesn't want her to stay here?",
+    "answer": "yes",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. The scene shows a man speaking to a girl, and he mentions her mother. Now, why would he do that? Hmm, could it be that he's trying to convey something important about her staying here? Wait, what if he's actually suggesting that she shouldn't stay? Let's break it down further. If he's mentioning her mother, it could imply that her mother has some authority over her situation. Oh, I see, it's possible that the man is using her mother as a point of reference to persuade the girl to leave. But is that really what he's trying to do? I need to verify this. The context suggests a sense of urgency or finality in his tone, which might indicate that he doesn't want her to stay. So, after all this reflection, I believe the man is indeed mentioning her mother to suggest that she shouldn't stay here.</think>\n<answer>yes</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The scene shows a man speaking to a girl, and he mentions her mother. Now, why would he do that? Hmm, could it be that he's trying to convey something important about her staying here? Wait, what if he's actually suggesting that she shouldn't stay? Let's break it down further. If he's mentioning her mother, it could imply that her mother has some authority over her situation. Oh, I see, it's possible that the man is using her mother as a point of reference to persuade the girl to leave. But is that really what he's trying to do? I need to verify this. The context suggests a sense of urgency or finality in his tone, which might indicate that he doesn't want her to stay. So, after all this reflection, I believe the man is indeed mentioning her mother to suggest that she shouldn't stay here.</think>\n<answer>yes</answer><|im_end|>",
+    "extracted_answer": "yes",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "yes",
+      "instruct": "no",
+      "thinking": "no"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a man speaking to a girl, and he mentions her mother. Now, why would he do that? Hmm, could it be that he's trying to convey something important about her staying here? Wait, what if he's actually suggesting that she shouldn't stay? Let's break it down further. If he's mentioning her mother, it could imply that her mother has some authority over her situation. Oh, I see, it's possible that the man is using her mother as a point of reference to persuade the girl to leave. But is that really what he's trying to do? I need to verify this. The context suggests a sense of urgency or finality in his tone, which might indicate that he doesn't want her to stay. So, after all this reflection, I believe the man is indeed mentioning her mother to suggest that she shouldn't stay here.</think>\n<answer>yes</answer>",
+      "instruct": "no",
+      "thinking": "Got it, let's try to figure this out. The question is asking if the man is mentioning the girl's mother because he doesn't want her to stay here. First, I need to look at the context. The video shows a man in a hat, a girl, and a boy. The man is interacting with them. But the question is about whether he's mentioning the mother to prevent her from staying. \n\nWait, the problem is that the video description doesn't give specific dialogue. The user is asking based on the video content. But since the video clips provided don't include any dialogue or explicit mention of the mother, we can't confirm. However, the question is a yes/no. But maybe in the context of the scene, the man's action (like talking to the girl) might imply something. But without specific dialogue, it's hard. Wait, the question is phrased as \"Is this man mentioning the girl's mother because he doesn't want her to stay here?\" So we need to see if the man is referring to the mother as a reason for not wanting her to stay.\n\nBut since the video clips don't provide dialogue, we can't know for sure. However, maybe the answer is no because there's no indication of that. Wait, but the user is asking to answer with yes or no. Let's think: the question is about whether the man is mentioning the mother to prevent her from staying. If the video doesn't show that, then the answer is no. But maybe in the scene, the man is talking to the girl, and the context is that he's not wanting the mother to stay. But without explicit info, we have to go with what's given. Since the video doesn't provide dialogue where he mentions the mother, the answer is no.\n</think>\n\nno"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a man speaking to a girl, and he mentions her mother. Now, why would he do that? Hmm, could it be that he's trying to convey something important about her staying here? Wait, what if he's actually suggesting that she shouldn't stay? Let's break it down further. If he's mentioning her mother, it could imply that her mother has some authority over her situation. Oh, I see, it's possible that the man is using her mother as a point of reference to persuade the girl to leave. But is that really what he's trying to do? I need to verify this. The context suggests a sense of urgency or finality in his tone, which might indicate that he doesn't want her to stay. So, after all this reflection, I believe the man is indeed mentioning her mother to suggest that she shouldn't stay here.</think>\n<answer>yes</answer><|im_end|>",
+      "instruct": "no<|im_end|>",
+      "thinking": "Got it, let's try to figure this out. The question is asking if the man is mentioning the girl's mother because he doesn't want her to stay here. First, I need to look at the context. The video shows a man in a hat, a girl, and a boy. The man is interacting with them. But the question is about whether he's mentioning the mother to prevent her from staying. \n\nWait, the problem is that the video description doesn't give specific dialogue. The user is asking based on the video content. But since the video clips provided don't include any dialogue or explicit mention of the mother, we can't confirm. However, the question is a yes/no. But maybe in the context of the scene, the man's action (like talking to the girl) might imply something. But without specific dialogue, it's hard. Wait, the question is phrased as \"Is this man mentioning the girl's mother because he doesn't want her to stay here?\" So we need to see if the man is referring to the mother as a reason for not wanting her to stay.\n\nBut since the video clips don't provide dialogue, we can't know for sure. However, maybe the answer is no because there's no indication of that. Wait, but the user is asking to answer with yes or no. Let's think: the question is about whether the man is mentioning the mother to prevent her from staying. If the video doesn't show that, then the answer is no. But maybe in the scene, the man is talking to the girl, and the context is that he's not wanting the mother to stay. But without explicit info, we have to go with what's given. Since the video doesn't provide dialogue where he mentions the mother, the answer is no.\n</think>\n\nno<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.2056655589987009,
+        0.11482489964551476,
+        0.09662303303353735,
+        0.08079772299511156,
+        0.07719235697331704,
+        0.07074385663448696,
+        0.14830000313371444,
+        0.20585256858561699
+      ],
+      "metrics": {
+        "entropy": 1.9963613237987632,
+        "normalized_entropy": 0.9600468605556673,
+        "coefficient_of_variation": 0.41645058712906813,
+        "max_ratio": 0.20585256858561699,
+        "min_ratio": 0.07074385663448696
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's try to figure this out. The question is asking if the man is mentioning the girl's mother because he doesn't want her to stay here. First, I need to look at the context from the video clips. \n\nThe video shows a girl sitting outside a house, then a vintage car, a woman in a bikini walking, a man in a hat, and then the girl with a box. The man in the hat is probably the one in the scene where he's interacting with the girl. But the question is about whether he's mentioning the mother to prevent her from staying. \n\nWait, the problem is that the video clips don't provide explicit dialogue. The user is asking based on the given frames. But since we don't have the actual dialogue, maybe we need to infer. However, the question is a yes/no based on the context. But without specific dialogue, it's hard. Wait, maybe the key is in the scene where the man is talking to the girl. If he's mentioning the mother, maybe to say she shouldn't stay. But the problem is, the user is asking if the man is mentioning the mother because he doesn't want her to stay. \n\nBut since the video clips don't show the exact words, maybe the answer is no. Wait, but how? Let's think. The question is a bit tricky. Maybe the answer is no because there's no indication in the frames that he's mentioning the mother for that reason. Or maybe yes. Wait, the user is asking to answer with yes or no. \n\nWait, the problem is that the user provided the video frames, but we don't have the audio. So we have to go by the visual cues. The man in the hat is probably the one who might be talking. But without knowing what he said, it's impossible. But maybe the question is a trick. Wait, the question is \"Is this man mentioning the girl's mother because he doesn't want her to stay here?\" So we need to see if the context suggests that. \n\nLooking at the frames: the girl is outside, then the car, then the woman in bikini, then the man in hat. Then the girl with the box. Maybe the man is the one who is the father or someone, and he's talking to the girl. But the question is about mentioning the mother. If he's saying something like \"your mother isn't here, so you can't stay,\" but we don't know. \n\nWait, maybe the answer is no. Because the video doesn't show any indication that he's mentioning the mother for that reason. So the answer would be no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's try to figure this out. The question is asking if the man is mentioning the girl's mother because he doesn't want her to stay here. First, I need to look at the context from the video clips. \n\nThe video shows a girl sitting outside a house, then a vintage car, a woman in a bikini walking, a man in a hat, and then the girl with a box. The man in the hat is probably the one in the scene where he's interacting with the girl. But the question is about whether he's mentioning the mother to prevent her from staying. \n\nWait, the problem is that the video clips don't provide explicit dialogue. The user is asking based on the given frames. But since we don't have the actual dialogue, maybe we need to infer. However, the question is a yes/no based on the context. But without specific dialogue, it's hard. Wait, maybe the key is in the scene where the man is talking to the girl. If he's mentioning the mother, maybe to say she shouldn't stay. But the problem is, the user is asking if the man is mentioning the mother because he doesn't want her to stay. \n\nBut since the video clips don't show the exact words, maybe the answer is no. Wait, but how? Let's think. The question is a bit tricky. Maybe the answer is no because there's no indication in the frames that he's mentioning the mother for that reason. Or maybe yes. Wait, the user is asking to answer with yes or no. \n\nWait, the problem is that the user provided the video frames, but we don't have the audio. So we have to go by the visual cues. The man in the hat is probably the one who might be talking. But without knowing what he said, it's impossible. But maybe the question is a trick. Wait, the question is \"Is this man mentioning the girl's mother because he doesn't want her to stay here?\" So we need to see if the context suggests that. \n\nLooking at the frames: the girl is outside, then the car, then the woman in bikini, then the man in hat. Then the girl with the box. Maybe the man is the one who is the father or someone, and he's talking to the girl. But the question is about mentioning the mother. If he's saying something like \"your mother isn't here, so you can't stay,\" but we don't know. \n\nWait, maybe the answer is no. Because the video doesn't show any indication that he's mentioning the mother for that reason. So the answer would be no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 545,
+      "frame_ratios": [
+        0.21078080095932483,
+        0.12112263680340823,
+        0.10345522391390222,
+        0.11038577638853919,
+        0.0970012701824402,
+        0.07394392098444641,
+        0.14746771862706332,
+        0.13584265214087554
+      ],
+      "metrics": {
+        "entropy": 2.0341637248343467,
+        "normalized_entropy": 0.9782259727249114,
+        "coefficient_of_variation": 0.3106656882056922,
+        "max_ratio": 0.21078080095932483,
+        "min_ratio": 0.07394392098444641
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows a family moving into a new house, and there's a sense of transition and perhaps some emotional undercurrents. The man seems to be speaking to the girl, and he mentions her mother. Now, why would he mention her mother? Hmm, could it be that he's trying to convey something important about the situation? Wait, is he suggesting that the girl might not be staying here permanently? Let's break it down further. The context suggests a move, and mentioning the mother could imply a connection to why they are moving or why the girl might not stay. Oh, I see, it could be that he's hinting at a temporary arrangement or a reason why the girl might not remain in this new place. So, is he implying that she shouldn't stay here?</think>\n<answer>yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows a family moving into a new house, and there's a sense of transition and perhaps some emotional undercurrents. The man seems to be speaking to the girl, and he mentions her mother. Now, why would he mention her mother? Hmm, could it be that he's trying to convey something important about the situation? Wait, is he suggesting that the girl might not be staying here permanently? Let's break it down further. The context suggests a move, and mentioning the mother could imply a connection to why they are moving or why the girl might not stay. Oh, I see, it could be that he's hinting at a temporary arrangement or a reason why the girl might not remain in this new place. So, is he implying that she shouldn't stay here?</think>\n<answer>yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 179,
+      "frame_ratios": [
+        0.19354778239804832,
+        0.10538489214502436,
+        0.0905624167537329,
+        0.10788419681960051,
+        0.09616305535788752,
+        0.08994395896875919,
+        0.15575225419175245,
+        0.16076144336519474
+      ],
+      "metrics": {
+        "entropy": 2.037998001256196,
+        "normalized_entropy": 0.9800698699179778,
+        "coefficient_of_variation": 0.2945848080905565,
+        "max_ratio": 0.19354778239804832,
+        "min_ratio": 0.08994395896875919
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    }
+  ]
+}

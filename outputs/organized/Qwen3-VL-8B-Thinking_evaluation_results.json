@@ -1,0 +1,70 @@
+{
+  "obj_rel": {
+    "basic_accuracy": 0.785,
+    "halluc_accuracy": 0.915,
+    "accuracy": 0.715,
+    "num_pairs": 200,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "temporal": {
+    "basic_accuracy": 0.8409090909090909,
+    "halluc_accuracy": 0.7556818181818182,
+    "accuracy": 0.6818181818181818,
+    "num_pairs": 176,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "semantic": {
+    "basic_accuracy": 0.86,
+    "halluc_accuracy": 0.89,
+    "accuracy": 0.76,
+    "num_pairs": 200,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "interaction": {
+    "basic_accuracy": 0.31451612903225806,
+    "halluc_accuracy": 0.7419354838709677,
+    "accuracy": 0.18548387096774194,
+    "num_pairs": 124,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "fact": {
+    "basic_accuracy": 0.825,
+    "halluc_accuracy": 0.425,
+    "accuracy": 0.335,
+    "num_pairs": 200,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "nonfact": {
+    "basic_accuracy": 0.825,
+    "halluc_accuracy": 0.85,
+    "accuracy": 0.69,
+    "num_pairs": 200,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "factdet": {
+    "basic_accuracy": 0.88,
+    "halluc_accuracy": 0.94,
+    "accuracy": 0.82,
+    "num_pairs": 50,
+    "errors": 0,
+    "missing_video": 0
+  },
+  "weighted_all": {
+    "basic_accuracy": 0.7739130434782608,
+    "halluc_accuracy": 0.7721739130434783,
+    "accuracy": 0.5947826086956521,
+    "num_pairs": 1150
+  },
+  "macro_all": {
+    "basic_accuracy": 0.7614893171344784,
+    "halluc_accuracy": 0.7882310431503979,
+    "accuracy": 0.5981860075408463,
+    "num_subsets": 7
+  }
+}

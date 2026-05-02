@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "temporal_149_hallucination",
+    "eval_type": "temporal",
+    "index": 149,
+    "side": "hallucination",
+    "video": "v_SFfB6qvT5FI.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/temporal/videos/v_SFfB6qvT5FI.mp4",
+    "question": "Is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'?",
+    "answer": "no",
+    "type": "length_relative",
+    "predict": "<think>Let me think about this for a moment. The event 'he bungee jumps in the air' and 'he falls off a tower backwards into the air' seem quite similar at first glance, but let's break it down. \n\nWait, what exactly is happening in each scenario? In the first event, he's bungee jumping, which means he's attached to a bungee cord and will bounce up and down. In the second event, he falls off a tower backwards, which implies a more straightforward fall without the bouncing motion.\n\nHmm, the duration of these events could be influenced by the physics involved. Bungee jumping involves a stretch and recoil of the cord, which could extend the time in the air compared to a simple fall. Oh, I see, the bungee jump might actually last longer due to the oscillation.\n\nSo, considering the physics and the nature of the movements, the bungee jump might not be shorter. In fact, it could be longer due to the bouncing effect.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The event 'he bungee jumps in the air' and 'he falls off a tower backwards into the air' seem quite similar at first glance, but let's break it down. \n\nWait, what exactly is happening in each scenario? In the first event, he's bungee jumping, which means he's attached to a bungee cord and will bounce up and down. In the second event, he falls off a tower backwards, which implies a more straightforward fall without the bouncing motion.\n\nHmm, the duration of these events could be influenced by the physics involved. Bungee jumping involves a stretch and recoil of the cord, which could extend the time in the air compared to a simple fall. Oh, I see, the bungee jump might actually last longer due to the oscillation.\n\nSo, considering the physics and the nature of the movements, the bungee jump might not be shorter. In fact, it could be longer due to the bouncing effect.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The event 'he bungee jumps in the air' and 'he falls off a tower backwards into the air' seem quite similar at first glance, but let's break it down. \n\nWait, what exactly is happening in each scenario? In the first event, he's bungee jumping, which means he's attached to a bungee cord and will bounce up and down. In the second event, he falls off a tower backwards, which implies a more straightforward fall without the bouncing motion.\n\nHmm, the duration of these events could be influenced by the physics involved. Bungee jumping involves a stretch and recoil of the cord, which could extend the time in the air compared to a simple fall. Oh, I see, the bungee jump might actually last longer due to the oscillation.\n\nSo, considering the physics and the nature of the movements, the bungee jump might not be shorter. In fact, it could be longer due to the bouncing effect.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's analyze the video. First, the event \"he bungee jumps in the air\" – when does that happen? The bungee jump is the action where he jumps and is in the air. Then \"he falls off a tower backwards into the air\" – that's the initial fall before the bungee cord engages. Wait, the video shows him on the tower, then jumping. The falling off the tower backwards into the air is the start of the jump, and then the bungee jump in the air is the subsequent part. But the question is about the duration. The falling off the tower is a shorter event because it's the initial drop before the bungee cord pulls him back. So the bungee jump in the air (the part where he's bouncing) is longer than the initial fall. Wait, no: the question is whether \"he bungee jumps in the air\" is shorter than \"he falls off a tower backwards into the air\". Wait, \"falls off a tower backwards into the air\" is the action of jumping off, which is a brief moment. The bungee jump in the air is the time he's in the air with the bungee cord, which is longer. So the falling off is shorter. Therefore, the answer is yes, because the falling off is shorter than the bungee jump in the air.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The event 'he bungee jumps in the air' and 'he falls off a tower backwards into the air' seem quite similar at first glance, but let's break it down. \n\nWait, what exactly is happening in each scenario? In the first event, he's bungee jumping, which means he's attached to a bungee cord and will bounce up and down. In the second event, he falls off a tower backwards, which implies a more straightforward fall without the bouncing motion.\n\nHmm, the duration of these events could be influenced by the physics involved. Bungee jumping involves a stretch and recoil of the cord, which could extend the time in the air compared to a simple fall. Oh, I see, the bungee jump might actually last longer due to the oscillation.\n\nSo, considering the physics and the nature of the movements, the bungee jump might not be shorter. In fact, it could be longer due to the bouncing effect.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's analyze the video. First, the event \"he bungee jumps in the air\" – when does that happen? The bungee jump is the action where he jumps and is in the air. Then \"he falls off a tower backwards into the air\" – that's the initial fall before the bungee cord engages. Wait, the video shows him on the tower, then jumping. The falling off the tower backwards into the air is the start of the jump, and then the bungee jump in the air is the subsequent part. But the question is about the duration. The falling off the tower is a shorter event because it's the initial drop before the bungee cord pulls him back. So the bungee jump in the air (the part where he's bouncing) is longer than the initial fall. Wait, no: the question is whether \"he bungee jumps in the air\" is shorter than \"he falls off a tower backwards into the air\". Wait, \"falls off a tower backwards into the air\" is the action of jumping off, which is a brief moment. The bungee jump in the air is the time he's in the air with the bungee cord, which is longer. So the falling off is shorter. Therefore, the answer is yes, because the falling off is shorter than the bungee jump in the air.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\temporal_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\temporal_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\temporal_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.2841735949619767,
+        0.11114413953686592,
+        0.099243371143542,
+        0.08080553000006259,
+        0.07931575651858785,
+        0.08386740588351523,
+        0.11387552999708235,
+        0.14757467195836735
+      ],
+      "metrics": {
+        "entropy": 1.972929965206843,
+        "normalized_entropy": 0.9487787589417159,
+        "coefficient_of_variation": 0.5103495536121264,
+        "max_ratio": 0.2841735949619767,
+        "min_ratio": 0.07931575651858785
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's analyze the video. First, the event \"he bungee jumps in the air\" – when he jumps, he's in the air, then the bungee cord pulls him back. The other event is \"he falls off a tower backwards into the air\" – that's the initial fall before the bungee. Wait, the question is comparing the duration of the two events. Let's see the timestamps. The bungee jump in the air would be the part where he's bouncing, but the falling off the tower is the initial drop. The video shows him falling (from the tower) and then the bungee action. The falling off the tower is the first part, then the bungee jump. So the event of falling off the tower backwards into the air is the initial fall, which is shorter than the bungee jump in the air? Wait, no. Wait, the question is: is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'? Let's check the video. The falling off the tower (the initial drop) is when he's falling, which is a short duration. The bungee jump in the air would be the time he's in the air after the jump, which is longer? Wait, no. Wait, when you bungee jump, you fall down, then the cord stretches and pulls you back up. So the \"bungee jumps in the air\" might refer to the entire jump, but the question is about the duration. Let's look at the video segments. The video starts with him on the platform, then he jumps. The falling off the tower (the initial fall) is the part where he's going down, which is a short time. The bungee jump in the air would be the time he's suspended by the cord, which is longer. Wait, but the question is which event is shorter. The falling off the tower backwards into the air is the initial fall, which is a brief moment. The bungee jump in the air is the time he's in the air after the jump, which is longer. So the falling off the tower event is shorter. Therefore, the answer is yes, because the bungee jump in the air is longer than the falling off the tower event. Wait, no: the question is \"is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'?\" So if the bungee jump in the air is longer, then the answer is no. Wait, let's clarify. The event \"he falls off a tower backwards into the air\" is the initial fall, which is a short duration. The event \"he bungee jumps in the air\" is the entire jump, which includes the fall and the rebound. But the question is about the duration of each event. Let's see the video: the falling off the tower (the initial drop) is when he's falling, which is a short time. The bungee jump in the air would be the time he's in the air after the jump, which is longer. Wait, no. Wait, when you bungee jump, the jump itself is the fall, then the cord stops the fall and pulls you back. So the \"bungee jumps in the air\" might refer to the time he's airborne, which is the fall and the rebound. But the falling off the tower is the initial fall. So the falling off the tower event is shorter than the bungee jump in the air event. Therefore, the statement \"he bungee jumps in the air\" is longer than \"he falls off a tower backwards into the air\", so the answer to \"is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'?\" is no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's analyze the video. First, the event \"he bungee jumps in the air\" – when he jumps, he's in the air, then the bungee cord pulls him back. The other event is \"he falls off a tower backwards into the air\" – that's the initial fall before the bungee. Wait, the question is comparing the duration of the two events. Let's see the timestamps. The bungee jump in the air would be the part where he's bouncing, but the falling off the tower is the initial drop. The video shows him falling (from the tower) and then the bungee action. The falling off the tower is the first part, then the bungee jump. So the event of falling off the tower backwards into the air is the initial fall, which is shorter than the bungee jump in the air? Wait, no. Wait, the question is: is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'? Let's check the video. The falling off the tower (the initial drop) is when he's falling, which is a short duration. The bungee jump in the air would be the time he's in the air after the jump, which is longer? Wait, no. Wait, when you bungee jump, you fall down, then the cord stretches and pulls you back up. So the \"bungee jumps in the air\" might refer to the entire jump, but the question is about the duration. Let's look at the video segments. The video starts with him on the platform, then he jumps. The falling off the tower (the initial fall) is the part where he's going down, which is a short time. The bungee jump in the air would be the time he's suspended by the cord, which is longer. Wait, but the question is which event is shorter. The falling off the tower backwards into the air is the initial fall, which is a brief moment. The bungee jump in the air is the time he's in the air after the jump, which is longer. So the falling off the tower event is shorter. Therefore, the answer is yes, because the bungee jump in the air is longer than the falling off the tower event. Wait, no: the question is \"is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'?\" So if the bungee jump in the air is longer, then the answer is no. Wait, let's clarify. The event \"he falls off a tower backwards into the air\" is the initial fall, which is a short duration. The event \"he bungee jumps in the air\" is the entire jump, which includes the fall and the rebound. But the question is about the duration of each event. Let's see the video: the falling off the tower (the initial drop) is when he's falling, which is a short time. The bungee jump in the air would be the time he's in the air after the jump, which is longer. Wait, no. Wait, when you bungee jump, the jump itself is the fall, then the cord stops the fall and pulls you back. So the \"bungee jumps in the air\" might refer to the time he's airborne, which is the fall and the rebound. But the falling off the tower is the initial fall. So the falling off the tower event is shorter than the bungee jump in the air event. Therefore, the statement \"he bungee jumps in the air\" is longer than \"he falls off a tower backwards into the air\", so the answer to \"is the event 'he bungee jumps in the air' shorter than 'he falls off a tower backwards into the air'?\" is no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 814,
+      "frame_ratios": [
+        0.21368429918037954,
+        0.15007303207895065,
+        0.0934440242217772,
+        0.1063849447254853,
+        0.0931510525002762,
+        0.09133863176886345,
+        0.12631329517622902,
+        0.12561072034803866
+      ],
+      "metrics": {
+        "entropy": 2.035893719272804,
+        "normalized_entropy": 0.9790579241906208,
+        "coefficient_of_variation": 0.3096501592511384,
+        "max_ratio": 0.21368429918037954,
+        "min_ratio": 0.09133863176886345
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The sequence of events in the video shows a progression from standing on a platform to jumping off and then falling. The event 'he bungee jumps in the air' encompasses the entire action from the moment he jumps until he starts to bounce back up. On the other hand, 'he falls off a tower backwards into the air' seems to describe the initial phase of the jump, specifically the moment he falls before the bungee cord starts to work. \n\nHmm, so if we break it down, the bungee jumping in the air includes the falling and the bouncing back up, which is a longer duration. The falling off a tower backwards is just the initial part of the jump. \n\nOh, I see. Therefore, the event 'he bungee jumps in the air' cannot be shorter than 'he falls off a tower backwards into the air'.</think>\n<answer>no</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The sequence of events in the video shows a progression from standing on a platform to jumping off and then falling. The event 'he bungee jumps in the air' encompasses the entire action from the moment he jumps until he starts to bounce back up. On the other hand, 'he falls off a tower backwards into the air' seems to describe the initial phase of the jump, specifically the moment he falls before the bungee cord starts to work. \n\nHmm, so if we break it down, the bungee jumping in the air includes the falling and the bouncing back up, which is a longer duration. The falling off a tower backwards is just the initial part of the jump. \n\nOh, I see. Therefore, the event 'he bungee jumps in the air' cannot be shorter than 'he falls off a tower backwards into the air'.</think>\n<answer>no</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 194,
+      "frame_ratios": [
+        0.19611574563297818,
+        0.13955151930785537,
+        0.08354525205831786,
+        0.1025492541302051,
+        0.08333439317841534,
+        0.08325771925406367,
+        0.150611101458884,
+        0.1610350149792804
+      ],
+      "metrics": {
+        "entropy": 2.028467858443101,
+        "normalized_entropy": 0.9754868399928394,
+        "coefficient_of_variation": 0.321553973376757,
+        "max_ratio": 0.19611574563297818,
+        "min_ratio": 0.08325771925406367
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    }
+  ]
+}

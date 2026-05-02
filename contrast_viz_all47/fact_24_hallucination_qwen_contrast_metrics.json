@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "fact_24_hallucination",
+    "eval_type": "fact",
+    "index": 24,
+    "side": "hallucination",
+    "video": "2iWUUcW08ac_9037.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/external_factual/videos/2iWUUcW08ac_9037.mp4",
+    "question": "Based on the video, should we pour maple syrup on top when we make pancake?",
+    "answer": "no",
+    "type": "external_factual_instruct",
+    "predict": "<think>Let me think about this for a moment. The video shows a man making pancakes, and he does pour syrup on top of the pancakes at the end. However, the question is whether we should pour maple syrup when making the pancakes. Wait, what's the difference between pouring syrup on top and using it in the making process? Hmm, typically, syrup is added after the pancakes are cooked, not during the mixing of the batter. Oh, I see, the syrup isn't an ingredient in the pancake batter itself. Let's break it down: the video shows syrup being added after cooking, so it's not part of the making process. Therefore, we shouldn't pour maple syrup when making the pancake, but rather after they're cooked.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a man making pancakes, and he does pour syrup on top of the pancakes at the end. However, the question is whether we should pour maple syrup when making the pancakes. Wait, what's the difference between pouring syrup on top and using it in the making process? Hmm, typically, syrup is added after the pancakes are cooked, not during the mixing of the batter. Oh, I see, the syrup isn't an ingredient in the pancake batter itself. Let's break it down: the video shows syrup being added after cooking, so it's not part of the making process. Therefore, we shouldn't pour maple syrup when making the pancake, but rather after they're cooked.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a man making pancakes, and he does pour syrup on top of the pancakes at the end. However, the question is whether we should pour maple syrup when making the pancakes. Wait, what's the difference between pouring syrup on top and using it in the making process? Hmm, typically, syrup is added after the pancakes are cooked, not during the mixing of the batter. Oh, I see, the syrup isn't an ingredient in the pancake batter itself. Let's break it down: the video shows syrup being added after cooking, so it's not part of the making process. Therefore, we shouldn't pour maple syrup when making the pancake, but rather after they're cooked.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "So, let's check the video. The video is about making fluffy pancakes. In the first frame, there's a pancake with syrup, but the question is whether we should pour maple syrup on top. Wait, the video might show the process. But the question is asking if we should pour maple syrup. Typically, pancakes are served with syrup, but does the video indicate that? Let me think. The video starts with a pancake with syrup, but the actual recipe steps—maybe the video doesn't explicitly say, but the question is based on the video. Wait, the user is asking based on the video. Let's see. The video shows the person making pancakes, and in the first frame, there's syrup on the pancake. But does the video instruct to add syrup? Hmm. Wait, the question is \"should we pour maple syrup on top when we make pancake?\" The answer is probably yes, as it's a common practice, but does the video show that? Wait, the video might not explicitly say, but the first frame has syrup. But the question is to answer based on the video. Wait, maybe the video doesn't mention it, but the question is about the recipe. Wait, no, the user says \"based on the video\". Let me check the video content. The video is a cooking tutorial for fluffy pancakes. In the video, when they present the final pancakes, they have syrup. But does the recipe include adding syrup? The question is whether to pour it on top. Since the video shows the pancakes with syrup, it's implied that you do. So the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a man making pancakes, and he does pour syrup on top of the pancakes at the end. However, the question is whether we should pour maple syrup when making the pancakes. Wait, what's the difference between pouring syrup on top and using it in the making process? Hmm, typically, syrup is added after the pancakes are cooked, not during the mixing of the batter. Oh, I see, the syrup isn't an ingredient in the pancake batter itself. Let's break it down: the video shows syrup being added after cooking, so it's not part of the making process. Therefore, we shouldn't pour maple syrup when making the pancake, but rather after they're cooked.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "So, let's check the video. The video is about making fluffy pancakes. In the first frame, there's a pancake with syrup, but the question is whether we should pour maple syrup on top. Wait, the video might show the process. But the question is asking if we should pour maple syrup. Typically, pancakes are served with syrup, but does the video indicate that? Let me think. The video starts with a pancake with syrup, but the actual recipe steps—maybe the video doesn't explicitly say, but the question is based on the video. Wait, the user is asking based on the video. Let's see. The video shows the person making pancakes, and in the first frame, there's syrup on the pancake. But does the video instruct to add syrup? Hmm. Wait, the question is \"should we pour maple syrup on top when we make pancake?\" The answer is probably yes, as it's a common practice, but does the video show that? Wait, the video might not explicitly say, but the first frame has syrup. But the question is to answer based on the video. Wait, maybe the video doesn't mention it, but the question is about the recipe. Wait, no, the user says \"based on the video\". Let me check the video content. The video is a cooking tutorial for fluffy pancakes. In the video, when they present the final pancakes, they have syrup. But does the recipe include adding syrup? The question is whether to pour it on top. Since the video shows the pancakes with syrup, it's implied that you do. So the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\fact_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\fact_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\fact_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.26211161397813315,
+        0.13998428508580793,
+        0.09625845016011783,
+        0.10089468586797587,
+        0.08158554440682919,
+        0.08261204073622974,
+        0.1018158235332304,
+        0.1347375562316759
+      ],
+      "metrics": {
+        "entropy": 1.9960800272136998,
+        "normalized_entropy": 0.959911585492904,
+        "coefficient_of_variation": 0.44492827672450014,
+        "max_ratio": 0.26211161397813315,
+        "min_ratio": 0.08158554440682919
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "So, let's check the video. The first frame shows a person pouring syrup on pancakes, and the title is \"MAKE FLUFFY PANCAKES\". But the question is whether we should pour maple syrup on top. The video shows syrup being poured, so the answer would be yes. Wait, but maybe the question is about the recipe steps. Let me think. The video starts with pancakes and syrup, so likely yes.\n</think>\n\nyes",
+      "prediction_full": "So, let's check the video. The first frame shows a person pouring syrup on pancakes, and the title is \"MAKE FLUFFY PANCAKES\". But the question is whether we should pour maple syrup on top. The video shows syrup being poured, so the answer would be yes. Wait, but maybe the question is about the recipe steps. Let me think. The video starts with pancakes and syrup, so likely yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 91,
+      "frame_ratios": [
+        0.3146039639295329,
+        0.13332918683675488,
+        0.09467920943138627,
+        0.10758893512454436,
+        0.09238024331272374,
+        0.08348817627096701,
+        0.07518624738413833,
+        0.09874403770995252
+      ],
+      "metrics": {
+        "entropy": 1.9460378235299358,
+        "normalized_entropy": 0.9358463724629967,
+        "coefficient_of_variation": 0.5878748135652985,
+        "max_ratio": 0.3146039639295329,
+        "min_ratio": 0.07518624738413833
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a man making pancakes, and he does pour syrup on top of the pancakes at the end. However, the question is whether we should pour maple syrup when making pancakes. Hmm, wait, what's the difference between pouring syrup on top and using it in the making process? Oh, I see, the syrup is added after the pancakes are cooked, not during the making process. Let's break it down: the syrup is used as a topping, not an ingredient in the batter. So, should we pour maple syrup when making pancakes? No, we should not, as it's typically added after cooking.</think>\n<answer>no</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a man making pancakes, and he does pour syrup on top of the pancakes at the end. However, the question is whether we should pour maple syrup when making pancakes. Hmm, wait, what's the difference between pouring syrup on top and using it in the making process? Oh, I see, the syrup is added after the pancakes are cooked, not during the making process. Let's break it down: the syrup is used as a topping, not an ingredient in the batter. So, should we pour maple syrup when making pancakes? No, we should not, as it's typically added after cooking.</think>\n<answer>no</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 144,
+      "frame_ratios": [
+        0.23833703106876347,
+        0.1309478532169814,
+        0.10700832653759694,
+        0.10531125570419224,
+        0.11003890223656214,
+        0.1064679433976135,
+        0.09057902952361742,
+        0.11130965831467292
+      ],
+      "metrics": {
+        "entropy": 2.0274168096877063,
+        "normalized_entropy": 0.9749813923837924,
+        "coefficient_of_variation": 0.3524940483752231,
+        "max_ratio": 0.23833703106876347,
+        "min_ratio": 0.09057902952361742
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "fact_129_hallucination",
+    "eval_type": "fact",
+    "index": 129,
+    "side": "hallucination",
+    "video": "m03QoutPNDU_94.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/external_factual/videos/m03QoutPNDU_94.mp4",
+    "question": "Based on the video, should we thread thorugh the needle when we use sewing machine?",
+    "answer": "no",
+    "type": "external_factual_instruct",
+    "predict": "<think>Let me think about this for a moment. The video shows a detailed process of threading a sewing machine, and it seems quite important. Wait, what's the main purpose of threading the needle? Hmm, it's essential for the machine to sew, right? So, if we don't thread the needle, the machine won't be able to stitch anything. Oh, I see, that means threading the needle is a crucial step. Let's break it down further. The video shows the woman carefully threading the needle, indicating that it's a necessary step in using the sewing machine. Therefore, based on the video content and the fundamental operation of a sewing machine, we should indeed thread through the needle when using a sewing machine.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a detailed process of threading a sewing machine, and it seems quite important. Wait, what's the main purpose of threading the needle? Hmm, it's essential for the machine to sew, right? So, if we don't thread the needle, the machine won't be able to stitch anything. Oh, I see, that means threading the needle is a crucial step. Let's break it down further. The video shows the woman carefully threading the needle, indicating that it's a necessary step in using the sewing machine. Therefore, based on the video content and the fundamental operation of a sewing machine, we should indeed thread through the needle when using a sewing machine.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a detailed process of threading a sewing machine, and it seems quite important. Wait, what's the main purpose of threading the needle? Hmm, it's essential for the machine to sew, right? So, if we don't thread the needle, the machine won't be able to stitch anything. Oh, I see, that means threading the needle is a crucial step. Let's break it down further. The video shows the woman carefully threading the needle, indicating that it's a necessary step in using the sewing machine. Therefore, based on the video content and the fundamental operation of a sewing machine, we should indeed thread through the needle when using a sewing machine.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's think. In the video, there's a close-up of hands handling thread and the sewing machine. When you use a sewing machine, threading the needle is a standard step. The video shows the person working with thread, so it's implied that threading is necessary. So the answer should be yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a detailed process of threading a sewing machine, and it seems quite important. Wait, what's the main purpose of threading the needle? Hmm, it's essential for the machine to sew, right? So, if we don't thread the needle, the machine won't be able to stitch anything. Oh, I see, that means threading the needle is a crucial step. Let's break it down further. The video shows the woman carefully threading the needle, indicating that it's a necessary step in using the sewing machine. Therefore, based on the video content and the fundamental operation of a sewing machine, we should indeed thread through the needle when using a sewing machine.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's think. In the video, there's a close-up of hands handling thread and the sewing machine. When you use a sewing machine, threading the needle is a standard step. The video shows the person working with thread, so it's implied that threading is necessary. So the answer should be yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\fact_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\fact_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\fact_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.2352951747529568,
+        0.13908134297220898,
+        0.12180036960690938,
+        0.0866484635572995,
+        0.08176995007865168,
+        0.0942495979797125,
+        0.11241434430767339,
+        0.12874075674458774
+      ],
+      "metrics": {
+        "entropy": 2.0201257073085337,
+        "normalized_entropy": 0.9714751133021104,
+        "coefficient_of_variation": 0.36694636345595777,
+        "max_ratio": 0.23529517475295683,
+        "min_ratio": 0.08176995007865169
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's check the video. The video shows a person handling sewing machine parts, like threading the needle. Wait, in the steps, when they're setting up the sewing machine, threading the needle is a common step. Let me recall the video content. The person is showing how to thread the machine, so yes, you do thread through the needle. So the answer should be yes.\n</think>\n\nyes",
+      "prediction_full": "Got it, let's check the video. The video shows a person handling sewing machine parts, like threading the needle. Wait, in the steps, when they're setting up the sewing machine, threading the needle is a common step. Let me recall the video content. The person is showing how to thread the machine, so yes, you do thread through the needle. So the answer should be yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 84,
+      "frame_ratios": [
+        0.16058351393166825,
+        0.15351079750725646,
+        0.16416099934570497,
+        0.08950134444971797,
+        0.07301590792716235,
+        0.12835154471162374,
+        0.11873429129017209,
+        0.11214160083669418
+      ],
+      "metrics": {
+        "entropy": 2.04697383558735,
+        "normalized_entropy": 0.9843863338104434,
+        "coefficient_of_variation": 0.24965522897191603,
+        "max_ratio": 0.16416099934570497,
+        "min_ratio": 0.07301590792716235
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a woman threading a sewing machine, and it seems quite detailed. Wait, what exactly is the question asking? It's asking if we should thread through the needle when using a sewing machine. Hmm, let's break it down. If we're using a sewing machine, logically, we need to thread it somehow, right? Oh, I see, the needle is a crucial part of the threading process. The video shows the woman threading the needle, so it must be important. So, should we thread through the needle? Yes, that makes sense.</think>\n<answer>Yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a woman threading a sewing machine, and it seems quite detailed. Wait, what exactly is the question asking? It's asking if we should thread through the needle when using a sewing machine. Hmm, let's break it down. If we're using a sewing machine, logically, we need to thread it somehow, right? Oh, I see, the needle is a crucial part of the threading process. The video shows the woman threading the needle, so it must be important. So, should we thread through the needle? Yes, that makes sense.</think>\n<answer>Yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 133,
+      "frame_ratios": [
+        0.155622510942649,
+        0.16756324345198836,
+        0.13636580007995813,
+        0.09141631356316571,
+        0.08249838588760505,
+        0.1201382344950867,
+        0.1119861594439584,
+        0.13440935213558858
+      ],
+      "metrics": {
+        "entropy": 2.0545769662671027,
+        "normalized_entropy": 0.9880426667860801,
+        "coefficient_of_variation": 0.22080458682453757,
+        "max_ratio": 0.16756324345198836,
+        "min_ratio": 0.08249838588760505
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          30,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          15,
+          20
+        ],
+        "total_video_tokens": 2400
+      }
+    }
+  ]
+}

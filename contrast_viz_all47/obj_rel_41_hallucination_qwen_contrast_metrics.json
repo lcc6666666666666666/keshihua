@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "obj_rel_41_hallucination",
+    "eval_type": "obj_rel",
+    "index": 41,
+    "side": "hallucination",
+    "video": "1164_6617533993_1133_1383.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/object_relation/videos/1164_6617533993_1133_1383.mp4",
+    "question": "Is there a suitcase in the video?",
+    "answer": "no",
+    "type": "object",
+    "predict": "<think>Let me think about this for a moment. I need to recall the details of the video. The scene shows two children playing on the floor with various toys. There's a girl in a pink dress and a boy in a white shirt. I remember seeing a few toys like a toy box and some papers, but I don't recall a suitcase. Wait, let's break it down further. The girl is playing with what looks like a toy purse, and the boy is playing with some other items. Hmm, I don't see anything resembling a suitcase. Oh, I see, there's no suitcase in the scene. I should double-check, but I'm quite sure there isn't one.</think>\n<answer>No</answer>",
+    "predict_full": "<think>Let me think about this for a moment. I need to recall the details of the video. The scene shows two children playing on the floor with various toys. There's a girl in a pink dress and a boy in a white shirt. I remember seeing a few toys like a toy box and some papers, but I don't recall a suitcase. Wait, let's break it down further. The girl is playing with what looks like a toy purse, and the boy is playing with some other items. Hmm, I don't see anything resembling a suitcase. Oh, I see, there's no suitcase in the scene. I should double-check, but I'm quite sure there isn't one.</think>\n<answer>No</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. I need to recall the details of the video. The scene shows two children playing on the floor with various toys. There's a girl in a pink dress and a boy in a white shirt. I remember seeing a few toys like a toy box and some papers, but I don't recall a suitcase. Wait, let's break it down further. The girl is playing with what looks like a toy purse, and the boy is playing with some other items. Hmm, I don't see anything resembling a suitcase. Oh, I see, there's no suitcase in the scene. I should double-check, but I'm quite sure there isn't one.</think>\n<answer>No</answer>",
+      "instruct": "yes",
+      "thinking": "So, let's check the video. Looking at the scene, there's a pink suitcase or bag near the kids. Wait, the question is if there's a suitcase. Let me confirm. In the video, there's a pink suitcase-like item on the floor. So yes, there is a suitcase.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. I need to recall the details of the video. The scene shows two children playing on the floor with various toys. There's a girl in a pink dress and a boy in a white shirt. I remember seeing a few toys like a toy box and some papers, but I don't recall a suitcase. Wait, let's break it down further. The girl is playing with what looks like a toy purse, and the boy is playing with some other items. Hmm, I don't see anything resembling a suitcase. Oh, I see, there's no suitcase in the scene. I should double-check, but I'm quite sure there isn't one.</think>\n<answer>No</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "So, let's check the video. Looking at the scene, there's a pink suitcase or bag near the kids. Wait, the question is if there's a suitcase. Let me confirm. In the video, there's a pink suitcase-like item on the floor. So yes, there is a suitcase.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\obj_rel_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\obj_rel_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\obj_rel_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.2815404895292332,
+        0.11258660508513313,
+        0.1008579157484602,
+        0.058909566527073826,
+        0.08019373745159218,
+        0.09434971424228804,
+        0.1281987010284968,
+        0.14336327038772265
+      ],
+      "metrics": {
+        "entropy": 1.967825983349852,
+        "normalized_entropy": 0.9463242625037598,
+        "coefficient_of_variation": 0.5130636251554048,
+        "max_ratio": 0.2815404895292332,
+        "min_ratio": 0.058909566527073826
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          72,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          36,
+          20
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "So, let's check the video. The question is if there's a suitcase. Looking at the scene: there's a pink toy suitcase near the girl. So yes, there is a suitcase.\n</think>\n\nyes",
+      "prediction_full": "So, let's check the video. The question is if there's a suitcase. Looking at the scene: there's a pink toy suitcase near the girl. So yes, there is a suitcase.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 43,
+      "frame_ratios": [
+        0.28800344896321667,
+        0.11879195449936322,
+        0.09914101062925176,
+        0.0781575005972013,
+        0.08862711621265286,
+        0.09189370411476051,
+        0.10473191149133312,
+        0.13065335349222054
+      ],
+      "metrics": {
+        "entropy": 1.976287482233161,
+        "normalized_entropy": 0.9503933833295723,
+        "coefficient_of_variation": 0.5085928871242434,
+        "max_ratio": 0.28800344896321667,
+        "min_ratio": 0.0781575005972013
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          72,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          36,
+          20
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows two children playing on the floor, and I need to determine if there's a suitcase present. Wait, what exactly is that pink object next to the girl? Hmm, it looks like a small suitcase with a handle on top. Oh, I see, it's definitely a suitcase, albeit a small one, possibly a toy suitcase. Let's break it down: the object has the shape, size, and features of a suitcase, so it must be considered as such. I should verify if there's any other suitcase in the scene, but I don't see any other one. So, after this deep pondering and verification, I can conclude that there is indeed a suitcase in the video.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows two children playing on the floor, and I need to determine if there's a suitcase present. Wait, what exactly is that pink object next to the girl? Hmm, it looks like a small suitcase with a handle on top. Oh, I see, it's definitely a suitcase, albeit a small one, possibly a toy suitcase. Let's break it down: the object has the shape, size, and features of a suitcase, so it must be considered as such. I should verify if there's any other suitcase in the scene, but I don't see any other one. So, after this deep pondering and verification, I can conclude that there is indeed a suitcase in the video.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 161,
+      "frame_ratios": [
+        0.2265847654186684,
+        0.13025537943998236,
+        0.10777979527072186,
+        0.0853767275986292,
+        0.10537646161291576,
+        0.1080331895036077,
+        0.10476266791419182,
+        0.1318310132412829
+      ],
+      "metrics": {
+        "entropy": 2.033071317202827,
+        "normalized_entropy": 0.9777006357007039,
+        "coefficient_of_variation": 0.3267144442970256,
+        "max_ratio": 0.2265847654186684,
+        "min_ratio": 0.0853767275986292
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          72,
+          40
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          36,
+          20
+        ],
+        "total_video_tokens": 5760
+      }
+    }
+  ]
+}

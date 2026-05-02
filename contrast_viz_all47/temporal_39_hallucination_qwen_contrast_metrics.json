@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "temporal_39_hallucination",
+    "eval_type": "temporal",
+    "index": 39,
+    "side": "hallucination",
+    "video": "v_Cc_DmDsXm6M.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/temporal/videos/v_Cc_DmDsXm6M.mp4",
+    "question": "Does 'a man is water skiing on a large lake' happen later than 'he is dressed up as a chef pig'?",
+    "answer": "no",
+    "type": "temporal_relative",
+    "predict": "<think>Let me think about this carefully. The question asks if the man water skiing happens later than him being dressed as a chef pig. First, let's break down the sequence of events. The video shows a person dressed as a chef pig water skiing. Then, there's a scene change where a different person is water skiing. So, the question is essentially asking if the scene with the different skier comes after the chef pig scene.\n\nHmm, if we consider the timeline of the video, the chef pig scene comes first. The scene with the different skier comes after. So, does this mean the man water skiing happens later? Oh, I see. The question is a bit tricky because it's mixing up the skiers. The correct interpretation should be that the scene with a different skier happens after the chef pig scene.\n\nWait, let's verify. The sequence is: chef pig scene -> different skier scene. So, yes, the different skier scene does happen later.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this carefully. The question asks if the man water skiing happens later than him being dressed as a chef pig. First, let's break down the sequence of events. The video shows a person dressed as a chef pig water skiing. Then, there's a scene change where a different person is water skiing. So, the question is essentially asking if the scene with the different skier comes after the chef pig scene.\n\nHmm, if we consider the timeline of the video, the chef pig scene comes first. The scene with the different skier comes after. So, does this mean the man water skiing happens later? Oh, I see. The question is a bit tricky because it's mixing up the skiers. The correct interpretation should be that the scene with a different skier happens after the chef pig scene.\n\nWait, let's verify. The sequence is: chef pig scene -> different skier scene. So, yes, the different skier scene does happen later.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this carefully. The question asks if the man water skiing happens later than him being dressed as a chef pig. First, let's break down the sequence of events. The video shows a person dressed as a chef pig water skiing. Then, there's a scene change where a different person is water skiing. So, the question is essentially asking if the scene with the different skier comes after the chef pig scene.\n\nHmm, if we consider the timeline of the video, the chef pig scene comes first. The scene with the different skier comes after. So, does this mean the man water skiing happens later? Oh, I see. The question is a bit tricky because it's mixing up the skiers. The correct interpretation should be that the scene with a different skier happens after the chef pig scene.\n\nWait, let's verify. The sequence is: chef pig scene -> different skier scene. So, yes, the different skier scene does happen later.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's check the video sequence. First, the person is dressed as a chef pig (red and white outfit, maybe a pig costume). Then, the action of water skiing happens. Wait, the question is whether \"a man is water skiing\" happens later than \"he is dressed up as a chef pig\". So the dressing up is the initial state, then he starts water skiing. Let's see the timestamps. The video starts with the person on the water, dressed as chef pig, then he's water skiing. So the water skiing happens after he's dressed as chef pig. So the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this carefully. The question asks if the man water skiing happens later than him being dressed as a chef pig. First, let's break down the sequence of events. The video shows a person dressed as a chef pig water skiing. Then, there's a scene change where a different person is water skiing. So, the question is essentially asking if the scene with the different skier comes after the chef pig scene.\n\nHmm, if we consider the timeline of the video, the chef pig scene comes first. The scene with the different skier comes after. So, does this mean the man water skiing happens later? Oh, I see. The question is a bit tricky because it's mixing up the skiers. The correct interpretation should be that the scene with a different skier happens after the chef pig scene.\n\nWait, let's verify. The sequence is: chef pig scene -> different skier scene. So, yes, the different skier scene does happen later.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's check the video sequence. First, the person is dressed as a chef pig (red and white outfit, maybe a pig costume). Then, the action of water skiing happens. Wait, the question is whether \"a man is water skiing\" happens later than \"he is dressed up as a chef pig\". So the dressing up is the initial state, then he starts water skiing. Let's see the timestamps. The video starts with the person on the water, dressed as chef pig, then he's water skiing. So the water skiing happens after he's dressed as chef pig. So the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\temporal_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\temporal_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\temporal_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.21298256199087856,
+        0.16195657607977723,
+        0.09318907420055457,
+        0.08618841936903567,
+        0.09236507725171629,
+        0.08832204955336377,
+        0.09876623602559811,
+        0.16623000552907577
+      ],
+      "metrics": {
+        "entropy": 2.017908434185587,
+        "normalized_entropy": 0.9704088303225199,
+        "coefficient_of_variation": 0.36247402644885235,
+        "max_ratio": 0.21298256199087856,
+        "min_ratio": 0.08618841936903567
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          16,
+          20
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          8,
+          10
+        ],
+        "total_video_tokens": 640
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's check the video sequence. First, the video starts with a black screen, then shows a person water skiing. The description says \"he is dressed up as a chef pig\" — wait, the person in the video is wearing a chef-like outfit with a pig? Wait, the video shows a person in a red and white outfit, maybe a chef pig costume. Then, the question is whether \"a man is water skiing on a large lake\" happens later than \"he is dressed up as a chef pig\".\n\nWait, the first part of the video (after the black screen) shows the person water skiing. The description of the person being dressed as a chef pig is part of the scene. So the water skiing is happening while he's dressed as a chef pig. So the water skiing event is not later than the dressing up; they happen at the same time. Wait, the question is: does the water skiing happen later than the dressing up?\n\nWait, the sequence: the video starts with black screen, then shows the person water skiing (so the water skiing is the main action). The person is dressed as a chef pig during the water skiing. So the dressing up is part of the water skiing event. Therefore, the water skiing (the action) is happening while he's dressed as a chef pig. So the water skiing does not happen later than the dressing up; they are concurrent. Therefore, the answer is no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's check the video sequence. First, the video starts with a black screen, then shows a person water skiing. The description says \"he is dressed up as a chef pig\" — wait, the person in the video is wearing a chef-like outfit with a pig? Wait, the video shows a person in a red and white outfit, maybe a chef pig costume. Then, the question is whether \"a man is water skiing on a large lake\" happens later than \"he is dressed up as a chef pig\".\n\nWait, the first part of the video (after the black screen) shows the person water skiing. The description of the person being dressed as a chef pig is part of the scene. So the water skiing is happening while he's dressed as a chef pig. So the water skiing event is not later than the dressing up; they happen at the same time. Wait, the question is: does the water skiing happen later than the dressing up?\n\nWait, the sequence: the video starts with black screen, then shows the person water skiing (so the water skiing is the main action). The person is dressed as a chef pig during the water skiing. So the dressing up is part of the water skiing event. Therefore, the water skiing (the action) is happening while he's dressed as a chef pig. So the water skiing does not happen later than the dressing up; they are concurrent. Therefore, the answer is no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 297,
+      "frame_ratios": [
+        0.26428078817484413,
+        0.13418408828425143,
+        0.11483946845413838,
+        0.10109224614226084,
+        0.10218465023682564,
+        0.09887283000728994,
+        0.0774451918171289,
+        0.1071007368832607
+      ],
+      "metrics": {
+        "entropy": 2.000662505082244,
+        "normalized_entropy": 0.9621152915248815,
+        "coefficient_of_variation": 0.43766028036468,
+        "max_ratio": 0.2642807881748442,
+        "min_ratio": 0.07744519181712892
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          16,
+          20
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          8,
+          10
+        ],
+        "total_video_tokens": 640
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this carefully. The question asks if 'a man is water skiing on a large lake' happens later than 'he is dressed up as a chef pig'. First, let's break down the sequence of events in the video. The man is initially seen dressed as a chef pig, engaging in water skiing. Then, he encounters an issue and falls into the water. So, the dressing up as a chef pig is actually the initial event, not something that happens later. Hmm, this means the sequence suggests that being dressed as a chef pig comes before the water skiing action is completed and he falls. Oh, I see, the question's phrasing is a bit tricky, but logically, the dressing up must precede the water skiing activity in this context.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this carefully. The question asks if 'a man is water skiing on a large lake' happens later than 'he is dressed up as a chef pig'. First, let's break down the sequence of events in the video. The man is initially seen dressed as a chef pig, engaging in water skiing. Then, he encounters an issue and falls into the water. So, the dressing up as a chef pig is actually the initial event, not something that happens later. Hmm, this means the sequence suggests that being dressed as a chef pig comes before the water skiing action is completed and he falls. Oh, I see, the question's phrasing is a bit tricky, but logically, the dressing up must precede the water skiing activity in this context.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 165,
+      "frame_ratios": [
+        0.1993111834391903,
+        0.17280181083667057,
+        0.11146505919705679,
+        0.09963127302615749,
+        0.10415298538374254,
+        0.11907657182448249,
+        0.0912205739245924,
+        0.10234054236810743
+      ],
+      "metrics": {
+        "entropy": 2.0398580590918534,
+        "normalized_entropy": 0.980964368656401,
+        "coefficient_of_variation": 0.29336826958792656,
+        "max_ratio": 0.1993111834391903,
+        "min_ratio": 0.0912205739245924
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          16,
+          20
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          8,
+          10
+        ],
+        "total_video_tokens": 640
+      }
+    }
+  ]
+}

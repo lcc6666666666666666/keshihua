@@ -1,0 +1,17 @@
+{
+  "fact": {
+    "basic_accuracy": 0.825,
+    "halluc_accuracy": 0.425,
+    "accuracy": 0.335
+  },
+  "nonfact": {
+    "basic_accuracy": 0.825,
+    "halluc_accuracy": 0.85,
+    "accuracy": 0.69
+  },
+  "all": {
+    "basic_accuracy": 0.825,
+    "halluc_accuracy": 0.6375,
+    "accuracy": 0.5125
+  }
+}

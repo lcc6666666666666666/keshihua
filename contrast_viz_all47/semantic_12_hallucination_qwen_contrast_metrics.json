@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "semantic_12_hallucination",
+    "eval_type": "semantic",
+    "index": 12,
+    "side": "hallucination",
+    "video": "jPBy6VTCfnM_a.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/semantic_detail/videos/jPBy6VTCfnM_a.mp4",
+    "question": "Are there turned-on monitors on most of the tables in the video?",
+    "answer": "no",
+    "type": "semantic_detail",
+    "predict": "<think>Let me think about this for a moment. The video shows a conference room with numerous tables and chairs. Now, I need to focus on the monitors on the tables. Wait, are they turned on? Hmm, if I recall correctly, most of the monitors appear to be on, displaying some content. Oh, I see, that's a good observation. Let's break it down further. If they were off, they would likely be dark and not visible. But in this case, they seem to be illuminated, suggesting they are indeed turned on. So, after this reflection, I can conclude that the monitors on most of the tables are indeed turned on.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video shows a conference room with numerous tables and chairs. Now, I need to focus on the monitors on the tables. Wait, are they turned on? Hmm, if I recall correctly, most of the monitors appear to be on, displaying some content. Oh, I see, that's a good observation. Let's break it down further. If they were off, they would likely be dark and not visible. But in this case, they seem to be illuminated, suggesting they are indeed turned on. So, after this reflection, I can conclude that the monitors on most of the tables are indeed turned on.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video shows a conference room with numerous tables and chairs. Now, I need to focus on the monitors on the tables. Wait, are they turned on? Hmm, if I recall correctly, most of the monitors appear to be on, displaying some content. Oh, I see, that's a good observation. Let's break it down further. If they were off, they would likely be dark and not visible. But in this case, they seem to be illuminated, suggesting they are indeed turned on. So, after this reflection, I can conclude that the monitors on most of the tables are indeed turned on.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "So, let's check the video. In the first frame, there are many tables with monitors. The question is if most are turned on. Looking at the first frame, the monitors on the tables—do they have lights? The description says \"monitors on most of the tables\" but need to see if they're on. Wait, the video shows the National Assembly room. In the first frame, the tables have monitors, but are they turned on? The problem is to answer yes or no. Let's think: in the video, the monitors on the tables—do they display something? If they are on, then yes. But maybe they are off. Wait, the question is \"Are there turned-on monitors on most of the tables in the video?\" So we need to check if most monitors are on. Looking at the first frame, the monitors on the tables—probably they are on, but maybe not. Wait, the video is a news broadcast. In such settings, monitors might be on. But let's check the frames. The first frame shows the room with many tables, each with a monitor. If the monitors are on, then yes. But maybe they are off. Wait, the problem is to answer based on the video. Since the user is asking, and the video shows the room, we need to infer. But maybe the monitors are on. Wait, the question is yes or no. Let's see: in the video, the monitors on the tables—do they have light? If they are on, then yes. But maybe not. Wait, the answer is likely yes because in such official settings, monitors are usually on. But I need to be precise. Wait, the first frame: the tables have monitors, and they are likely on. So the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video shows a conference room with numerous tables and chairs. Now, I need to focus on the monitors on the tables. Wait, are they turned on? Hmm, if I recall correctly, most of the monitors appear to be on, displaying some content. Oh, I see, that's a good observation. Let's break it down further. If they were off, they would likely be dark and not visible. But in this case, they seem to be illuminated, suggesting they are indeed turned on. So, after this reflection, I can conclude that the monitors on most of the tables are indeed turned on.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "So, let's check the video. In the first frame, there are many tables with monitors. The question is if most are turned on. Looking at the first frame, the monitors on the tables—do they have lights? The description says \"monitors on most of the tables\" but need to see if they're on. Wait, the video shows the National Assembly room. In the first frame, the tables have monitors, but are they turned on? The problem is to answer yes or no. Let's think: in the video, the monitors on the tables—do they display something? If they are on, then yes. But maybe they are off. Wait, the question is \"Are there turned-on monitors on most of the tables in the video?\" So we need to check if most monitors are on. Looking at the first frame, the monitors on the tables—probably they are on, but maybe not. Wait, the video is a news broadcast. In such settings, monitors might be on. But let's check the frames. The first frame shows the room with many tables, each with a monitor. If the monitors are on, then yes. But maybe they are off. Wait, the problem is to answer based on the video. Since the user is asking, and the video shows the room, we need to infer. But maybe the monitors are on. Wait, the question is yes or no. Let's see: in the video, the monitors on the tables—do they have light? If they are on, then yes. But maybe not. Wait, the answer is likely yes because in such official settings, monitors are usually on. But I need to be precise. Wait, the first frame: the tables have monitors, and they are likely on. So the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\semantic_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\semantic_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\semantic_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.22446770312144246,
+        0.17427188807248653,
+        0.0944755708603401,
+        0.059689203638181226,
+        0.09432021879852633,
+        0.09137962353898672,
+        0.11746529182289883,
+        0.1439305001471378
+      ],
+      "metrics": {
+        "entropy": 2.002890627300456,
+        "normalized_entropy": 0.963186791816451,
+        "coefficient_of_variation": 0.40005497787464706,
+        "max_ratio": 0.22446770312144246,
+        "min_ratio": 0.059689203638181226
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "So, let's check the video. In the first frame, there are many tables with monitors. The description says \"most of the tables\" have turned-on monitors. Looking at the first image, the tables have monitors, and the text mentions \"국회 '업무추진비 공개'\" which is about the National Assembly's business operation budget. The monitors are likely on. So the answer should be yes.\n</think>\n\nyes",
+      "prediction_full": "So, let's check the video. In the first frame, there are many tables with monitors. The description says \"most of the tables\" have turned-on monitors. Looking at the first image, the tables have monitors, and the text mentions \"국회 '업무추진비 공개'\" which is about the National Assembly's business operation budget. The monitors are likely on. So the answer should be yes.\n</think>\n\nyes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 88,
+      "frame_ratios": [
+        0.29294483762439943,
+        0.17423149294288856,
+        0.11793730713660616,
+        0.08012435286773917,
+        0.0821301459472572,
+        0.07568500654082722,
+        0.07690247606849387,
+        0.10004438087178838
+      ],
+      "metrics": {
+        "entropy": 1.9466914136494347,
+        "normalized_entropy": 0.9361606828710551,
+        "coefficient_of_variation": 0.5649698145486309,
+        "max_ratio": 0.29294483762439943,
+        "min_ratio": 0.07568500654082722
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video shows a room with many tables, and I need to determine if the monitors on these tables are turned on. Wait, what exactly am I looking for here? Hmm, I need to focus on the state of the monitors - are they on or off? Let's break it down. If I recall, most of the tables have small screens on them. Now, are these screens turned on? Oh, I see - they appear to be on, displaying some content. But is it true for most of them? I should verify that. After a closer look, it seems that indeed, most of the monitors are turned on. So, I can conclude that the statement is accurate.</think>\n<answer>yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video shows a room with many tables, and I need to determine if the monitors on these tables are turned on. Wait, what exactly am I looking for here? Hmm, I need to focus on the state of the monitors - are they on or off? Let's break it down. If I recall, most of the tables have small screens on them. Now, are these screens turned on? Oh, I see - they appear to be on, displaying some content. But is it true for most of them? I should verify that. After a closer look, it seems that indeed, most of the monitors are turned on. So, I can conclude that the statement is accurate.</think>\n<answer>yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 158,
+      "frame_ratios": [
+        0.24656831646592603,
+        0.14619546183181784,
+        0.10941733827506521,
+        0.08789228230313519,
+        0.10264028991163857,
+        0.09930455309542094,
+        0.09630579115099427,
+        0.11167596696600195
+      ],
+      "metrics": {
+        "entropy": 2.0153500884198863,
+        "normalized_entropy": 0.9691785260728347,
+        "coefficient_of_variation": 0.3899641556281869,
+        "max_ratio": 0.24656831646592603,
+        "min_ratio": 0.08789228230313519
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          44,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          22,
+          40
+        ],
+        "total_video_tokens": 7040
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_38_hallucination",
+    "eval_type": "interaction",
+    "index": 38,
+    "side": "hallucination",
+    "video": "38.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/38.mp4",
+    "question": "Did Sheldon forget something?",
+    "answer": "no",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. Sheldon seems to be standing up and holding a controller, which suggests he's actively participating in a game. Wait, did he forget something? Hmm, I don't see any obvious indication that he forgot something in this particular scene. He appears to be fully engaged in the game, and there's no visible item he might have forgotten. Let's break it down further. If he had forgotten something, we might expect to see him looking around or reaching for something, but that's not the case here. Oh, I see, he seems to be focused on the game. Therefore, based on this analysis, it doesn't appear that Sheldon forgot anything.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this for a moment. Sheldon seems to be standing up and holding a controller, which suggests he's actively participating in a game. Wait, did he forget something? Hmm, I don't see any obvious indication that he forgot something in this particular scene. He appears to be fully engaged in the game, and there's no visible item he might have forgotten. Let's break it down further. If he had forgotten something, we might expect to see him looking around or reaching for something, but that's not the case here. Oh, I see, he seems to be focused on the game. Therefore, based on this analysis, it doesn't appear that Sheldon forgot anything.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. Sheldon seems to be standing up and holding a controller, which suggests he's actively participating in a game. Wait, did he forget something? Hmm, I don't see any obvious indication that he forgot something in this particular scene. He appears to be fully engaged in the game, and there's no visible item he might have forgotten. Let's break it down further. If he had forgotten something, we might expect to see him looking around or reaching for something, but that's not the case here. Oh, I see, he seems to be focused on the game. Therefore, based on this analysis, it doesn't appear that Sheldon forgot anything.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's look at the video. In the scene, Sheldon is standing and then moves around. The question is if he forgot something. Wait, in the video, maybe there's a moment where he's distracted. But the key is to check if there's a clue. Wait, the problem is to answer yes or no. Let's think. In the context of the show, Sheldon is often forgetful, but here, maybe the action shows he forgot. Wait, the video shows him moving, maybe he forgot his controller? Wait, no, the question is \"Did Sheldon forget something?\" Let's check the frames. In the video, Sheldon is holding a controller, but maybe he forgot something else. Wait, the answer is based on the video. Wait, maybe in the scene, he's not holding something he should. Wait, no, the correct answer here is yes. Wait, no, let's see. Wait, the user wants a yes or no. Let's check the video. In the video, Sheldon is standing, then moves, maybe he forgot his place. But the actual answer from the context: in the show, Sheldon is known for being forgetful, but in this specific scene, maybe he did forget. Wait, the problem is to answer based on the video. Wait, the video shows him moving around, maybe he forgot something. But the answer is yes. Wait, no, maybe not. Wait, the correct answer is yes. Wait, no, let's think again. Wait, the question is \"Did Sheldon forget something?\" In the video, maybe he forgot his controller? No, he's holding it. Wait, maybe he forgot to sit down. But the answer is yes. Wait, no, the correct answer is yes. Wait, no, maybe the answer is no. Wait, I'm confused. Wait, let's check the video. In the video, Sheldon is standing, then moves to sit. Maybe he forgot to sit. But the question is \"Did Sheldon forget something?\" So the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. Sheldon seems to be standing up and holding a controller, which suggests he's actively participating in a game. Wait, did he forget something? Hmm, I don't see any obvious indication that he forgot something in this particular scene. He appears to be fully engaged in the game, and there's no visible item he might have forgotten. Let's break it down further. If he had forgotten something, we might expect to see him looking around or reaching for something, but that's not the case here. Oh, I see, he seems to be focused on the game. Therefore, based on this analysis, it doesn't appear that Sheldon forgot anything.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's look at the video. In the scene, Sheldon is standing and then moves around. The question is if he forgot something. Wait, in the video, maybe there's a moment where he's distracted. But the key is to check if there's a clue. Wait, the problem is to answer yes or no. Let's think. In the context of the show, Sheldon is often forgetful, but here, maybe the action shows he forgot. Wait, the video shows him moving, maybe he forgot his controller? Wait, no, the question is \"Did Sheldon forget something?\" Let's check the frames. In the video, Sheldon is holding a controller, but maybe he forgot something else. Wait, the answer is based on the video. Wait, maybe in the scene, he's not holding something he should. Wait, no, the correct answer here is yes. Wait, no, let's see. Wait, the user wants a yes or no. Let's check the video. In the video, Sheldon is standing, then moves, maybe he forgot his place. But the actual answer from the context: in the show, Sheldon is known for being forgetful, but in this specific scene, maybe he did forget. Wait, the problem is to answer based on the video. Wait, the video shows him moving around, maybe he forgot something. But the answer is yes. Wait, no, maybe not. Wait, the correct answer is yes. Wait, no, let's think again. Wait, the question is \"Did Sheldon forget something?\" In the video, maybe he forgot his controller? No, he's holding it. Wait, maybe he forgot to sit down. But the answer is yes. Wait, no, the correct answer is yes. Wait, no, maybe the answer is no. Wait, I'm confused. Wait, let's check the video. In the video, Sheldon is standing, then moves to sit. Maybe he forgot to sit. But the question is \"Did Sheldon forget something?\" So the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.216857651629641,
+        0.14007381230922694,
+        0.09099007804647437,
+        0.08140538996780172,
+        0.09581796508213722,
+        0.10656221687326804,
+        0.1183589451771503,
+        0.14993394091430043
+      ],
+      "metrics": {
+        "entropy": 2.0294996137414625,
+        "normalized_entropy": 0.9759830094102916,
+        "coefficient_of_variation": 0.32960049542249564,
+        "max_ratio": 0.216857651629641,
+        "min_ratio": 0.08140538996780172
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. The scene is from The Big Bang Theory. Sheldon is in the red shirt. The question is if he forgot something. Wait, in the video, maybe there's a moment where he's acting out of character or something. Wait, the video shows him moving around, but the question is about forgetting. Wait, maybe the context is from a specific episode. Wait, the user is asking based on the video provided. Let me check the frames. The video shows Sheldon standing, then sitting, interacting. But the question is \"Did Sheldon forget something?\" Hmm. Wait, maybe in the context of the show, but the video itself—do we see any indication? Wait, maybe the answer is no, but I need to think. Wait, maybe the question is a trick. Wait, the user wants a yes/no. Let me recall: in some episodes, Sheldon might forget, but in this specific clip, is there a clue? Wait, the video shows him moving, but no clear sign of forgetting. Wait, maybe the answer is no. Wait, but maybe I'm missing something. Wait, the problem is to answer based on the video. Let's see: the video shows the group playing a game, Sheldon is active. Maybe he didn't forget. So answer no.\n</think>\n\nno",
+      "prediction_full": "Got it, let's look at the video. The scene is from The Big Bang Theory. Sheldon is in the red shirt. The question is if he forgot something. Wait, in the video, maybe there's a moment where he's acting out of character or something. Wait, the video shows him moving around, but the question is about forgetting. Wait, maybe the context is from a specific episode. Wait, the user is asking based on the video provided. Let me check the frames. The video shows Sheldon standing, then sitting, interacting. But the question is \"Did Sheldon forget something?\" Hmm. Wait, maybe in the context of the show, but the video itself—do we see any indication? Wait, maybe the answer is no, but I need to think. Wait, maybe the question is a trick. Wait, the user wants a yes/no. Let me recall: in some episodes, Sheldon might forget, but in this specific clip, is there a clue? Wait, the video shows him moving, but no clear sign of forgetting. Wait, maybe the answer is no. Wait, but maybe I'm missing something. Wait, the problem is to answer based on the video. Let's see: the video shows the group playing a game, Sheldon is active. Maybe he didn't forget. So answer no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 273,
+      "frame_ratios": [
+        0.22284685901263776,
+        0.13841886405888604,
+        0.09134886141571816,
+        0.13764501697882958,
+        0.11268186233395748,
+        0.10428788947201105,
+        0.09534554644389312,
+        0.09742510028406678
+      ],
+      "metrics": {
+        "entropy": 2.032553017182307,
+        "normalized_entropy": 0.977451386077605,
+        "coefficient_of_variation": 0.3257834748641691,
+        "max_ratio": 0.22284685901263776,
+        "min_ratio": 0.09134886141571816
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. Sheldon seems to be in a state of motion, possibly leaving the room. Wait, what could he have forgotten? Hmm, it's not immediately clear from the image alone. Let's break it down: Sheldon is standing and appears to be in the process of leaving, while the others are seated and engaged in an activity, possibly playing a game. Oh, I see, he might have forgotten something important, but what? It's hard to tell from this still image alone. However, given his sudden movement and the context, it's plausible that he might have forgotten something.</think>\n<answer>yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. Sheldon seems to be in a state of motion, possibly leaving the room. Wait, what could he have forgotten? Hmm, it's not immediately clear from the image alone. Let's break it down: Sheldon is standing and appears to be in the process of leaving, while the others are seated and engaged in an activity, possibly playing a game. Oh, I see, he might have forgotten something important, but what? It's hard to tell from this still image alone. However, given his sudden movement and the context, it's plausible that he might have forgotten something.</think>\n<answer>yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 135,
+      "frame_ratios": [
+        0.1903519900090696,
+        0.12590627184649897,
+        0.09383021155252738,
+        0.12065166055185109,
+        0.11298152636019101,
+        0.10223528590447775,
+        0.10620210906562047,
+        0.14784094470976375
+      ],
+      "metrics": {
+        "entropy": 2.0541330503128092,
+        "normalized_entropy": 0.9878291883374699,
+        "coefficient_of_variation": 0.23323658495045377,
+        "max_ratio": 0.1903519900090696,
+        "min_ratio": 0.09383021155252738
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          36,
+          80
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          18,
+          40
+        ],
+        "total_video_tokens": 5760
+      }
+    }
+  ]
+}

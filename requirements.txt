@@ -1,0 +1,8 @@
+accelerate
+matplotlib
+numpy
+opencv-python
+pillow
+torch
+tqdm
+transformers

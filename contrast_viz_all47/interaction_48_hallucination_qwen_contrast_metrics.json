@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "interaction_48_hallucination",
+    "eval_type": "interaction",
+    "index": 48,
+    "side": "hallucination",
+    "video": "48.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/interaction/videos/48.mp4",
+    "question": "Does the man like the coffee?",
+    "answer": "no",
+    "type": null,
+    "predict": "<think>Let me think about this for a moment. The scene shows a man and a woman in a living room setting. The man is playing a keyboard, and the woman seems to be talking to him. There's a coffee cup on the table, but I don't see the man drinking from it in this particular sequence. Wait, does that mean he doesn't like the coffee? Hmm, I need to consider if there's any indication of his preference for coffee in this scene. Oh, I see, there's no clear evidence that he drinks it or expresses a preference for it. Let's break it down: if he didn't drink it, it doesn't necessarily mean he doesn't like it, but there's no indication he does. So, based on this scene alone, I can't confirm that he likes the coffee.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The scene shows a man and a woman in a living room setting. The man is playing a keyboard, and the woman seems to be talking to him. There's a coffee cup on the table, but I don't see the man drinking from it in this particular sequence. Wait, does that mean he doesn't like the coffee? Hmm, I need to consider if there's any indication of his preference for coffee in this scene. Oh, I see, there's no clear evidence that he drinks it or expresses a preference for it. Let's break it down: if he didn't drink it, it doesn't necessarily mean he doesn't like it, but there's no indication he does. So, based on this scene alone, I can't confirm that he likes the coffee.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a man and a woman in a living room setting. The man is playing a keyboard, and the woman seems to be talking to him. There's a coffee cup on the table, but I don't see the man drinking from it in this particular sequence. Wait, does that mean he doesn't like the coffee? Hmm, I need to consider if there's any indication of his preference for coffee in this scene. Oh, I see, there's no clear evidence that he drinks it or expresses a preference for it. Let's break it down: if he didn't drink it, it doesn't necessarily mean he doesn't like it, but there's no indication he does. So, based on this scene alone, I can't confirm that he likes the coffee.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "Got it, let's check the video. In the scene where the man is on the couch, he's holding a coffee cup. Then he stands up and moves, but there's no clear indication he doesn't like it. Wait, the question is if he likes the coffee. But maybe the action of him having it suggests he does. Wait, but maybe there's a detail. Wait, in the video, when he's sitting, he's holding a coffee cup. But does he like it? Hmm. Wait, maybe the answer is yes because he's holding it. But let's think again. Wait, the problem is to answer yes or no. Let's see the context. The man is holding a coffee cup, so maybe he likes it. But maybe not. Wait, maybe the video shows him drinking it. Wait, in the frames, he's holding the cup. But the question is \"Does the man like the coffee?\" So if he's holding it, maybe he does. But maybe there's a trick. Wait, maybe he's not drinking it. Wait, the video shows him holding the cup, but no action of drinking. Hmm. Wait, maybe the answer is yes. Wait, but maybe not. Wait, let's check the video again. The man is sitting on the couch, holding a coffee cup. Then he stands up. But there's no indication he dislikes it. So maybe the answer is yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The scene shows a man and a woman in a living room setting. The man is playing a keyboard, and the woman seems to be talking to him. There's a coffee cup on the table, but I don't see the man drinking from it in this particular sequence. Wait, does that mean he doesn't like the coffee? Hmm, I need to consider if there's any indication of his preference for coffee in this scene. Oh, I see, there's no clear evidence that he drinks it or expresses a preference for it. Let's break it down: if he didn't drink it, it doesn't necessarily mean he doesn't like it, but there's no indication he does. So, based on this scene alone, I can't confirm that he likes the coffee.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "Got it, let's check the video. In the scene where the man is on the couch, he's holding a coffee cup. Then he stands up and moves, but there's no clear indication he doesn't like it. Wait, the question is if he likes the coffee. But maybe the action of him having it suggests he does. Wait, but maybe there's a detail. Wait, in the video, when he's sitting, he's holding a coffee cup. But does he like it? Hmm. Wait, maybe the answer is yes because he's holding it. But let's think again. Wait, the problem is to answer yes or no. Let's see the context. The man is holding a coffee cup, so maybe he likes it. But maybe not. Wait, maybe the video shows him drinking it. Wait, in the frames, he's holding the cup. But the question is \"Does the man like the coffee?\" So if he's holding it, maybe he does. But maybe there's a trick. Wait, maybe he's not drinking it. Wait, the video shows him holding the cup, but no action of drinking. Hmm. Wait, maybe the answer is yes. Wait, but maybe not. Wait, let's check the video again. The man is sitting on the couch, holding a coffee cup. Then he stands up. But there's no indication he dislikes it. So maybe the answer is yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\interaction_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\interaction_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\interaction_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "yes",
+      "prediction_full": "yes<|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.24700795683980148,
+        0.1190447464941164,
+        0.06613322101037127,
+        0.07754769632415115,
+        0.08998036049379556,
+        0.09722418720930118,
+        0.11197360932925308,
+        0.1910882222992099
+      ],
+      "metrics": {
+        "entropy": 1.9813711458637724,
+        "normalized_entropy": 0.9528381087660492,
+        "coefficient_of_variation": 0.4662500297240196,
+        "max_ratio": 0.24700795683980148,
+        "min_ratio": 0.06613322101037127
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          28,
+          60
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          14,
+          30
+        ],
+        "total_video_tokens": 3360
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "Got it, let's look at the video. In the scene, the man is on the couch, and there's a coffee cup on the table. Then he stands up and moves towards the coffee. Wait, the question is if he likes the coffee. But the video doesn't show him drinking it or expressing preference. Wait, maybe the action of him moving towards the coffee? Wait, no. Let me check again. The video shows the man standing up, maybe he's going to get the coffee. But does that mean he likes it? Hmm. Wait, maybe the context. Wait, the problem is to answer yes or no. But the video might not show him liking it. Wait, maybe the answer is no? Wait, no, maybe I'm missing something. Wait, the man is on the couch, then he stands up. The coffee cup is on the table. Maybe he's going to drink it, so he likes it? But the question is \"Does the man like the coffee?\" Without explicit action, but maybe the context. Wait, maybe the answer is no. Wait, no, let's think. Wait, in the video, when he stands up, maybe he's about to take the coffee. But the question is about liking. Hmm. Wait, maybe the answer is no. Wait, no, maybe I need to check the video again. Wait, the video shows the man and woman on the couch. Then the man stands up, and the woman is holding a cup. Wait, no, the coffee cup is on the table. Wait, maybe the man is going to drink it, so he likes it. But the question is to answer yes or no. Wait, maybe the answer is yes. Wait, but how do I know? Wait, maybe the video doesn't show him drinking, but the action of moving towards it implies he likes it. But maybe not. Wait, maybe the answer is no. Wait, I'm confused. Wait, let's look at the timestamps. The man stands up at around 27-30 seconds. The coffee cup is on the table. Maybe he's going to drink it, so he likes it. So answer yes. But maybe not. Wait, the problem is to answer based on the video. Since the video shows him moving towards the coffee, maybe he likes it. So yes.\n</think>\n\nno",
+      "prediction_full": "Got it, let's look at the video. In the scene, the man is on the couch, and there's a coffee cup on the table. Then he stands up and moves towards the coffee. Wait, the question is if he likes the coffee. But the video doesn't show him drinking it or expressing preference. Wait, maybe the action of him moving towards the coffee? Wait, no. Let me check again. The video shows the man standing up, maybe he's going to get the coffee. But does that mean he likes it? Hmm. Wait, maybe the context. Wait, the problem is to answer yes or no. But the video might not show him liking it. Wait, maybe the answer is no? Wait, no, maybe I'm missing something. Wait, the man is on the couch, then he stands up. The coffee cup is on the table. Maybe he's going to drink it, so he likes it? But the question is \"Does the man like the coffee?\" Without explicit action, but maybe the context. Wait, maybe the answer is no. Wait, no, let's think. Wait, in the video, when he stands up, maybe he's about to take the coffee. But the question is about liking. Hmm. Wait, maybe the answer is no. Wait, no, maybe I need to check the video again. Wait, the video shows the man and woman on the couch. Then the man stands up, and the woman is holding a cup. Wait, no, the coffee cup is on the table. Wait, maybe the man is going to drink it, so he likes it. But the question is to answer yes or no. Wait, maybe the answer is yes. Wait, but how do I know? Wait, maybe the video doesn't show him drinking, but the action of moving towards it implies he likes it. But maybe not. Wait, maybe the answer is no. Wait, I'm confused. Wait, let's look at the timestamps. The man stands up at around 27-30 seconds. The coffee cup is on the table. Maybe he's going to drink it, so he likes it. So answer yes. But maybe not. Wait, the problem is to answer based on the video. Since the video shows him moving towards the coffee, maybe he likes it. So yes.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 487,
+      "frame_ratios": [
+        0.2908080816268921,
+        0.13213284313678741,
+        0.08596436679363251,
+        0.10094250738620758,
+        0.08798567205667496,
+        0.07832898199558258,
+        0.10262635350227356,
+        0.12121119350194931
+      ],
+      "metrics": {
+        "entropy": 1.9718029431983295,
+        "normalized_entropy": 0.9482367759208309,
+        "coefficient_of_variation": 0.5192989158597459,
+        "max_ratio": 0.2908080816268921,
+        "min_ratio": 0.07832898199558258
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          28,
+          60
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          14,
+          30
+        ],
+        "total_video_tokens": 3360
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The scene shows a man and a woman in a living room setting. The man is sitting on a couch with a laptop, and the woman is talking to him. There's a coffee table in front of them with a cup on it. The woman seems to be explaining something to the man, and at one point, she hands him a cup. Now, does the man like the coffee?\n\nHmm, I need to consider the context. The man is shown holding the cup after the woman hands it to him. His facial expression doesn't seem particularly positive or negative. Wait, does he actually take a sip? Oh, I see, he doesn't actually drink from it in the scene. Let's break it down further. If he didn't drink it, we can't really determine his preference from this scene alone. However, given that he doesn't show any signs of rejecting it, it's possible he might like it, but we can't be certain.\n\nReflecting on this, I think the best answer based on the given options and the scene is to assume he doesn't show any clear dislike.</think>\n<answer>yes</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The scene shows a man and a woman in a living room setting. The man is sitting on a couch with a laptop, and the woman is talking to him. There's a coffee table in front of them with a cup on it. The woman seems to be explaining something to the man, and at one point, she hands him a cup. Now, does the man like the coffee?\n\nHmm, I need to consider the context. The man is shown holding the cup after the woman hands it to him. His facial expression doesn't seem particularly positive or negative. Wait, does he actually take a sip? Oh, I see, he doesn't actually drink from it in the scene. Let's break it down further. If he didn't drink it, we can't really determine his preference from this scene alone. However, given that he doesn't show any signs of rejecting it, it's possible he might like it, but we can't be certain.\n\nReflecting on this, I think the best answer based on the given options and the scene is to assume he doesn't show any clear dislike.</think>\n<answer>yes</answer><|im_end|>",
+      "extracted_answer": "yes",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 242,
+      "frame_ratios": [
+        0.2546700759330369,
+        0.10484247342221518,
+        0.09233539276315592,
+        0.11243232004546165,
+        0.10600181353086789,
+        0.08185360336740007,
+        0.11277984491646752,
+        0.13508447602139484
+      ],
+      "metrics": {
+        "entropy": 2.0097741209712896,
+        "normalized_entropy": 0.9664970525440851,
+        "coefficient_of_variation": 0.40908824567788177,
+        "max_ratio": 0.2546700759330369,
+        "min_ratio": 0.08185360336740007
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          28,
+          60
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          14,
+          30
+        ],
+        "total_video_tokens": 3360
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "case": {
+    "case_id": "semantic_81_hallucination",
+    "eval_type": "semantic",
+    "index": 81,
+    "side": "hallucination",
+    "video": "jubrtJMjQwg_b.mp4",
+    "video_path": "/data1/liugengyuan/datasets/VideoHallucer/semantic_detail/videos/jubrtJMjQwg_b.mp4",
+    "question": "Does 'THA106' displayed in the video?",
+    "answer": "no",
+    "type": "semantic_detail",
+    "predict": "<think>Let me think about this for a moment. The video frames I'm looking at show a title screen with Thai text and some film-related graphics. I don't see any 'THA106' text on these frames. Wait, could it be hidden somewhere? Hmm, I'll double-check the frames again. Oh, I see, there's no 'THA106' displayed anywhere in these frames. Let's break it down: the text is in Thai, and there are no alphanumeric codes like 'THA106' visible. I'm quite confident in this conclusion after verifying the frames thoroughly.</think>\n<answer>no</answer>",
+    "predict_full": "<think>Let me think about this for a moment. The video frames I'm looking at show a title screen with Thai text and some film-related graphics. I don't see any 'THA106' text on these frames. Wait, could it be hidden somewhere? Hmm, I'll double-check the frames again. Oh, I see, there's no 'THA106' displayed anywhere in these frames. Let's break it down: the text is in Thai, and there are no alphanumeric codes like 'THA106' visible. I'm quite confident in this conclusion after verifying the frames thoroughly.</think>\n<answer>no</answer><|im_end|>",
+    "extracted_answer": "no",
+    "correctness": {
+      "favor": true,
+      "instruct": false,
+      "thinking": false
+    },
+    "extracted_answers": {
+      "favor": "no",
+      "instruct": "yes",
+      "thinking": "yes"
+    },
+    "predictions": {
+      "favor": "<think>Let me think about this for a moment. The video frames I'm looking at show a title screen with Thai text and some film-related graphics. I don't see any 'THA106' text on these frames. Wait, could it be hidden somewhere? Hmm, I'll double-check the frames again. Oh, I see, there's no 'THA106' displayed anywhere in these frames. Let's break it down: the text is in Thai, and there are no alphanumeric codes like 'THA106' visible. I'm quite confident in this conclusion after verifying the frames thoroughly.</think>\n<answer>no</answer>",
+      "instruct": "yes",
+      "thinking": "So, let's check the video frames. The user provided frames, and in the last frame (frame 4), there's text \"THA106\" visible. So the answer should be yes.\n</think>\n\nyes"
+    },
+    "predictions_full": {
+      "favor": "<think>Let me think about this for a moment. The video frames I'm looking at show a title screen with Thai text and some film-related graphics. I don't see any 'THA106' text on these frames. Wait, could it be hidden somewhere? Hmm, I'll double-check the frames again. Oh, I see, there's no 'THA106' displayed anywhere in these frames. Let's break it down: the text is in Thai, and there are no alphanumeric codes like 'THA106' visible. I'm quite confident in this conclusion after verifying the frames thoroughly.</think>\n<answer>no</answer><|im_end|>",
+      "instruct": "yes<|im_end|>",
+      "thinking": "So, let's check the video frames. The user provided frames, and in the last frame (frame 4), there's text \"THA106\" visible. So the answer should be yes.\n</think>\n\nyes<|im_end|>"
+    },
+    "source_prediction_files": {
+      "favor": "outputs\\organized\\predictions\\favor\\semantic_predictions.json",
+      "instruct": "outputs\\organized\\predictions\\instruct\\semantic_predictions.json",
+      "thinking": "outputs\\organized\\predictions\\thinking\\semantic_predictions.json"
+    }
+  },
+  "models": [
+    {
+      "label": "Qwen3-VL-Instruct",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+      "prediction": "no",
+      "prediction_full": "no<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 1,
+      "frame_ratios": [
+        0.276536331059379,
+        0.12163595220855128,
+        0.09336798151153422,
+        0.07280510284278005,
+        0.07827197352123398,
+        0.10025028361564886,
+        0.08930701296665453,
+        0.16782536227421807
+      ],
+      "metrics": {
+        "entropy": 1.969122472769457,
+        "normalized_entropy": 0.9469477421225029,
+        "coefficient_of_variation": 0.5107134321975482,
+        "max_ratio": 0.276536331059379,
+        "min_ratio": 0.07280510284278005
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          20,
+          36
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          10,
+          18
+        ],
+        "total_video_tokens": 1440
+      }
+    },
+    {
+      "label": "Qwen3-VL-Thinking",
+      "model_path": "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
+      "prediction": "So, let's check the video frames. The first frame shows a person, then the next frames have Thai text. The question is if 'THA106' is displayed. Looking at the frames: the second frame has Thai text \"การพูดแนะนำหนังสือ\" and a film camera icon. There's no 'THA106' visible in any of the frames. So the answer is no.\n</think>\n\nno",
+      "prediction_full": "So, let's check the video frames. The first frame shows a person, then the next frames have Thai text. The question is if 'THA106' is displayed. Looking at the frames: the second frame has Thai text \"การพูดแนะนำหนังสือ\" and a film camera icon. There's no 'THA106' visible in any of the frames. So the answer is no.\n</think>\n\nno<|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 92,
+      "frame_ratios": [
+        0.34674128631695145,
+        0.1785143898538173,
+        0.10223469061974666,
+        0.06989899225608265,
+        0.0637107784769626,
+        0.06307247979139924,
+        0.06876985677503156,
+        0.1070575259100085
+      ],
+      "metrics": {
+        "entropy": 1.8670056215138573,
+        "normalized_entropy": 0.8978399171566197,
+        "coefficient_of_variation": 0.7302740097369127,
+        "max_ratio": 0.34674128631695145,
+        "min_ratio": 0.06307247979139924
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          20,
+          36
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          10,
+          18
+        ],
+        "total_video_tokens": 1440
+      }
+    },
+    {
+      "label": "FAVOR",
+      "model_path": "/data1/liugengyuan/models/FAVOR0.5-8B",
+      "prediction": "<think>Let me think about this for a moment. The video frames provided show a young girl and some text in Thai. There's also a clapperboard with some text on it. Now, I need to check if 'THA106' is displayed anywhere in these frames. Hmm, let's break it down. The text on the clapperboard seems to have some numbers and letters, but I need to verify if 'THA106' is among them. Oh, I see, the clapperboard does have 'THA106' written on it. So, it seems that 'THA106' is indeed displayed in the video.</think>\n<answer>No</answer>",
+      "prediction_full": "<think>Let me think about this for a moment. The video frames provided show a young girl and some text in Thai. There's also a clapperboard with some text on it. Now, I need to check if 'THA106' is displayed anywhere in these frames. Hmm, let's break it down. The text on the clapperboard seems to have some numbers and letters, but I need to verify if 'THA106' is among them. Oh, I see, the clapperboard does have 'THA106' written on it. So, it seems that 'THA106' is indeed displayed in the video.</think>\n<answer>No</answer><|im_end|>",
+      "extracted_answer": "no",
+      "layers": [
+        35
+      ],
+      "num_replayed_tokens": 147,
+      "frame_ratios": [
+        0.32681661357258834,
+        0.14740463871650936,
+        0.1112827269541811,
+        0.07756975922629596,
+        0.07825486245371606,
+        0.0811608272617932,
+        0.0818375336850057,
+        0.09567303812991027
+      ],
+      "metrics": {
+        "entropy": 1.9229346500640996,
+        "normalized_entropy": 0.924736094533677,
+        "coefficient_of_variation": 0.6356084002661003,
+        "max_ratio": 0.32681661357258834,
+        "min_ratio": 0.07756975922629596
+      },
+      "frame_map": {
+        "num_bins": 8,
+        "grid_thw": [
+          8,
+          20,
+          36
+        ],
+        "merge_size": 2,
+        "temporal_patch_size": 2,
+        "heatmap_shape": [
+          10,
+          18
+        ],
+        "total_video_tokens": 1440
+      }
+    }
+  ]
+}
