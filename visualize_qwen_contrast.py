@@ -35,6 +35,7 @@ from favor_utils import (
 from visualize_frame_attention import (
     DecoderAttentionCollector,
     filter_generated_ids,
+    heatmap_list_to_array,
     reduce_attention_records,
     replay_generated_tokens,
     token_scores_to_frame_outputs,
@@ -186,7 +187,12 @@ def compute_attention_with_loaded_model(
         layer_ids=layer_ids,
         total_video_tokens=frame_map["total_video_tokens"],
     )
-    ratios, heatmaps = token_scores_to_frame_outputs(token_scores, frame_map)
+    ratios, heatmaps, raw_heatmaps = token_scores_to_frame_outputs(
+        token_scores,
+        frame_map,
+        norm_mode=args.heatmap_norm,
+        ratio_power=args.ratio_power,
+    )
     frame_indices = frame_indices_from_metadata(
         metadata,
         num_bins=frame_map["num_bins"],
@@ -204,9 +210,12 @@ def compute_attention_with_loaded_model(
         "num_replayed_tokens": int(replay_ids.shape[1]),
         "frame_ratios": ratios,
         "metrics": attention_metrics(ratios),
+        "heatmap_norm": args.heatmap_norm,
+        "ratio_power": args.ratio_power,
         "frame_map": {key: value for key, value in frame_map.items() if key != "frame_slices"},
         "frames": frames,
         "heatmaps": heatmaps,
+        "raw_heatmaps": raw_heatmaps,
         "token_scores": token_scores,
     }
 
@@ -247,10 +256,13 @@ def save_comparison_figure(
                 continue
             frame = frames[frame_idx] if frame_idx < len(frames) else np.zeros((224, 224, 3), dtype=np.uint8)
             ax.imshow(frame)
+            heatmap = np.clip(np.asarray(heatmaps[frame_idx]), 0.0, 1.0)
             ax.imshow(
-                heatmaps[frame_idx],
+                heatmap,
                 cmap="jet",
                 alpha=overlay_alpha,
+                vmin=0.0,
+                vmax=1.0,
                 interpolation="bilinear",
                 extent=(0, frame.shape[1], frame.shape[0], 0),
             )
@@ -291,6 +303,8 @@ def save_outputs(output_dir: Path, case: Dict[str, Any], results: Sequence[Dict[
 
     metrics_payload = {
         "case": case,
+        "heatmap_norm": results[0]["heatmap_norm"] if results else None,
+        "ratio_power": results[0]["ratio_power"] if results else None,
         "models": [
             {
                 "label": result["label"],
@@ -302,6 +316,8 @@ def save_outputs(output_dir: Path, case: Dict[str, Any], results: Sequence[Dict[
                 "num_replayed_tokens": result["num_replayed_tokens"],
                 "frame_ratios": result["frame_ratios"],
                 "metrics": result["metrics"],
+                "heatmap_norm": result["heatmap_norm"],
+                "ratio_power": result["ratio_power"],
                 "frame_map": result["frame_map"],
             }
             for result in results
@@ -314,7 +330,12 @@ def save_outputs(output_dir: Path, case: Dict[str, Any], results: Sequence[Dict[
         np.savez_compressed(
             output_dir / f"{stem}_{safe_label}_attention.npz",
             token_scores=result["token_scores"],
+            ratios=np.asarray(result["frame_ratios"]),
             frame_ratios=np.asarray(result["frame_ratios"]),
+            heatmaps=heatmap_list_to_array(result["heatmaps"]),
+            raw_heatmaps=heatmap_list_to_array(result["raw_heatmaps"]),
+            heatmap_norm=result["heatmap_norm"],
+            ratio_power=np.asarray(result["ratio_power"]),
             layers=np.asarray(result["layers"]),
         )
 
@@ -358,6 +379,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--attn_implementation", type=str, default=None)
     parser.add_argument("--cols", type=int, default=4)
     parser.add_argument("--overlay_alpha", type=float, default=0.55)
+    parser.add_argument("--heatmap_norm", choices=["local", "global", "ratio_scaled"], default="ratio_scaled")
+    parser.add_argument("--ratio_power", type=float, default=0.5)
     return parser.parse_args()
 
 

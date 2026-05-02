@@ -212,28 +212,89 @@ def reduce_attention_records(
 def token_scores_to_frame_outputs(
     token_scores: np.ndarray,
     frame_map: Dict[str, Any],
-) -> Tuple[List[float], List[np.ndarray]]:
-    ratios: List[float] = []
+    norm_mode: str = "ratio_scaled",
+    ratio_power: float = 0.5,
+    eps: float = 1e-8,
+) -> Tuple[List[float], List[np.ndarray], List[np.ndarray]]:
+    return _token_scores_to_frame_outputs_impl(
+        token_scores,
+        frame_map,
+        norm_mode=norm_mode,
+        ratio_power=ratio_power,
+        eps=eps,
+    )
+
+
+def local_minmax_heatmap(hm_raw: np.ndarray, eps: float = 1e-8) -> np.ndarray:
+    hm_min = float(hm_raw.min())
+    hm_max = float(hm_raw.max())
+    if hm_max <= hm_min:
+        return np.zeros_like(hm_raw, dtype=np.float64)
+    return (hm_raw - hm_min) / (hm_max - hm_min + eps)
+
+
+def _token_scores_to_frame_outputs_impl(
+    token_scores: np.ndarray,
+    frame_map: Dict[str, Any],
+    norm_mode: str = "ratio_scaled",
+    ratio_power: float = 0.5,
+    eps: float = 1e-8,
+) -> Tuple[List[float], List[np.ndarray], List[np.ndarray]]:
+    if norm_mode not in {"local", "global", "ratio_scaled"}:
+        raise ValueError(f"Unsupported heatmap norm_mode: {norm_mode}")
+
+    scores = np.asarray(token_scores, dtype=np.float64)
+    raw_ratios: List[float] = []
     heatmaps: List[np.ndarray] = []
+    raw_heatmaps: List[np.ndarray] = []
     default_shape = tuple(frame_map["heatmap_shape"])
 
     for _, start, end in frame_map["frame_slices"]:
-        frame_scores = token_scores[start:end]
-        ratios.append(float(frame_scores.sum()))
+        frame_scores = scores[start:end]
+        raw_ratios.append(float(frame_scores.sum()))
         shape = default_shape
         if int(np.prod(shape)) != len(frame_scores):
             shape = infer_grid_shape(len(frame_scores))
-        heatmap = frame_scores.reshape(shape)
-        if heatmap.max() > heatmap.min():
-            heatmap = (heatmap - heatmap.min()) / (heatmap.max() - heatmap.min())
-        else:
-            heatmap = np.zeros_like(heatmap)
-        heatmaps.append(heatmap)
+        raw_heatmaps.append(frame_scores.reshape(shape))
 
-    ratio_sum = sum(ratios)
-    if ratio_sum > 0:
-        ratios = [r / ratio_sum for r in ratios]
-    return ratios, heatmaps
+    score_sum = float(scores.sum())
+    ratio_denominator = score_sum if score_sum > 0 else eps
+    ratios = [float(r / ratio_denominator) for r in raw_ratios]
+
+    global_max = float(scores.max()) if scores.size else 0.0
+    max_ratio = max(ratios) if ratios else 0.0
+
+    for hm_raw, ratio in zip(raw_heatmaps, ratios):
+        if norm_mode == "local":
+            heatmap = local_minmax_heatmap(hm_raw, eps=eps)
+        elif norm_mode == "global":
+            if global_max > 0:
+                heatmap = hm_raw / global_max
+            else:
+                heatmap = np.zeros_like(hm_raw, dtype=np.float64)
+        else:
+            hm_local = local_minmax_heatmap(hm_raw, eps=eps)
+            if max_ratio > 0:
+                scale_base = max(ratio, 0.0) / max_ratio
+                scale = scale_base ** ratio_power if scale_base > 0 or ratio_power >= 0 else 0.0
+            else:
+                scale = 0.0
+            heatmap = hm_local * scale
+        heatmaps.append(np.clip(heatmap, 0.0, 1.0))
+
+    return ratios, heatmaps, raw_heatmaps
+
+
+def heatmap_list_to_array(heatmaps: Sequence[np.ndarray]) -> np.ndarray:
+    if not heatmaps:
+        return np.empty((0,), dtype=np.float32)
+    try:
+        return np.stack([np.asarray(hm, dtype=np.float32) for hm in heatmaps], axis=0)
+    except ValueError:
+        output = np.empty((len(heatmaps),), dtype=object)
+        for idx, heatmap in enumerate(heatmaps):
+            output[idx] = np.asarray(heatmap, dtype=np.float32)
+        return output
 
 
 def save_attention_figure(
@@ -266,7 +327,16 @@ def save_attention_figure(
         else:
             frame = np.zeros((224, 224, 3), dtype=np.uint8)
         ax.imshow(frame)
-        ax.imshow(heatmaps[idx], cmap="jet", alpha=overlay_alpha, interpolation="bilinear", extent=(0, frame.shape[1], frame.shape[0], 0))
+        heatmap = np.clip(np.asarray(heatmaps[idx]), 0.0, 1.0)
+        ax.imshow(
+            heatmap,
+            cmap="jet",
+            alpha=overlay_alpha,
+            vmin=0.0,
+            vmax=1.0,
+            interpolation="bilinear",
+            extent=(0, frame.shape[1], frame.shape[0], 0),
+        )
         ax.set_title(f"Frame {idx}\nRatio: {ratios[idx] * 100:.2f}%", fontsize=10, fontweight="bold")
 
     wrapped_q = "\n".join(textwrap.wrap(f"Q: {question}", width=110))
@@ -371,6 +441,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--attn_implementation", type=str, default=None, help="Keep default/fast backend; selected decode steps are forced to eager inside hooks.")
     parser.add_argument("--cols", type=int, default=4)
     parser.add_argument("--overlay_alpha", type=float, default=0.55)
+    parser.add_argument("--heatmap_norm", choices=["local", "global", "ratio_scaled"], default="ratio_scaled")
+    parser.add_argument("--ratio_power", type=float, default=0.5)
     return parser.parse_args()
 
 
@@ -448,7 +520,12 @@ def main() -> None:
         layer_ids=layer_ids,
         total_video_tokens=frame_map["total_video_tokens"],
     )
-    ratios, heatmaps = token_scores_to_frame_outputs(token_scores, frame_map)
+    ratios, heatmaps, raw_heatmaps = token_scores_to_frame_outputs(
+        token_scores,
+        frame_map,
+        norm_mode=args.heatmap_norm,
+        ratio_power=args.ratio_power,
+    )
 
     frame_indices = frame_indices_from_metadata(
         metadata,
@@ -486,6 +563,8 @@ def main() -> None:
         "layers": layer_ids,
         "num_replayed_tokens": int(replay_ids.shape[1]),
         "frame_ratios": ratios,
+        "heatmap_norm": args.heatmap_norm,
+        "ratio_power": args.ratio_power,
         "uniform_ratio": 1.0 / len(ratios) if ratios else 0.0,
         "metrics": attention_metrics(ratios),
         "frame_map": {
@@ -495,7 +574,17 @@ def main() -> None:
         },
     }
     write_json(metrics_path, metrics)
-    np.savez_compressed(npz_path, token_scores=token_scores, frame_ratios=np.asarray(ratios), layers=np.asarray(layer_ids))
+    np.savez_compressed(
+        npz_path,
+        token_scores=token_scores,
+        ratios=np.asarray(ratios),
+        frame_ratios=np.asarray(ratios),
+        heatmaps=heatmap_list_to_array(heatmaps),
+        raw_heatmaps=heatmap_list_to_array(raw_heatmaps),
+        heatmap_norm=args.heatmap_norm,
+        ratio_power=np.asarray(args.ratio_power),
+        layers=np.asarray(layer_ids),
+    )
 
     print(f"prediction: {prediction}")
     print(f"attention figure: {fig_path}")
