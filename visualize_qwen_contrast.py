@@ -34,10 +34,10 @@ from favor_utils import (
 )
 from visualize_frame_attention import (
     DecoderAttentionCollector,
-    filter_generated_ids,
     heatmap_list_to_array,
     reduce_attention_records,
     replay_generated_tokens,
+    select_final_answer_replay_tokens,
     token_scores_to_frame_outputs,
 )
 
@@ -171,14 +171,19 @@ def compute_attention_with_loaded_model(
     )
     decoded = decode_generated_outputs(processor, generated_ids)
     prediction = decoded["text"]
-    replay_ids = filter_generated_ids(processor, generated_ids)
+    replay_ids, collect_steps, replay_selection = select_final_answer_replay_tokens(
+        processor,
+        generated_ids,
+        decoded["extracted_answer"],
+    )
     if replay_ids.numel() == 0:
         raise RuntimeError(f"{label} produced no generated tokens to replay.")
+    print(f"[{label}] selected answer token={replay_selection['selected_token_text']!r} step={collect_steps[0]}")
 
     collector = DecoderAttentionCollector(decoder_layers, layer_ids, video_positions)
     collector.install()
     try:
-        replay_generated_tokens(model, inputs, replay_ids, collector)
+        replay_generated_tokens(model, inputs, replay_ids, collector, collect_token_indices=collect_steps)
     finally:
         collector.restore()
 
@@ -208,6 +213,8 @@ def compute_attention_with_loaded_model(
         "extracted_answer": decoded["extracted_answer"],
         "layers": layer_ids,
         "num_replayed_tokens": int(replay_ids.shape[1]),
+        "num_collected_tokens": len(collect_steps),
+        **replay_selection,
         "frame_ratios": ratios,
         "metrics": attention_metrics(ratios),
         "heatmap_norm": args.heatmap_norm,
@@ -314,6 +321,14 @@ def save_outputs(output_dir: Path, case: Dict[str, Any], results: Sequence[Dict[
                 "extracted_answer": result["extracted_answer"],
                 "layers": result["layers"],
                 "num_replayed_tokens": result["num_replayed_tokens"],
+                "num_collected_tokens": result["num_collected_tokens"],
+                "replay_token_mode": result["replay_token_mode"],
+                "total_response_tokens": result["total_response_tokens"],
+                "total_filtered_response_tokens": result["total_filtered_response_tokens"],
+                "selected_replay_steps": result["selected_replay_steps"],
+                "selected_token_id": result["selected_token_id"],
+                "selected_token_text": result["selected_token_text"],
+                "selected_answer": result["selected_answer"],
                 "frame_ratios": result["frame_ratios"],
                 "metrics": result["metrics"],
                 "heatmap_norm": result["heatmap_norm"],

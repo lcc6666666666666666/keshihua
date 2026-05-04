@@ -2,7 +2,6 @@ import argparse
 import gc
 import math
 import os
-import re
 import types
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
@@ -29,8 +28,9 @@ from favor_utils import (
     write_json,
 )
 from visualize_frame_attention import (
-    filter_generated_ids,
+    NoFinalAnswerTokenError,
     replay_generated_tokens,
+    select_final_answer_replay_tokens,
 )
 
 
@@ -43,16 +43,6 @@ DEFAULT_QWEN3_VL_THINKING_MODEL_PATH = os.environ.get(
     "QWEN3_VL_THINKING_MODEL_PATH",
     "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
 )
-YES_NO_TOKEN_RE = re.compile(r"\b(yes|no)\b", re.IGNORECASE)
-
-
-def clear_cuda_cache() -> None:
-    if not torch.cuda.is_available():
-        return
-    try:
-        torch.cuda.empty_cache()
-    except RuntimeError as exc:
-        print(f"[WARN] torch.cuda.empty_cache failed after an earlier CUDA error: {exc}")
 
 
 class LayerFrameEntropyCollector:
@@ -62,22 +52,16 @@ class LayerFrameEntropyCollector:
         layer_ids: Sequence[int],
         video_positions: torch.Tensor,
         frame_slices: Sequence[Tuple[int, int, int]],
-        collect_steps: Optional[Sequence[int]] = None,
         eps: float = 1e-12,
     ) -> None:
         self.layers = layers
         self.layer_ids = list(layer_ids)
         self.video_positions = video_positions
         self.frame_slices = list(frame_slices)
-        self.collect_steps = None if collect_steps is None else set(int(step) for step in collect_steps)
-        self.current_step: Optional[int] = None
         self.eps = eps
         self.enabled = False
         self._originals: List[Tuple[Any, Any]] = []
         self.records: Dict[int, List[Dict[str, float]]] = {idx: [] for idx in self.layer_ids}
-
-    def should_collect_current_step(self) -> bool:
-        return self.collect_steps is None or self.current_step in self.collect_steps
 
     def install(self) -> None:
         for layer_idx in self.layer_ids:
@@ -91,7 +75,6 @@ class LayerFrameEntropyCollector:
                     hidden_states = args[0]
                 should_collect = (
                     collector.enabled
-                    and collector.should_collect_current_step()
                     and torch.is_tensor(hidden_states)
                     and hidden_states.ndim >= 3
                     and hidden_states.shape[1] == 1
@@ -216,72 +199,6 @@ def parse_layer_ids(args: argparse.Namespace, total_layers: int) -> List[int]:
     return valid
 
 
-def decode_single_token(processor: Any, token_id: int) -> str:
-    tokenizer = getattr(processor, "tokenizer", processor)
-    if hasattr(tokenizer, "decode"):
-        try:
-            return tokenizer.decode([int(token_id)], skip_special_tokens=True, clean_up_tokenization_spaces=False)
-        except TypeError:
-            return tokenizer.decode([int(token_id)], skip_special_tokens=True)
-    return str(token_id)
-
-
-def is_yes_no_token_text(text: str) -> bool:
-    stripped = str(text).strip().strip(" .,:;!?\"'`[](){}<>/\n\t").lower()
-    return stripped in {"yes", "no"} or YES_NO_TOKEN_RE.fullmatch(stripped) is not None
-
-
-def find_last_answer_token_index(processor: Any, replay_ids: torch.Tensor) -> Optional[int]:
-    token_ids = replay_ids[0].detach().cpu().tolist()
-    for idx in range(len(token_ids) - 1, -1, -1):
-        if is_yes_no_token_text(decode_single_token(processor, int(token_ids[idx]))):
-            return idx
-    return None
-
-
-def select_replay_tokens(
-    processor: Any,
-    generated_ids: torch.Tensor,
-    mode: str,
-    max_replay_tokens: Optional[int],
-) -> Tuple[torch.Tensor, Optional[List[int]], Dict[str, Any]]:
-    filtered_ids = filter_generated_ids(processor, generated_ids)
-    if filtered_ids.numel() == 0:
-        return filtered_ids, None, {"replay_token_mode": mode}
-
-    total_tokens = int(filtered_ids.shape[1])
-    if mode == "answer":
-        selected_idx = find_last_answer_token_index(processor, filtered_ids)
-        if selected_idx is None:
-            raise RuntimeError("No yes/no answer token found in generated response; skipping this case in answer-token mode.")
-        replay_ids = filtered_ids[:, : selected_idx + 1]
-        return replay_ids, [selected_idx], {
-            "replay_token_mode": mode,
-            "total_filtered_response_tokens": total_tokens,
-            "selected_replay_steps": [selected_idx],
-            "selected_token_text": decode_single_token(processor, int(filtered_ids[0, selected_idx].detach().cpu())),
-            "answer_token_found": True,
-        }
-
-    if mode == "last":
-        count = total_tokens if max_replay_tokens is None else min(max(1, int(max_replay_tokens)), total_tokens)
-        start = total_tokens - count
-        return filtered_ids, list(range(start, total_tokens)), {
-            "replay_token_mode": mode,
-            "total_filtered_response_tokens": total_tokens,
-            "selected_replay_steps": list(range(start, total_tokens)),
-        }
-
-    replay_ids = filtered_ids
-    if max_replay_tokens is not None:
-        replay_ids = replay_ids[:, : max_replay_tokens]
-    return replay_ids, None, {
-        "replay_token_mode": mode,
-        "total_filtered_response_tokens": total_tokens,
-        "selected_replay_steps": None,
-    }
-
-
 def case_to_record(
     item: Dict[str, Any],
     eval_type: str,
@@ -396,25 +313,28 @@ def compute_case_stats(
         temperature=args.temperature,
     )
     decoded = decode_generated_outputs(processor, generated_ids)
-    replay_ids, collect_steps, replay_selection = select_replay_tokens(
-        processor=processor,
-        generated_ids=generated_ids,
-        mode=args.replay_token_mode,
-        max_replay_tokens=args.max_replay_tokens,
+    replay_ids, collect_steps, replay_selection = select_final_answer_replay_tokens(
+        processor,
+        generated_ids,
+        decoded["extracted_answer"],
     )
     if replay_ids.numel() == 0:
         raise RuntimeError(f"{label} produced no generated tokens to replay.")
+    if args.max_replay_tokens is not None:
+        print(
+            f"[WARN] {label} --max_replay_tokens is ignored in final-answer token mode; "
+            f"replaying {replay_ids.shape[1]} prefix tokens to preserve context."
+        )
 
     collector = LayerFrameEntropyCollector(
         layers=decoder_layers,
         layer_ids=layer_ids,
         video_positions=video_positions,
         frame_slices=frame_map["frame_slices"],
-        collect_steps=collect_steps,
     )
     collector.install()
     try:
-        replay_generated_tokens(model, inputs, replay_ids, collector)
+        replay_generated_tokens(model, inputs, replay_ids, collector, collect_token_indices=collect_steps)
     finally:
         collector.restore()
 
@@ -424,7 +344,8 @@ def compute_case_stats(
 
     del inputs, raw_inputs
     gc.collect()
-    clear_cuda_cache()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
     return {
         "case_id": case.get("case_id", f"{case.get('eval_type')}_{case.get('index')}_{case.get('side')}"),
@@ -438,7 +359,7 @@ def compute_case_stats(
         "prediction_full": decoded["full_text"],
         "extracted_answer": decoded["extracted_answer"],
         "num_replayed_tokens": int(replay_ids.shape[1]),
-        "num_collected_tokens": int(next(iter(layer_stats.values()))["num_response_tokens"]),
+        "num_collected_tokens": len(collect_steps),
         **replay_selection,
         "frame_map": {key: value for key, value in frame_map.items() if key != "frame_slices"},
         "layer_stats": {str(layer): stats for layer, stats in layer_stats.items()},
@@ -450,6 +371,8 @@ def aggregate_model_results(
     model_path: str,
     layer_ids: Sequence[int],
     case_results: Sequence[Dict[str, Any]],
+    total_cases: int,
+    skipped_no_answer_token: int,
 ) -> Dict[str, Any]:
     rows: List[Dict[str, float]] = []
     for layer_idx in layer_ids:
@@ -484,6 +407,9 @@ def aggregate_model_results(
         "label": label,
         "model_path": model_path,
         "layers": list(layer_ids),
+        "num_input_cases": int(total_cases),
+        "num_successful_cases": int(len(case_results)),
+        "num_skipped_no_answer_token": int(skipped_no_answer_token),
         "case_results": list(case_results),
         "layer_summary": rows,
     }
@@ -495,6 +421,9 @@ def write_csv(path: Path, summaries: Sequence[Dict[str, Any]]) -> None:
     fieldnames = [
         "model",
         "model_path",
+        "num_input_cases",
+        "num_successful_cases",
+        "num_skipped_no_answer_token",
         "layer",
         "num_cases",
         "num_response_tokens",
@@ -524,6 +453,9 @@ def write_csv(path: Path, summaries: Sequence[Dict[str, Any]]) -> None:
                 payload = {key: row.get(key, "") for key in fieldnames}
                 payload["model"] = summary["label"]
                 payload["model_path"] = summary["model_path"]
+                payload["num_input_cases"] = summary.get("num_input_cases", "")
+                payload["num_successful_cases"] = summary.get("num_successful_cases", "")
+                payload["num_skipped_no_answer_token"] = summary.get("num_skipped_no_answer_token", "")
                 writer.writerow(payload)
 
 
@@ -577,33 +509,52 @@ def run_model(
         print(f"[{label}] decoder_layers={decoder_path}, selected_layers={layer_ids}")
 
         case_results = []
+        skipped_no_answer_token = 0
         total_cases = len(cases)
         for case_idx, case in enumerate(cases):
             case_id = case.get("case_id", f"{case.get('eval_type')}_{case.get('index')}_{case.get('side')}")
             print(f"[{label}] case {case_idx + 1}/{total_cases}: {case_id}")
             try:
                 case_results.append(compute_case_stats(label, model, processor, decoder_layers, layer_ids, case, args))
+            except NoFinalAnswerTokenError as exc:
+                skipped_no_answer_token += 1
+                print(f"[SKIP] {label} {case_id}: {exc}")
             except Exception as exc:
                 if not args.continue_on_error:
                     raise
                 print(f"[WARN] {label} {case_id}: {type(exc).__name__}: {exc}")
 
         if not case_results:
-            message = f"{label} has no successful cases."
+            message = (
+                f"{label} has no successful cases after skipping "
+                f"{skipped_no_answer_token} cases without final answer tokens."
+            )
             if args.continue_on_error:
                 print(f"[WARN] {message} Skipping this model.")
                 return None
             raise RuntimeError(message)
-        return aggregate_model_results(label, model_path, layer_ids, case_results)
+        print(
+            f"[{label}] successful_cases={len(case_results)}/{total_cases}, "
+            f"skipped_no_answer_token={skipped_no_answer_token}"
+        )
+        return aggregate_model_results(
+            label,
+            model_path,
+            layer_ids,
+            case_results,
+            total_cases=total_cases,
+            skipped_no_answer_token=skipped_no_answer_token,
+        )
     finally:
         del model, processor
         gc.collect()
-        clear_cuda_cache()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Plot layer-wise video-internal frame attention sink metrics for response tokens."
+        description="Plot layer-wise video-internal frame attention sink metrics for the final answer token."
     )
     parser.add_argument("--case_file", type=str, default=None, help="Optional selected case JSON.")
     parser.add_argument("--data_dir", type=str, default=DEFAULT_DATA_DIR)
@@ -640,13 +591,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min_pixels", type=int, default=None)
     parser.add_argument("--max_pixels", type=int, default=None)
     parser.add_argument("--max_new_tokens", type=int, default=1024)
-    parser.add_argument("--max_replay_tokens", type=int, default=None)
-    parser.add_argument(
-        "--replay_token_mode",
-        choices=["all", "last", "answer"],
-        default="all",
-        help="Which response tokens to collect attention for. 'answer' replays the response prefix and collects only the last yes/no token.",
-    )
+    parser.add_argument("--max_replay_tokens", type=int, default=None, help="Ignored in final-answer token mode; kept for old command compatibility.")
     parser.add_argument("--do_sample", action="store_true")
     parser.add_argument("--temperature", type=float, default=0.0)
 
@@ -671,7 +616,7 @@ def main() -> None:
         if summary is not None:
             summaries.append(summary)
     if not summaries:
-        raise RuntimeError("No model has successful cases.")
+        raise RuntimeError("No model has successful cases after skipping cases without final answer tokens.")
 
     output_dir = Path(args.output_dir)
     payload = {
@@ -686,8 +631,8 @@ def main() -> None:
             "num_frames": args.num_frames,
             "max_new_tokens": args.max_new_tokens,
             "max_replay_tokens": args.max_replay_tokens,
-            "replay_token_mode": args.replay_token_mode,
-            "metric_definition": "For each response token and layer: mean heads, sum attention over tokens in each video frame/bin, normalize across video frames, then compute entropy and frame sink metrics.",
+            "replay_token_mode": "final_answer",
+            "metric_definition": "For the final yes/no answer token and each layer: mean heads, sum attention over tokens in each video frame/bin, normalize across video frames, then compute entropy and frame sink metrics.",
             "model_order": args.model_order,
             "model_paths": {
                 "video_ktr": args.video_ktr_model_path,
