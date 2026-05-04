@@ -40,6 +40,10 @@ DEFAULT_VIDEO_R1_MODEL_PATH = os.environ.get("VIDEO_R1_MODEL_PATH", "/data1/liug
 DEFAULT_VIDEO_KTR_MODEL_PATH = os.environ.get("VIDEO_KTR_MODEL_PATH", "/data1/liugengyuan/models/Video-KTR")
 DEFAULT_ONETHINKER_MODEL_PATH = os.environ.get("ONETHINKER_MODEL_PATH", "/data1/liugengyuan/models/OneThinker")
 DEFAULT_AUTO_VIDEO_R1_MODEL_PATH = os.environ.get("AUTO_VIDEO_R1_MODEL_PATH", "/data1/liugengyuan/models/Auto-Video-R1")
+DEFAULT_QWEN3_VL_INSTRUCT_MODEL_PATH = os.environ.get(
+    "QWEN3_VL_INSTRUCT_MODEL_PATH",
+    "/data1/liugengyuan/models/Qwen3-VL-8B-Instruct",
+)
 DEFAULT_QWEN3_VL_THINKING_MODEL_PATH = os.environ.get(
     "QWEN3_VL_THINKING_MODEL_PATH",
     "/data1/liugengyuan/models/Qwen3-VL-8B-Thinking",
@@ -265,6 +269,7 @@ def selected_model_specs(args: argparse.Namespace) -> List[Tuple[str, str]]:
         "video_ktr": ("Video-KTR", args.video_ktr_model_path),
         "onethinker": ("OneThinker", args.onethinker_model_path),
         "auto_video_r1": ("Auto-Video-R1", args.auto_video_r1_model_path),
+        "instruct": ("Qwen3-VL-Instruct", args.instruct_model_path),
         "thinking": ("Qwen3-VL-Thinking", args.thinking_model_path),
     }
     output = [specs[key] for key in args.model_order]
@@ -535,11 +540,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--video_ktr_model_path", type=str, default=DEFAULT_VIDEO_KTR_MODEL_PATH)
     parser.add_argument("--onethinker_model_path", type=str, default=DEFAULT_ONETHINKER_MODEL_PATH)
     parser.add_argument("--auto_video_r1_model_path", type=str, default=DEFAULT_AUTO_VIDEO_R1_MODEL_PATH)
+    parser.add_argument("--instruct_model_path", type=str, default=DEFAULT_QWEN3_VL_INSTRUCT_MODEL_PATH)
     parser.add_argument("--thinking_model_path", type=str, default=DEFAULT_QWEN3_VL_THINKING_MODEL_PATH)
     parser.add_argument(
         "--model_order",
         nargs="+",
-        choices=["favor", "video_r1", "video_ktr", "onethinker", "auto_video_r1", "thinking"],
+        choices=["favor", "video_r1", "video_ktr", "onethinker", "auto_video_r1", "instruct", "thinking"],
         default=["video_ktr", "onethinker", "auto_video_r1", "favor", "thinking"],
     )
 
@@ -599,6 +605,7 @@ def main() -> None:
                 "onethinker": args.onethinker_model_path,
                 "auto_video_r1": args.auto_video_r1_model_path,
                 "favor": args.favor_model_path,
+                "instruct": args.instruct_model_path,
                 "thinking": args.thinking_model_path,
                 "video_r1": args.video_r1_model_path,
             },
