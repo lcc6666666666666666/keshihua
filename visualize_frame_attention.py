@@ -150,6 +150,8 @@ def replay_generated_tokens(
     collector.enabled = True
     with torch.inference_mode():
         for step in range(generated_ids.shape[1]):
+            if hasattr(collector, "current_step"):
+                collector.current_step = step
             token = generated_ids[:, step : step + 1].to(device)
             new_mask = torch.ones((attention_mask.shape[0], 1), dtype=attention_mask.dtype, device=device)
             attention_mask = torch.cat([attention_mask, new_mask], dim=1)
@@ -183,6 +185,8 @@ def replay_generated_tokens(
             outputs = safe_forward(model, step_kwargs)
             past_key_values = outputs.past_key_values
     collector.enabled = False
+    if hasattr(collector, "current_step"):
+        collector.current_step = None
 
 
 def reduce_attention_records(

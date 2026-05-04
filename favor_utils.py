@@ -313,40 +313,81 @@ def load_favor_model(
     device_map: str = "auto",
     attn_implementation: Optional[str] = None,
 ) -> Tuple[Any, Any]:
-    from transformers import AutoProcessor
+    from transformers import AutoConfig, AutoProcessor
 
     dtype_value = parse_dtype(dtype)
+    config_model_type = None
+    try:
+        config = AutoConfig.from_pretrained(model_path, trust_remote_code=True)
+        config_model_type = getattr(config, "model_type", None)
+    except Exception:
+        pass
     processor = AutoProcessor.from_pretrained(model_path, trust_remote_code=True)
 
     model_classes: List[Any] = []
-    try:
-        from transformers import Qwen3VLForConditionalGeneration
 
-        model_classes.append(Qwen3VLForConditionalGeneration)
-    except Exception:
-        pass
-    try:
-        from transformers import Qwen3VLMoeForConditionalGeneration
+    def add_model_class(cls: Any) -> None:
+        if cls not in model_classes:
+            model_classes.append(cls)
 
-        model_classes.append(Qwen3VLMoeForConditionalGeneration)
-    except Exception:
-        pass
+    if config_model_type == "qwen2_5_vl":
+        try:
+            from transformers import Qwen2_5_VLForConditionalGeneration
+
+            add_model_class(Qwen2_5_VLForConditionalGeneration)
+        except Exception:
+            pass
+    elif config_model_type == "qwen2_vl":
+        try:
+            from transformers import Qwen2VLForConditionalGeneration
+
+            add_model_class(Qwen2VLForConditionalGeneration)
+        except Exception:
+            pass
+    elif config_model_type == "qwen3_vl":
+        try:
+            from transformers import Qwen3VLForConditionalGeneration
+
+            add_model_class(Qwen3VLForConditionalGeneration)
+        except Exception:
+            pass
+    elif config_model_type == "qwen3_vl_moe":
+        try:
+            from transformers import Qwen3VLMoeForConditionalGeneration
+
+            add_model_class(Qwen3VLMoeForConditionalGeneration)
+        except Exception:
+            pass
+
+    if config_model_type not in {"qwen2_5_vl", "qwen2_vl"}:
+        try:
+            from transformers import Qwen3VLForConditionalGeneration
+
+            add_model_class(Qwen3VLForConditionalGeneration)
+        except Exception:
+            pass
+        try:
+            from transformers import Qwen3VLMoeForConditionalGeneration
+
+            add_model_class(Qwen3VLMoeForConditionalGeneration)
+        except Exception:
+            pass
     try:
         from transformers import AutoModelForImageTextToText
 
-        model_classes.append(AutoModelForImageTextToText)
+        add_model_class(AutoModelForImageTextToText)
     except Exception:
         pass
     try:
         from transformers import AutoModelForVision2Seq
 
-        model_classes.append(AutoModelForVision2Seq)
+        add_model_class(AutoModelForVision2Seq)
     except Exception:
         pass
     try:
         from transformers import AutoModelForCausalLM
 
-        model_classes.append(AutoModelForCausalLM)
+        add_model_class(AutoModelForCausalLM)
     except Exception:
         pass
 

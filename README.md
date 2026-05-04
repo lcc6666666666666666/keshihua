@@ -192,3 +192,42 @@ The comparison output contains:
 Use `*_qwen_contrast_attention.png` for the paper-style figure, and use
 `normalized_entropy` plus `coefficient_of_variation` in the metrics JSON to support the
 claim that FAVOR is more temporally uniform.
+
+## 5. Layer-Wise Frame Entropy
+
+`plot_layer_frame_entropy.py` computes, for each response token and decoder layer:
+
+1. attention to video tokens,
+2. summed attention inside each temporal frame/bin,
+3. frame-dimension normalization,
+4. softmax over frames,
+5. entropy.
+
+It averages the token-level entropy over 5 samples by default and saves both the entropy
+plot and the frame-0 sink-ratio plot.
+
+```bash
+python plot_layer_frame_entropy.py \
+  --data_dir /data1/liugengyuan/datasets/VideoHallucer \
+  --eval_type fact \
+  --side hallucination \
+  --num_samples 5 \
+  --output_dir result/layer_frame_entropy_5samples \
+  --video_ktr_model_path /data1/liugengyuan/models/Video-KTR \
+  --onethinker_model_path /data1/liugengyuan/models/OneThinker \
+  --auto_video_r1_model_path /data1/liugengyuan/models/Auto-Video-R1 \
+  --favor_model_path /data1/liugengyuan/models/FAVOR0.5-8B \
+  --thinking_model_path /data1/liugengyuan/models/Qwen3-VL-8B-Thinking \
+  --num_frames 16 \
+  --max_new_tokens 128
+```
+
+Outputs:
+
+```text
+layer_frame_entropy.png
+layer_frame_normalized_entropy.png
+layer_frame_sink_ratio.png
+layer_frame_entropy_summary.csv
+layer_frame_entropy_results.json
+```
