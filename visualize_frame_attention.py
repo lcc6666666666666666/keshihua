@@ -1,5 +1,4 @@
 import argparse
-import re
 import textwrap
 import types
 from pathlib import Path
@@ -32,13 +31,6 @@ from favor_utils import (
     strip_model_inputs,
     write_json,
 )
-
-
-ANSWER_TOKEN_RE = re.compile(r"\b(yes|no)\b", re.IGNORECASE)
-
-
-class NoFinalAnswerTokenError(RuntimeError):
-    pass
 
 
 class DecoderAttentionCollector:
@@ -123,102 +115,42 @@ def safe_forward(model: Any, kwargs: Dict[str, Any]) -> Any:
         return model(**kwargs)
 
 
-def filter_generated_ids(processor: Any, generated_ids: torch.Tensor) -> torch.Tensor:
+def non_special_token_mask(processor: Any, generated_ids: torch.Tensor) -> Optional[List[bool]]:
     tokenizer = getattr(processor, "tokenizer", processor)
     special_ids = set(getattr(tokenizer, "all_special_ids", []) or [])
     if not special_ids or generated_ids.shape[0] != 1:
-        return generated_ids
-    kept = [tok for tok in generated_ids[0].tolist() if int(tok) not in special_ids]
-    if not kept:
-        return generated_ids
-    return torch.tensor([kept], dtype=generated_ids.dtype, device=generated_ids.device)
-
-
-def decode_token_ids(processor: Any, token_ids: Sequence[int]) -> str:
-    decoder = processor if hasattr(processor, "batch_decode") else getattr(processor, "tokenizer", processor)
-    ids = [int(token_id) for token_id in token_ids]
-    if hasattr(decoder, "batch_decode"):
-        try:
-            return decoder.batch_decode([ids], skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
-        except TypeError:
-            return decoder.batch_decode([ids], skip_special_tokens=True)[0]
-
-    if hasattr(decoder, "decode"):
-        try:
-            return decoder.decode(ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)
-        except TypeError:
-            return decoder.decode(ids, skip_special_tokens=True)
-    return " ".join(str(token_id) for token_id in ids)
-
-
-def normalize_answer_token(text: Any) -> Optional[str]:
-    matches = ANSWER_TOKEN_RE.findall(str(text or ""))
-    return matches[-1].lower() if matches else None
-
-
-def find_final_answer_token_index(
-    processor: Any,
-    replay_ids: torch.Tensor,
-    extracted_answer: Any = None,
-) -> Optional[int]:
-    if replay_ids.shape[0] != 1:
-        raise ValueError("Final-answer token selection only supports batch size 1.")
-
-    answer = normalize_answer_token(extracted_answer)
-    token_ids = [int(token_id) for token_id in replay_ids[0].detach().cpu().tolist()]
-    candidates: List[int] = []
-    for idx, token_id in enumerate(token_ids):
-        token_text = decode_token_ids(processor, [token_id])
-        token_answers = [match.lower() for match in ANSWER_TOKEN_RE.findall(token_text)]
-        if answer:
-            token_answers = [match for match in token_answers if match == answer]
-        if token_answers:
-            candidates.append(idx)
-    if candidates:
-        return candidates[-1]
-
-    full_text = decode_token_ids(processor, token_ids)
-    if answer:
-        pattern = re.compile(r"\b" + re.escape(answer) + r"\b", re.IGNORECASE)
-    else:
-        pattern = ANSWER_TOKEN_RE
-    matches = list(pattern.finditer(full_text))
-    if not matches:
         return None
-
-    answer_end = matches[-1].end()
-    for idx in range(len(token_ids)):
-        prefix_text = decode_token_ids(processor, token_ids[: idx + 1])
-        if len(prefix_text) >= answer_end:
-            return idx
-    return None
+    return [int(tok) not in special_ids for tok in generated_ids[0].detach().cpu().tolist()]
 
 
-def select_final_answer_replay_tokens(
-    processor: Any,
-    generated_ids: torch.Tensor,
-    extracted_answer: Any = None,
-) -> Tuple[torch.Tensor, List[int], Dict[str, Any]]:
-    if generated_ids.numel() == 0:
-        raise NoFinalAnswerTokenError("Model produced no generated tokens; no final yes/no answer token to collect.")
+def limit_collect_mask(
+    mask: Optional[Sequence[bool]],
+    max_collect_tokens: Optional[int],
+    total_tokens: Optional[int] = None,
+) -> Optional[List[bool]]:
+    if mask is None:
+        if max_collect_tokens is None:
+            return None
+        if total_tokens is None:
+            raise ValueError("total_tokens is required when limiting collection without an existing mask.")
+        limit = max(0, int(max_collect_tokens))
+        return [idx < limit for idx in range(int(total_tokens))]
+    if max_collect_tokens is None:
+        return [bool(item) for item in mask]
+    remaining = max(0, int(max_collect_tokens))
+    output: List[bool] = []
+    for item in mask:
+        collect = bool(item) and remaining > 0
+        output.append(collect)
+        if collect:
+            remaining -= 1
+    return output
 
-    selected_idx = find_final_answer_token_index(processor, generated_ids, extracted_answer)
-    if selected_idx is None:
-        raise NoFinalAnswerTokenError("No final yes/no answer token found in generated response.")
 
-    replay_ids = generated_ids[:, : selected_idx + 1]
-    selected_token_id = int(generated_ids[0, selected_idx].detach().cpu())
-    selected_token_text = decode_token_ids(processor, [selected_token_id])
-    filtered_ids = filter_generated_ids(processor, generated_ids)
-    return replay_ids, [selected_idx], {
-        "replay_token_mode": "final_answer",
-        "total_response_tokens": int(generated_ids.shape[1]),
-        "total_filtered_response_tokens": int(filtered_ids.shape[1]),
-        "selected_replay_steps": [int(selected_idx)],
-        "selected_token_id": selected_token_id,
-        "selected_token_text": selected_token_text,
-        "selected_answer": normalize_answer_token(extracted_answer) or normalize_answer_token(selected_token_text) or "",
-    }
+def count_collect_tokens(mask: Optional[Sequence[bool]], generated_ids: torch.Tensor) -> int:
+    if mask is None:
+        return int(generated_ids.shape[1])
+    return int(sum(1 for item in mask if item))
 
 
 def replay_generated_tokens(
@@ -226,8 +158,13 @@ def replay_generated_tokens(
     inputs: Dict[str, Any],
     generated_ids: torch.Tensor,
     collector: DecoderAttentionCollector,
-    collect_token_indices: Optional[Sequence[int]] = None,
+    collect_token_mask: Optional[Sequence[bool]] = None,
 ) -> None:
+    if collect_token_mask is not None and len(collect_token_mask) != int(generated_ids.shape[1]):
+        raise ValueError(
+            f"collect_token_mask length {len(collect_token_mask)} does not match generated length {generated_ids.shape[1]}."
+        )
+
     model_inputs = strip_model_inputs(clone_tensor_inputs(inputs))
     device = model_inputs["input_ids"].device
     input_ids = model_inputs["input_ids"]
@@ -243,12 +180,9 @@ def replay_generated_tokens(
         outputs = safe_forward(model, prefill_kwargs)
     past_key_values = outputs.past_key_values
 
-    collect_steps = None if collect_token_indices is None else {int(idx) for idx in collect_token_indices}
     with torch.inference_mode():
         for step in range(generated_ids.shape[1]):
-            if hasattr(collector, "current_step"):
-                collector.current_step = step
-            collector.enabled = collect_steps is None or step in collect_steps
+            collector.enabled = collect_token_mask is None or bool(collect_token_mask[step])
             token = generated_ids[:, step : step + 1].to(device)
             new_mask = torch.ones((attention_mask.shape[0], 1), dtype=attention_mask.dtype, device=device)
             attention_mask = torch.cat([attention_mask, new_mask], dim=1)
@@ -282,8 +216,6 @@ def replay_generated_tokens(
             outputs = safe_forward(model, step_kwargs)
             past_key_values = outputs.past_key_values
     collector.enabled = False
-    if hasattr(collector, "current_step"):
-        collector.current_step = None
 
 
 def reduce_attention_records(
@@ -605,18 +537,17 @@ def main() -> None:
     )
     decoded = decode_generated_outputs(processor, generated_ids)
     prediction = decoded["text"]
-    replay_ids, collect_steps, replay_selection = select_final_answer_replay_tokens(
-        processor,
-        generated_ids,
-        decoded["extracted_answer"],
-    )
-    if replay_ids.numel() == 0:
+    collect_mask = non_special_token_mask(processor, generated_ids)
+    num_collected_tokens = count_collect_tokens(collect_mask, generated_ids)
+    if generated_ids.numel() == 0:
         raise RuntimeError("Model produced no generated tokens to replay.")
+    if num_collected_tokens == 0:
+        raise RuntimeError("Model produced no non-special generated tokens to collect.")
 
     collector = DecoderAttentionCollector(decoder_layers, layer_ids, video_positions)
     collector.install()
     try:
-        replay_generated_tokens(model, inputs, replay_ids, collector, collect_token_indices=collect_steps)
+        replay_generated_tokens(model, inputs, generated_ids, collector, collect_token_mask=collect_mask)
     finally:
         collector.restore()
 
@@ -666,9 +597,8 @@ def main() -> None:
         "generated_text_full": decoded["full_text"],
         "extracted_answer": decoded["extracted_answer"],
         "layers": layer_ids,
-        "num_replayed_tokens": int(replay_ids.shape[1]),
-        "num_collected_tokens": len(collect_steps),
-        **replay_selection,
+        "num_replayed_tokens": int(generated_ids.shape[1]),
+        "num_collected_tokens": num_collected_tokens,
         "frame_ratios": ratios,
         "heatmap_norm": args.heatmap_norm,
         "ratio_power": args.ratio_power,
@@ -694,7 +624,6 @@ def main() -> None:
     )
 
     print(f"prediction: {prediction}")
-    print(f"selected answer token: {replay_selection['selected_token_text']} (step {collect_steps[0]})")
     print(f"attention figure: {fig_path}")
     print(f"ratio bar: {bar_path}")
     print(f"metrics: {metrics_path}")
